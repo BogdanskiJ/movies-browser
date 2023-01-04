@@ -13,7 +13,7 @@ body {
     font-family: 'Poppins', sans-serif;
     transition: background 0.3s;
     overflow-y: scroll;
-    font-size: 18px
-    
+    font-size: 18px;
+    background-color: ${({ theme }) => theme.color.background};
 }
 `;
