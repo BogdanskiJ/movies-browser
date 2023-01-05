@@ -1,9 +1,10 @@
 import React from "react";
-import { MovieBrowser } from "./features";
+import NoResultPage from "./common/NoResultPage";
+
 
 export const App = () => {
   return (
-    <MovieBrowser />
+    <NoResultPage />
   );
 }
 
