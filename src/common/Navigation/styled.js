@@ -4,8 +4,8 @@ export const StyledNavigation = styled.ul`
     align-items: center;
     display: flex;
     flex-direction: row;
-    grid-template-columns: 1fr, 1fr, 1fr;
-    height: 94px;
+    min-height: 94px;
+    width: auto;
     background-color: ${({theme}) => theme.color.woodSmoke};
     margin: 0px;
     list-style-type: none;
