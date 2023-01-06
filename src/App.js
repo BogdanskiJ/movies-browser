@@ -1,9 +1,9 @@
 import React from "react";
-import { MovieBrowser } from "./features";
+import { Navigation } from "./common/Navigation";
 
 export const App = () => {
   return (
-    <MovieBrowser />
+    <Navigation />
   );
 }
 
