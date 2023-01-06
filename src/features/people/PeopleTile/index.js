@@ -1,11 +1,13 @@
-import { Tile, Name, Photo } from "./styled"
+import { Tile, Name, Photo, NameBox, Poster } from "./styled"
 
 
 export const PeopleTile = ({name}) => {
     return(
         <Tile>
-            <Photo></Photo>
+            <Poster><Photo></Photo></Poster>
+            <NameBox>
             <Name>{name}</Name>
+            </NameBox>
         </Tile>
     )
 }
