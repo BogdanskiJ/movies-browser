@@ -1,9 +1,9 @@
 import React from "react";
-import { MovieBrowser } from "./features";
+import { LoadingPage } from "./common/LoadingPage";
 
 export const App = () => {
   return (
-    <MovieBrowser />
+    <LoadingPage />
   );
 }
 
