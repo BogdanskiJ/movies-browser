@@ -17,7 +17,7 @@ export const PrevButton = styled.button`
   padding: 8px 16px;
   gap: 8px;
   height: 36px;
-  background: #e4e6f0;
+  background: ${({ theme }) => theme.color.prevBttn};
   border-radius: 5px;
   border: none;
 `;
@@ -28,7 +28,7 @@ export const NextButton = styled.button`
   padding: 8px 16px;
   gap: 8px;
   height: 36px;
-  background: #d6e4ff;
+  background: ${({ theme }) => theme.color.nextBttn};
   border: none;
   border-radius: 5px;
 `;
@@ -36,13 +36,13 @@ export const NextButton = styled.button`
 export const StyledSpan = styled.span`
   font-weight: 400;
   font-size: 16px;
-  color: #7e839a;
+  color: ${({ theme }) => theme.color.greyNumber};
   width: 120px;
 `;
 export const Number = styled.span`
   font-weight: 600;
   font-size: 16px;
-  color: #18181b;
+  color: ${({ theme }) => theme.color.black};
 `;
 
 export const TextBox = styled.div`

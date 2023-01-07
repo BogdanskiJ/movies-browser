@@ -4,6 +4,14 @@ import { NavLink } from "react-router-dom";
 
 export const Wrapper = styled.div`
 background-color: ${({ theme }) => theme.color.black};
+
+@media (max-width: 767px){
+width: 100%;
+/* display: grid;
+grid-template-columns: 2 1fr;
+grid-template-rows: 2 1fr; */
+
+}
 `
 export const NavContainer = styled.div`
 display: flex;
@@ -13,6 +21,12 @@ margin: auto;
 color: ${({ theme }) => theme.color.white};
 align-items: center;
 justify-content: space-between;
+
+@media (max-width: 767px){
+  width: auto;
+  display: flex;
+  flex-direction: row;
+}
 `
 
 export const NavHeader = styled.h1`
@@ -46,4 +60,7 @@ border: 1px solid ${({ theme }) => theme.color.borderColor};
 border-radius: 33px;
 margin: 23px 0px;
 display: flex;
+
+@media (max-width: 767px){
+}
 `
