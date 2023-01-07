@@ -1,9 +1,9 @@
 import React from "react";
-import { MovieBrowser } from "./features";
+import { ErrorPage } from "./common/ErrorPage";
 
 export const App = () => {
   return (
-    <MovieBrowser />
+    <ErrorPage />
   );
 }
 
