@@ -1,10 +1,10 @@
-import React from "react"
-
+import React from "react";
+import { Descritpion } from "./Description";
+import { Navigation } from "./Navigation";
 
 export const MovieBrowser = () => (
-    <div>
-    Przykładowy tekst
-    
-    </div>
-    
-    )
+  <>
+    <Navigation />
+    <Descritpion />
+  </>
+);
