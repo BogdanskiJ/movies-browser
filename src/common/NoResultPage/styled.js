@@ -23,5 +23,6 @@ export const Container = styled.div`
 
     @media (max-width:767px){
         margin-top: -100px;
+        width: 340px;
     };
 `;
