@@ -27,6 +27,17 @@ export const Container = styled.div`
     };
 
     animation: rotate 2s linear infinite;
+
+    @media (max-width:767px){
+        margin-top: 24px;
+    };    
+`;
+
+export const LoadingIcon = styled.img`
+    @media (max-width:767px){
+        width: 35px;
+        height: 35px;
+    };
 `;
 
 
