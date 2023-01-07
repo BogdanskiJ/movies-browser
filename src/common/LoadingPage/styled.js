@@ -15,3 +15,19 @@ export const StyledHeader = styled.header`
         margin-left: 16px;
     };
 `;
+
+export const Container = styled.div`
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+
+    @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+    };
+
+    animation: rotate 2s linear infinite;
+`;
+
+
+
