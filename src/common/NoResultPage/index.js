@@ -1,10 +1,12 @@
-import { NoResultIcon } from "./NoResultIcon";
-import { StyledHeader } from "./styled";
+import { ReactComponent as NoResultIcon } from "./NoResultIcon/picture.svg";
+import { Container, StyledHeader } from "./styled";
 
 const NoResultPage = () => (
     <>
         <StyledHeader>Sorry, there are no result for "Muan"</StyledHeader>
-        <NoResultIcon />
+        <Container>
+            <NoResultIcon />  
+        </Container>
     </>
 );
 

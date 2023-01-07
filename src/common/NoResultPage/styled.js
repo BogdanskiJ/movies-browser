@@ -8,3 +8,9 @@ export const StyledHeader = styled.header`
     margin-left: 276px;
     margin-top: 56px;
 `;
+
+export const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+`;
