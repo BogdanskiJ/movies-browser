@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const MovieListPage = styled.div`
+export const MovieDetailsPage = styled.div`
+max-width:1920px;
+margin:auto;
 `;
 
 export const PopularMoviesBox = styled.div`
@@ -32,7 +34,6 @@ export const PopularMoviesName = styled.h1`
         align-self:center;
         font-size: 18px;
     }
-
 `;
 
 export const MoviesList = styled.div`
@@ -43,9 +44,3 @@ export const MoviesList = styled.div`
     align-items: center;
     flex-wrap: wrap;
 `;
-
-
-
-
-
-
