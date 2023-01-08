@@ -1,10 +1,16 @@
 import React from "react"
-
+import { MovieList } from "./movieList"
+import { Container } from "./styled"
+import { theme } from "../theme";
 
 export const MovieBrowser = () => (
-    <div>
-    Przykładowy tekst
-    
-    </div>
-    
-    )
+    <Container theme={theme}>
+
+        <MovieList />
+
+    </Container>
+
+
+
+
+)

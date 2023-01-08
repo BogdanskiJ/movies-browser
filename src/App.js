@@ -1,9 +1,9 @@
 import React from "react";
-import { LoadingPage } from "./common/LoadingPage";
+import { Navigation } from "./common/Navigation";
 
 export const App = () => {
   return (
-    <LoadingPage />
+    <Navigation />
   );
 }
 
