@@ -10,8 +10,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        max-width: 1920px;
-        height: 1720px;
         margin: 0 auto;
         background: ${({theme}) => theme.color.mercury};
         font-family: "Poppins", sans-serif;
