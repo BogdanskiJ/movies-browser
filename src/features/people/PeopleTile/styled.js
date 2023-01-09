@@ -20,7 +20,7 @@ export const NameBox = styled.div`
   text-align: center;
 `;
 export const Name = styled.h3`
-  color: ${({ theme }) => theme.color.text};
+  color: ${({ theme }) => theme.color.woodSmoke};
   font-weight: 500;
   font-size: 22px;
   display: flex;
