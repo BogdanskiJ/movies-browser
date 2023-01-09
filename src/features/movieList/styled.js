@@ -40,12 +40,6 @@ export const MoviesList = styled.div`
     gap: 24px;
     align-content: center;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
 `;
-
-
-
-
-
-
