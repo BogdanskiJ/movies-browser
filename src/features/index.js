@@ -1,9 +1,14 @@
 import React from "react"
 import { MovieList } from "./movieList"
 import { Container } from "./styled"
+import { Navigation } from "./people/Navigation"
+import { People } from "./people/PeoplePage"
 import { theme } from "../theme";
 
 export const MovieBrowser = () => (
+<>
+    <Navigation />
+    <People />
     <Container theme={theme}>
         <MovieList
             movieTitle={"Mulan"}
@@ -16,4 +21,5 @@ export const MovieBrowser = () => (
             votesNumber={"350"}
         />
     </Container>
+    </>
 )
