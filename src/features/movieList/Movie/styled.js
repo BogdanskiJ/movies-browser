@@ -4,7 +4,6 @@ export const MovieDetail = styled.div`
     display:flex;
     flex-direction:column;
     max-width: 324px;
-    min-height:650px;
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     border-radius: 5px;
     gap:16px;
@@ -13,8 +12,8 @@ export const MovieDetail = styled.div`
     @media (max-width: 756px) {
         flex-direction:row;
         max-width: fit-content;
-        padding:16px;
-        gap:16px;
+        margin:0;
+        min-width: 100%;
     }
 `;
 
@@ -34,11 +33,10 @@ export const MovieDescriptionBox = styled.div`
     gap:8px;
     width:100%;
     height:100%;
-    /* @media (max-width: 756px) {
-        font-size: 13px;
-        margin:0;
-        margin-top:4px;
-    } */
+     @media (max-width: 756px) {
+        height:auto;
+        gap:0;
+    } 
 `;
 
 export const MovieTitle = styled.h2`
@@ -50,6 +48,9 @@ export const MovieTitle = styled.h2`
     @media (max-width: 756px) {
         font-size: 16px;
         margin:0;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 130%;
     }
 `;
 
@@ -58,11 +59,12 @@ export const MovieYear = styled.div`
     font-size: 16px;
     line-height: 150%;
     color: ${({ theme }) => theme.color.waterloo};
-    /* @media (max-width: 756px) {
+    @media (max-width: 756px) {
+        font-weight: 400;
         font-size: 13px;
-        margin:0;
+        line-height: 130%;
         margin-top:4px;
-    } */
+    } 
 `;
 
 export const MovieTags = styled.ul`
@@ -74,12 +76,11 @@ export const MovieTags = styled.ul`
     list-style-type: none;
     padding:0;
     margin:0;
-    /* @media (max-width: 756px) {
+    @media (max-width: 756px) {
         font-size: 10px;
         margin:0;
         margin-top:8px;
-        padding-left:0;
-    } */
+    } 
 `;
 
 export const Tag = styled.li`
@@ -92,7 +93,9 @@ export const Tag = styled.li`
     color: ${({ theme }) => theme.color.woodsmoke};
     background: ${({ theme }) => theme.color.mystic};
     @media (max-width: 756px) {
+        font-weight: 400;
         font-size: 10px;
+        line-height: 110%;
         padding:4px 8px;
     }
 `;
@@ -110,6 +113,9 @@ export const MovieRating = styled.div`
     border-radius: 5px;
     @media (max-width: 756px) {
         padding: 0;
+        height:auto;
+        margin-top:8px;
+        gap:8px;
     }
 `;
 
