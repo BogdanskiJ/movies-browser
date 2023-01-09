@@ -15,3 +15,4 @@ export const GlobalStyle = createGlobalStyle`
         background: ${({theme}) => theme.color.mercury};
         font-family: "Poppins", sans-serif;
     }
+`
