@@ -10,10 +10,6 @@ import { PaginationPageNumber } from "./PaginationNumberPage";
 
 function Pagination() {
     const windowWidth = window.innerWidth;
-    console.log(windowWidth)
-
-
-
     return (
         <PaginationBox theme={theme}>
             {(windowWidth > 753)

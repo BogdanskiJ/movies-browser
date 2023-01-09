@@ -8,6 +8,7 @@ export const theme = {
         pattensBlue: "#D6E4FF",
         woodSmoke: "#18181B",
         scienceBlue: "#0044CC",
+        whisper: "#F5F5FA"
     },
     breakpoint: {
         mobileMax: 320,
