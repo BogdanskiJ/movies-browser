@@ -1,3 +1,4 @@
+
 export const theme = {
     color: {
         white: "#FFFFFF",
@@ -6,5 +7,5 @@ export const theme = {
     },
     breakpoint: {
         mobileMax: 320,
-    },
-};
+    }
+}
