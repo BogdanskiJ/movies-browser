@@ -1,40 +1,33 @@
 import React from "react";
-import styled from "styled-components";
+import { css } from "styled-components";
 import { theme } from "../../../theme";
-import { MovieDetail, MovieRating, MovieTags, MovieTitle, MovieYear, Poster, Rating, Tag, VotesNumber } from "./styled";
+import { MovieDescriptionBox, MovieDetail, MovieRating, MovieTags, MovieTitle, MovieYear, Poster, Rating, Tag, VotesNumber } from "./styled";
 import poster from "../../../images/poster.png"
 import { ReactComponent as Star } from '../../../images/star.svg'
 
-export const Movie = () => (
+export const Movie = ({ movieTitle, movieYear, tag1, tag2, tag3, tag4, movieRating, votesNumber }) => (
     <>
         <MovieDetail theme={theme}>
-            <div>
-                <Poster src={poster} alt="" />
-            </div>
-            <div>
+            <Poster src={poster} alt="" />
+            <MovieDescriptionBox>
                 <MovieTitle>
-                    Mulan
+                    {movieTitle}
                 </MovieTitle>
                 <MovieYear>
-                    2020
+                    {movieYear}
                 </MovieYear>
                 <MovieTags>
-                    <Tag>dasda</Tag>
-                    <Tag>ddaa</Tag>
-                    <Tag>dadasdasa</Tag>
-                    <Tag>dasdasda</Tag>
+                    <Tag>{tag1}</Tag>
+                    <Tag>{tag2}</Tag>
+                    <Tag>{tag3}</Tag>
+                    <Tag>{tag4}</Tag>
                 </MovieTags>
                 <MovieRating>
                     <Star />
-                    <Rating>7,5</Rating>
-                    <VotesNumber>35 votes</VotesNumber>
+                    <Rating>{movieRating}</Rating>
+                    <VotesNumber>{votesNumber} votes</VotesNumber>
                 </MovieRating>
-            </div>
+            </MovieDescriptionBox>
         </MovieDetail>
-
-
     </>
-
-
-
-);
+    );
