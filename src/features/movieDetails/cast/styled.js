@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const CastBox = styled.div`
 max-width:1368px;
+width:100%;
 margin:auto;
-margin-top:64px;
 display: flex;
 flex-direction: column;
 gap: 32px;
