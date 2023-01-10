@@ -1,6 +1,3 @@
-import styled from "styled-components";
-
-
 
 export const theme = {
     color: {
@@ -13,5 +10,10 @@ export const theme = {
         black: "#000000",
         stormGrey: "#74788B",
         whisper: "#F5F5FA"
+        scienceBlue: "#0044CC",
+    },
+    breakpoint: {
+        mobileMax: 320,
+
     },
 };

@@ -1,19 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-html {
-    box-sizing: border-box;
-}
+    html {
+        box-sizing: border-box;
+    }
 
-*,::after, ::before {
-    box-sizing: inherit;
-}
+    *,::after, ::before {
+        box-sizing: inherit;
+    }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    transition: background 0.3s;
-    overflow-y: scroll;
-    font-size: 18px;
-    background-color: #E5E5E5;
-}
-`;
+    body {
+        max-width: 1920px;
+        margin: 0 auto;
+        background: ${({theme}) => theme.color.mercury};
+        font-family: "Poppins", sans-serif;
+    }
+`
