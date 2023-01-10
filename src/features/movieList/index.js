@@ -3,8 +3,6 @@ import { theme } from "../../theme";
 import { Movie } from "./Movie";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
 
-
-
 export const MovieList = () => (
 
   <MovieListPage theme={theme}>
