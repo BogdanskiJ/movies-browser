@@ -5,31 +5,30 @@ import { MovieMainPoster } from "./movieMainPoster";
 import { MovieTail } from "./movieTile";
 import { MovieDetailsPage } from "./styled";
 
-
 export const MovieDetails = () => (
 
   <MovieDetailsPage theme={theme}>
-    <MovieMainPoster 
-    movieTitle={"Mulan Long Title"}
-    movieRating={"7,5"}
-    votesNumber={"350"}
-    maxRating={"10"}
+    <MovieMainPoster
+      movieTitle={"Mulan"}
+      movieRating={"7,5"}
+      votesNumber={"350"}
+      maxRating={"10"}
     />
-    <MovieTail 
-    movieTitle={"Mulan Long Title"}
-    movieYear={"2020"}
-    countryProduction={"USA"}
-    releaseData={"24.10.2020"}
-    tag1={"Action"}
-    tag2={"Horror"}
-    tag3={"Drama"}
-    tag4={"Comedy"}
-    movieRating={"7,5"}
-    votesNumber={"350"}
-    maxRating={"10"}
-    movieStory={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ullam eos, temporibus natus aliquam ad modi omnis at harum iusto eius a? Enim sunt perspiciatis autem iusto nemo, dicta laudantium!"}
+    <MovieTail
+      movieTitle={"Mulan"}
+      movieYear={"2020"}
+      countryProduction={"USA"}
+      releaseData={"24.10.2020"}
+      tag1={"Action"}
+      tag2={"Horror"}
+      tag3={"Drama"}
+      tag4={"Comedy"}
+      movieRating={"7,5"}
+      votesNumber={"350"}
+      maxRating={"10"}
+      movieStory={"A young Chinese maiden disguises herself as a male warrior in order to save her father. Disguises herself as a male warrior in order to save her father. A young Chinese maiden disguises herself as a male warrior in order to save her father."}
     />
-    <Cast/>
+    <Cast />
     <Crew />
   </MovieDetailsPage>
 );
