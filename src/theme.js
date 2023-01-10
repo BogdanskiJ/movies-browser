@@ -11,6 +11,7 @@ export const theme = {
         pattensBlue: "#D6E4FF",
         woodsmoke: "#18181B",
         black: "#000000",
-        stormGrey: "#74788B"
+        stormGrey: "#74788B",
+        whisper: "#F5F5FA"
     },
 };
