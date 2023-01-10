@@ -12,8 +12,8 @@ export const MovieMainPosterRating = ({ movieTitle, movieRating, votesNumber, ma
                 <Star />
                 <Rating>{movieRating}</Rating>
                 <MaxRating>/ {maxRating}</MaxRating>
+                <VotesNumber>{votesNumber} votes</VotesNumber>
             </MovieRating>
-            <VotesNumber>{votesNumber} votes</VotesNumber>
         </MovieDetail>
     </MovieDescription>
 );
