@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const CrewBox = styled.div`
 max-width:1368px;
+width:100%;
 margin:auto;
-margin-top:64px;
 display: flex;
 flex-direction: column;
 gap: 32px;
+
+margin-bottom:103px;
 
 /* flex-direction: row;
 align-items: flex-start;
