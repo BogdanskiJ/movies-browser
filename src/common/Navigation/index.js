@@ -1,6 +1,6 @@
 import iconNavigation from "./IconNavigation/video.svg";
 import iconSearch from "./IconSearch/search.svg";
-import { Icon, IconSearch, Input, Item, Name, StyledNavigation } from "./styled";
+import { Container, Icon, IconSearch, Input, Item, Name, StyledNavigation, StyledNavLink, Subpages } from "./styled";
 
 export const Navigation = () => (
     <nav>
@@ -11,18 +11,24 @@ export const Navigation = () => (
             <Name>
                 Movies Browser
             </Name>
-            <Item movies>
-                Movies
-            </Item>
-            <Item people>
-                People
-            </Item>
-            <li>
-                <IconSearch src={iconSearch} alt="" />
-            </li>
-            <li>
-                <Input placeholder={`Search for movies...`} />
-            </li>
+            <Container>
+                <Subpages>
+                    <li>
+                        <StyledNavLink to="/movies">Movies</StyledNavLink>
+                    </li>
+                    <li>
+                        <StyledNavLink to="/people">People</StyledNavLink>
+                    </li>
+                </Subpages>
+                <div>
+                    <li>
+                        <IconSearch src={iconSearch} alt="" />
+                    </li>
+                    <li>
+                        <Input placeholder={`Search for movies...`} />
+                    </li>
+                </div>
+            </Container>
         </StyledNavigation>
     </nav>
 );

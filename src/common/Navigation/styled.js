@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 export const StyledNavigation = styled.ul`
@@ -26,7 +27,8 @@ export const Icon = styled.img`
 export const Name = styled.li`
     display: flex;
     flex-wrap: nowrap;
-    padding: 16px;
+    padding-left: 16px;
+    padding-right: 92px;
     font-weight: 500;
     font-size: 24px;
     line-height: 40px;
@@ -41,21 +43,26 @@ export const Name = styled.li`
     };
 `;
 
-export const Item = styled.li`
+export const Subpages = styled.div`
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 4px;
+    padding: 12px;
+`;
+
+export const StyledNavLink = styled(NavLink)`
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
     text-transform: uppercase;
-    padding: 32px;
-    margin-top: 4px;
+    color: ${({theme}) => theme.color.white};
+    text-decoration: none;
+    padding: 8px 24px;
 
-    ${({people}) => people && css`
-        margin-right: 380px;
-    `}
-
-    ${({movies}) => movies && css`
-        margin-left: 56px;
-    `}
+    &.active{
+        border: 1px solid #FFFFFF;
+        border-radius: 24px;
+    };
 
     @media (max-width:767px){
         font-size: 12px;
@@ -69,7 +76,7 @@ export const Input = styled.input`
     border-radius: 33px;
     width: 432px;
     height: 48px;
-    padding: 14px 12px 12px 40px;
+    padding: 12px 14px 12px 40px;
 
     @media (max-width:767px){
         width: 288px;
@@ -82,7 +89,7 @@ export const Input = styled.input`
 export const IconSearch = styled.img`
     position: absolute;
     top: 34px;
-    left: 1252px;
+    left: 1269px;
 
     @media (max-width:767px){
         width: 12px;
@@ -90,4 +97,10 @@ export const IconSearch = styled.img`
         top: 98px;
         left: 56px;
     };
+`;
+
+export const Container = styled.div`
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-column-gap: 388px;
 `;
