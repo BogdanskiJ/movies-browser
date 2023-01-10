@@ -7,13 +7,7 @@ margin:auto;
 display: flex;
 flex-direction: column;
 gap: 32px;
-
 margin-bottom:103px;
-
-/* flex-direction: row;
-align-items: flex-start;
-padding: 40px;
- */
 `;
 
 export const Title = styled.div`
