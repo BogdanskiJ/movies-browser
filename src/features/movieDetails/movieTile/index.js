@@ -1,13 +1,14 @@
 import { theme } from "../../../theme";
-import { MovieDescription, MovieDetail, CountryAndDate, ProductionInfo, MovieRating, MovieTags, MovieTitle, MovieYear, Poster, Rating, Tag, Tail, VotesNumber, MovieProduction, MaxRating, MovieStory } from "./styled";
+import { MovieDescription, MovieDetail, CountryAndDate, ProductionInfo, MovieRating, MovieTags, MovieTitle, MovieYear, Poster, Rating, Tag, Tail, VotesNumber, MovieProduction, MaxRating, MovieStory, PosterBox, StarBox, Production, ReleaseData } from "./styled";
 import poster from "../../../images/poster.png"
 import { ReactComponent as Star } from '../../../images/star.svg'
 
-
-export const MovieTail = ({ movieTitle, movieYear, countryProduction, releaseData, tag1, tag2, tag3, tag4, votesNumber, maxRating, movieRating, movieStory }) => (
+export const MovieTail = ({ movieTitle, movieYear, countryProduction, releaseData, tag1, tag2, tag3, votesNumber, maxRating, movieRating, movieStory }) => (
 
     <Tail theme={theme}>
-        <Poster src={poster} alt="" />
+        <PosterBox>
+            <Poster src={poster} alt="" />
+        </PosterBox>
         <MovieDescription>
             <MovieTitle>
                 {movieTitle}
@@ -16,11 +17,11 @@ export const MovieTail = ({ movieTitle, movieYear, countryProduction, releaseDat
                 {movieYear}
             </MovieYear>
             <MovieProduction>
-                <CountryAndDate>Production:
+                <CountryAndDate><Production>Production:</Production>
                     <ProductionInfo>{countryProduction}
                     </ProductionInfo>
                 </CountryAndDate>
-                <CountryAndDate>Release date:
+                <CountryAndDate><ReleaseData>Release date:</ReleaseData>
                     <ProductionInfo>{releaseData}
                     </ProductionInfo>
                 </CountryAndDate>
@@ -29,17 +30,18 @@ export const MovieTail = ({ movieTitle, movieYear, countryProduction, releaseDat
                 <Tag>{tag1}</Tag>
                 <Tag>{tag2}</Tag>
                 <Tag>{tag3}</Tag>
-                <Tag>{tag4}</Tag>
             </MovieTags>
             <MovieRating>
-                <Star />
+                <StarBox>
+                    <Star/>
+                </StarBox>
                 <Rating>{movieRating}</Rating>
                 <MaxRating>/{maxRating}</MaxRating>
                 <VotesNumber>{votesNumber} votes</VotesNumber>
             </MovieRating>
-            <MovieStory>
-                {movieStory}
-            </MovieStory>
         </MovieDescription>
+        <MovieStory>
+            {movieStory}
+        </MovieStory>
     </Tail>
 );
