@@ -11,6 +11,7 @@ export const Tile = styled.div`
   align-items: center;
   margin: 24px 0;
 `;
+
 export const NameBox = styled.div`
   width: 176px;
   height: 64px;
@@ -19,6 +20,7 @@ export const NameBox = styled.div`
   align-items: center;
   text-align: center;
 `;
+
 export const Name = styled.h3`
   color: ${({ theme }) => theme.color.woodSmoke};
   font-weight: 500;
@@ -34,6 +36,7 @@ export const Poster = styled.div`
   height: 231px;
   top: -6px;
 `;
+
 export const Photo = styled.img`
   border-radius: 5px;
   width: 177px;

@@ -4,7 +4,6 @@ import { Movie } from "./Movie";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
 
 export const MovieList = ({ movieTitle, movieYear, tag1, tag2, tag3, tag4, movieRating, votesNumber }) => (
-
   <MovieListPage theme={theme}>
     <PopularMoviesBox>
       <PopularMoviesName>

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const PaginationBox = styled.div`
     margin-top:40px;
     justify-content:center;
@@ -9,9 +8,10 @@ export const PaginationBox = styled.div`
     align-items: center;
     padding: 0px;
     gap: 24px;
+
     @media (max-width: 756px) {
         gap: 8px;
-    }
+    };
 `;
 
 export const PaginationLeftButton = styled.button`
@@ -27,9 +27,10 @@ export const PaginationLeftButton = styled.button`
     border-style:none;
     background: ${({ theme }) => theme.color.mystic};
     color: ${({ theme }) => theme.color.woodsmoke};
+
     @media (max-width: 756px) {
         padding: 7.5px 12px;
-    }
+    };
 `;
 
 export const PaginationRightButton = styled.button`
@@ -45,8 +46,8 @@ export const PaginationRightButton = styled.button`
     border-style:none;
     background: ${({ theme }) => theme.color.pattensBlue};
     color: ${({ theme }) => theme.color.woodsmoke};
+
     @media (max-width: 756px) {
         padding: 7.5px 12px;
-    }
-    
+    }; 
 `;
