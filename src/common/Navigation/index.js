@@ -1,17 +1,19 @@
 import iconNavigation from "./IconNavigation/video.svg";
 import iconSearch from "./IconSearch/search.svg";
-import { Container, Icon, IconSearch, Input, Item, Name, StyledNavigation, StyledNavLink, Subpages } from "./styled";
+import { Container, Icon, IconSearch, Input, Logo, Name, StyledNavigation, StyledNavLink, Subpages } from "./styled";
 
 export const Navigation = () => (
     <nav>
         <StyledNavigation>
-            <li>
-                <Icon src={iconNavigation} alt="" />
-            </li>
-            <Name>
-                Movies Browser
-            </Name>
             <Container>
+                <Logo>
+                    <li>
+                        <Icon src={iconNavigation} alt="" />
+                    </li>
+                    <Name>
+                        Movies Browser
+                    </Name>
+                </Logo>
                 <Subpages>
                     <li>
                         <StyledNavLink to="/movies">Movies</StyledNavLink>

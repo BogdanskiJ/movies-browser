@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const StyledNavigation = styled.ul`
     align-items: center;
@@ -14,6 +14,13 @@ export const StyledNavigation = styled.ul`
     color: ${({theme}) => theme.color.white};
 `;
 
+export const Logo = styled.div`
+    display: grid;
+    grid-template-columns: 342px 300px;
+    grid-column-gap: 16px;
+    align-items: center;
+`;
+
 export const Icon = styled.img`
     margin-left: 298px;
 
@@ -25,10 +32,6 @@ export const Icon = styled.img`
 `;
 
 export const Name = styled.li`
-    display: flex;
-    flex-wrap: nowrap;
-    padding-left: 16px;
-    padding-right: 92px;
     font-weight: 500;
     font-size: 24px;
     line-height: 40px;
@@ -48,6 +51,11 @@ export const Subpages = styled.div`
     flex-wrap: nowrap;
     margin-top: 4px;
     padding: 12px;
+
+    @media (max-width: 767px){
+        padding: 6px;
+        margin: auto;
+    };
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -68,6 +76,7 @@ export const StyledNavLink = styled(NavLink)`
         font-size: 12px;
         line-height: 18px;
         margin: auto;
+        padding: 4px 12px;
     };
 `;
 
@@ -101,6 +110,7 @@ export const IconSearch = styled.img`
 
 export const Container = styled.div`
     display: grid;
-    grid-template-columns: 220px 1fr;
-    grid-column-gap: 388px;
+    grid-template-columns: 600px 540px 1fr;
+    grid-column-gap: 38px;
+    align-items: center;
 `;
