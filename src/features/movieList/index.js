@@ -5,11 +5,10 @@ import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "
 
 
 export const MovieList = ({ movieTitle, movieYear, tag1, tag2, tag3, tag4, movieRating, votesNumber }) => (
-
   <MovieListPage theme={theme}>
     <PopularMoviesBox>
       <PopularMoviesName>
-        Popular Movies
+        Popular movies
       </PopularMoviesName>
       <MoviesList>
         <Movie

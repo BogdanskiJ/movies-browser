@@ -1,6 +1,24 @@
-# Getting Started with Create React App
+# Movie Browser (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of content
+- Demo
+- General info
+- Movie Browser
+- Technologies
+
+## Demo
+[Movie Browser](https://kubabogd.github.io/movies-browser/)
+
+
+## General info
+Movie Browser. Application to access information about all existing movies.
+
+## Technologies
+- HTML
+- CSS
+- JS
+- ES6
+- BEM
 
 ## Available Scripts
 

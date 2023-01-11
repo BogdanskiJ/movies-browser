@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const MovieDetail = styled.div`
     display:flex;
@@ -9,22 +9,24 @@ export const MovieDetail = styled.div`
     gap:16px;
     padding: 16px;
     background: ${({ theme }) => theme.color.white};
+
     @media (max-width: 756px) {
         flex-direction:row;
         max-width: fit-content;
         margin:0;
         min-width: 100%;
-    }
+    };
 `;
 
 export const Poster = styled.img`
     border-radius: 5px;
     max-width:292px;
+
     @media (max-width: 756px) {
         width: 114px;
         height: 169px;
         margin:0;
-    }
+    };
 `;
 
 export const MovieDescriptionBox = styled.div`
@@ -33,10 +35,11 @@ export const MovieDescriptionBox = styled.div`
     gap:8px;
     width:100%;
     height:100%;
+
      @media (max-width: 756px) {
         height:auto;
         gap:0;
-    } 
+    };
 `;
 
 export const MovieTitle = styled.h2`
@@ -45,13 +48,14 @@ export const MovieTitle = styled.h2`
     line-height: 130%;
     margin:0;
     color: ${({ theme }) => theme.color.woodsmoke};
+
     @media (max-width: 756px) {
         font-size: 16px;
         margin:0;
         font-weight: 500;
         font-size: 16px;
         line-height: 130%;
-    }
+    };
 `;
 
 export const MovieYear = styled.div`
@@ -59,12 +63,13 @@ export const MovieYear = styled.div`
     font-size: 16px;
     line-height: 150%;
     color: ${({ theme }) => theme.color.waterloo};
+
     @media (max-width: 756px) {
         font-weight: 400;
         font-size: 13px;
         line-height: 130%;
         margin-top:4px;
-    } 
+    };
 `;
 
 export const MovieTags = styled.ul`
@@ -76,11 +81,12 @@ export const MovieTags = styled.ul`
     list-style-type: none;
     padding:0;
     margin:0;
+
     @media (max-width: 756px) {
         font-size: 10px;
         margin:0;
         margin-top:8px;
-    } 
+    };
 `;
 
 export const Tag = styled.li`
@@ -92,12 +98,13 @@ export const Tag = styled.li`
     border-radius: 5px;
     color: ${({ theme }) => theme.color.woodsmoke};
     background: ${({ theme }) => theme.color.mystic};
+
     @media (max-width: 756px) {
         font-weight: 400;
         font-size: 10px;
         line-height: 110%;
         padding:4px 8px;
-    }
+    };
 `;
 
 export const MovieRating = styled.div`
@@ -111,12 +118,13 @@ export const MovieRating = styled.div`
     height: 100%;
     align-items: flex-end;
     border-radius: 5px;
+
     @media (max-width: 756px) {
         padding: 0;
         height:auto;
         margin-top:8px;
         gap:8px;
-    }
+    };
 `;
 
 export const Rating = styled.div`
@@ -124,11 +132,12 @@ export const Rating = styled.div`
     font-size: 16px;
     line-height: 150%;
     color: ${({ theme }) => theme.color.woodsmoke};
+
     @media (max-width: 756px) {
         padding: 0;
         font-size: 13px;
         line-height: 130%;
-    }
+    };
 `;
 
 export const VotesNumber = styled.div`
@@ -136,9 +145,10 @@ export const VotesNumber = styled.div`
     font-size: 16px;
     line-height: 150%;
     color: ${({ theme }) => theme.color.waterloo};
+
     @media (max-width: 756px) {
         padding: 0;
         font-size: 13px;
         line-height: 130%;
-    }
+    };
 `;
