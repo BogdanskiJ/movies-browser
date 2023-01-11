@@ -1,14 +1,15 @@
 
 import Pagination from "../../../common/pagination";
 import { PeopleTile } from "../PeopleTile";
-import { Info, MainWrapper, TileWrapper } from "./styled";
+import { Background, Info, MainWrapper, TileWrapper } from "./styled";
 
 
 export const People = () => {
 
   return (
     <>
-      <MainWrapper>
+    <Background>
+    <MainWrapper>
         <Info>Popular people</Info>
         <TileWrapper>
           <PeopleTile name={"Jakub Kedzierski "} />
@@ -22,6 +23,7 @@ export const People = () => {
         </TileWrapper>
         <Pagination />
       </MainWrapper>
+    </Background>
     </>
   );
 };
