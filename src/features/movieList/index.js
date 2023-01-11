@@ -7,7 +7,7 @@ export const MovieList = ({ movieTitle, movieYear, tag1, tag2, tag3, tag4, movie
   <MovieListPage theme={theme}>
     <PopularMoviesBox>
       <PopularMoviesName>
-        Popular Movies
+        Popular movies
       </PopularMoviesName>
       <MoviesList>
         <Movie
