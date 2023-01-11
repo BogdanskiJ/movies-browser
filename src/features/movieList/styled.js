@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const MovieListPage = styled.div`
     background-color: ${({ theme }) => theme.color.whisper};
     padding-top:60px;
+
     @media (max-width: 756px) {
         padding-top:24px;
-    }
+    };
 `;
 
 export const PopularMoviesBox = styled.div`
@@ -17,10 +18,11 @@ export const PopularMoviesBox = styled.div`
     align-content: center;
     justify-content: center;
     align-items: center;
+
     @media (max-width: 756px) {
         align-self:center;
         padding: 16px;
-    }
+    };
 `;
 
 export const PopularMoviesName = styled.h1`
@@ -29,13 +31,15 @@ export const PopularMoviesName = styled.h1`
     font-size: 36px;
     line-height: 120%;
     color: ${({ theme }) => theme.color.woodsmoke};
+
     @media (max-width: 1353px) {
         align-self:center;
-    }
+    };
+
     @media (max-width: 756px) {
         align-self:flex-start;
         font-size: 18px;
-    }
+    };
 `;
 
 export const MoviesList = styled.div`
@@ -45,7 +49,8 @@ export const MoviesList = styled.div`
     justify-content: center;
     align-items: stretch;
     flex-wrap: wrap;
+
     @media (max-width: 756px) {
         gap: 16px;
-    }
+    };
 `;

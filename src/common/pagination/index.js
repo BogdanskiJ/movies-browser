@@ -1,10 +1,8 @@
 import React from "react";
-import { Form } from "react-router-dom";
-import styled from "styled-components";
 import { theme } from "../../theme";
-import { PaginationBox, PaginationLeftButton, PaginationRightButton } from "./styled"
-import { ReactComponent as NextArrow } from '../../images/nextArrow.svg'
-import { ReactComponent as PrevArrow } from '../../images/prevArrow.svg'
+import { PaginationBox, PaginationLeftButton, PaginationRightButton } from "./styled";
+import { ReactComponent as NextArrow } from '../../images/nextArrow.svg';
+import { ReactComponent as PrevArrow } from '../../images/prevArrow.svg';
 import { PaginationPageNumber } from "./PaginationNumberPage";
 
 
@@ -54,10 +52,8 @@ function Pagination() {
                         <NextArrow />
                         <NextArrow />
                     </PaginationRightButton></>}
-
-
         </PaginationBox>
-    )
+    );
 };
 export default Pagination;
 
