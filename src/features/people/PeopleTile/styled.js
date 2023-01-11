@@ -11,6 +11,7 @@ export const Tile = styled.div`
   align-items: center;
   margin: 24px;
   margin-left: 0;
+  margin-bottom: 0;
 `;
 
 export const NameBox = styled.div`
