@@ -1,5 +1,4 @@
 import React from "react";
-import { css } from "styled-components";
 import { theme } from "../../../theme";
 import { MovieDescriptionBox, MovieDetail, MovieRating, MovieTags, MovieTitle, MovieYear, Poster, Rating, Tag, VotesNumber } from "./styled";
 import poster from "../../../images/poster.png"
