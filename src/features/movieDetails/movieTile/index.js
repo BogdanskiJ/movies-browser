@@ -1,21 +1,10 @@
 import { theme } from "../../../theme";
-import { MovieDescription, MovieDetail, CountryAndDate, ProductionInfo, MovieRating, MovieTags, MovieTitle, MovieYear, Poster, Rating, Tag, Tail, VotesNumber, MovieProduction, MaxRating, MovieStory, PosterBox, StarBox, Production, ReleaseData } from "./styled";
+import { MovieDescription, CountryAndDate, ProductionInfo, MovieRating, MovieTags, MovieTitle, MovieYear, Poster, Rating, Tag, Tail, VotesNumber, MovieProduction, MaxRating, MovieStory, PosterBox, StarBox, Production, ReleaseData } from "./styled";
 import { ReactComponent as Star } from '../../../images/star.svg'
-import { useDataFromAPI } from "../dataFromAPI";
-import { useEffect, useState } from "react";
 
-export const MovieTail = ({ movieTitle, movieYear, releaseData, votesNumber, maxRating, movieRating, movieStory, movieTilePoster }) => {
+export const MovieTail = ({ movieTitle, movieYear, releaseData, votesNumber, maxRating, movieRating, movieStory, movieTilePoster, countryProductionArray, tagArray }) => {
 
-  const dataFromAPI = useDataFromAPI();
-
-  const [countryProductionArray, setCountryProductionArray] = useState([]);
-  const [tagArray, setTagArray] = useState([]);
-
-  useEffect(() => {
-    setCountryProductionArray(dataFromAPI.data.production_countries);
-    setTagArray(dataFromAPI.data.genres);
-  }, [dataFromAPI]);
-//trzeba dodać pobieranie odpowiedniej wielkości obrazu w zależności od @media 
+  //trzeba dodać pobieranie odpowiedniej wielkości obrazu w zależności od @media 
   return (
 
     <Tail theme={theme}>
