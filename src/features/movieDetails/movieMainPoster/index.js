@@ -1,4 +1,4 @@
-import { MovieBigPoster, PosterBig } from "./styled";
+import { MovieBigPoster } from "./styled";
 import { MovieMainPosterRating } from "./movieMainPosterRating";
 
 export const MovieMainPoster = ({ movieTitle, movieRating, votesNumber, maxRating, movieBackgroundPosterW1280 }) => (
