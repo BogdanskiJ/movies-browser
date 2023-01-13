@@ -9,7 +9,9 @@ export const Tile = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 24px 0;
+  margin: 24px;
+  margin-left: 0;
+  margin-bottom: 0;
 `;
 
 export const NameBox = styled.div`

@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
+export const Background = styled.div`
+background-color: ${({ theme }) => theme.color.whisper};
+`
+
 export const MainWrapper = styled.div`
   width: 1368px;
   margin: auto;
   display: grid;
-  margin-top: 56px;
+  padding: 56px;
   align-items: center;
+  background-color: ${({ theme }) => theme.color.whisper};
 
   @media (max-width: 767px) {
     max-width: 100%;

@@ -8,7 +8,7 @@ export const StyledNavigation = styled.ul`
     flex-wrap: wrap;
     min-height: 94px;
     width: auto;
-    background-color: ${({theme}) => theme.color.woodSmoke};
+    background-color: ${({theme}) => theme.color.black};
     margin: 0px;
     list-style-type: none;
     color: ${({theme}) => theme.color.white};
