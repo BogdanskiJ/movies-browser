@@ -3,8 +3,12 @@ import { theme } from "../../../theme";
 import { MovieDescriptionBox, MovieDetail, MovieRating, MovieTags, MovieTitle, MovieYear, Poster, Rating, Tag, VotesNumber } from "./styled";
 import { ReactComponent as Star } from '../../../images/star.svg';
 
-const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApiLink, movieTagArray }) => {
+const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApiLink, movieTagArray, genresArray }) => {
 
+  const genreSort = (a, b) => {
+    if (a === b.id) { return (b.name) }
+  }
+  
   return (
     <MovieDetail theme={theme}>
       <Poster src={`https://image.tmdb.org/t/p/w342/${moviePosterApiLink}`} alt="" />
@@ -18,10 +22,10 @@ const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApi
         </MovieYear>
         <MovieTags>
           {
-            (movieTagArray !== undefined ?
+            ((movieTagArray !== undefined && genresArray !== undefined) ?
               (movieTagArray.map(tag =>
                 <Tag key={tag}>
-                  {tag}
+                  {genresArray.map(tagName => genreSort(tag, tagName))}
                 </Tag>
               )) : "")
           }
