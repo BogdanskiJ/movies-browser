@@ -19,6 +19,11 @@ export const Logo = styled.div`
     grid-template-columns: 342px 300px;
     grid-column-gap: 16px;
     align-items: center;
+
+    @media (max-width: 767px){
+        grid-template-columns: 10px 120px;
+        grid-column-gap: 0px;
+    };
 `;
 
 export const Icon = styled.img`
@@ -91,20 +96,20 @@ export const Input = styled.input`
         width: 288px;
         height: 44px;
         margin: auto;
-        margin-bottom: 16px;
+        margin-top: 14px;
     };
 `;
 
 export const IconSearch = styled.img`
     position: absolute;
     top: 34px;
-    left: 1269px;
+    left: 1445px;
 
     @media (max-width:767px){
         width: 12px;
         height: 13px;
-        top: 98px;
-        left: 56px;
+        top: 78px;
+        left: 70px;
     };
 `;
 
@@ -113,4 +118,10 @@ export const Container = styled.div`
     grid-template-columns: 600px 540px 1fr;
     grid-column-gap: 38px;
     align-items: center;
+
+    @media (max-width: 767px){
+        grid-template-columns: 142px 165px;
+        grid-column-gap: 0px;
+        padding: 12px;
+    };
 `;
