@@ -19,6 +19,7 @@ const MovieDetails = () => {
   // 1 trzeba dodać pobieranie odpowiedniej wielkości obrazu w zależności od @media
 
   // 2 trzeba dodać sprawdzanie czy wystepuje plakat itp
+  
   return (
     (movieDetails !== undefined)
       ?
