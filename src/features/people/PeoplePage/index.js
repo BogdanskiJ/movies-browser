@@ -1,41 +1,34 @@
-import { Pagination } from "../../Pagination"
-import { PeopleTile } from "../PeopleTile"
-import { Info, MainWrapper, TileWrapper } from "./styled"
+import { useEffect, useState } from "react";
+import Pagination from "../../../common/pagination";
+import { PeopleTile } from "../PeopleTile";
+import { Background, Info, MainWrapper, TileWrapper } from "./styled";
 
 
 export const People = () => {
-    return(
-        <>
+  const [name, setName] = useState([])
+
+  useEffect(() =>{
+    fetch("https://api.themoviedb.org/3/person/popular?api_key=9515ffc857c67f1558538dad140abb29&language=en-US&page=1")
+    .then((res) => res.json())
+    .then(data => {
+      console.log(data.results)
+      setName(data.results)
+    })
+  }, [])
+
+  return (
+    <>
+      <Background>
         <MainWrapper>
-            <Info>Popular people</Info>
-            <TileWrapper>
-            <PeopleTile 
-            name={"Jakub Kedzierski "}
-            />
-            <PeopleTile 
-            name={"Jakub Kedzierski SSSSS"}
-            />
-            <PeopleTile 
-            name={"Jakub"}
-            />
-            <PeopleTile 
-            name={"Jakub Bzaaaas"}
-            />
-            <PeopleTile 
-            name={"Jakub"}
-            />
-            <PeopleTile 
-            name={"Jakub"}
-            />
-            <PeopleTile 
-            name={"Jakub"}
-            />
-            <PeopleTile 
-            name={"Jakub"}
-            />
-            </TileWrapper>
-            <Pagination />
+          <Info>Popular people</Info>
+          <TileWrapper>
+            {name.map((names) => <PeopleTile name={names} key={names.id} {...names} />)}
+          </TileWrapper>
+          <Pagination />
         </MainWrapper>
-        </>
-    )
-}
+      </Background>
+    </>
+  );
+};
+
+export default People;

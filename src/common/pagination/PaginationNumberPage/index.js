@@ -1,6 +1,6 @@
 import React from "react";
 import { theme } from "../../../theme";
-import { PageNumberBox, Number } from "./styled"
+import { PageNumberBox, Number } from "./styled";
 
 
 export const PaginationPageNumber = () => (
@@ -11,10 +11,5 @@ export const PaginationPageNumber = () => (
             of
             <Number>500</Number>
         </PageNumberBox>
-
-
     </>
-
-
-
 );

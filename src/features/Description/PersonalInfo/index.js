@@ -1,5 +1,4 @@
-import { Info, PersonalInfo } from "./styled"
-
+import { Info, PersonalInfo } from "./styled";
 
 export const Information = () => {
     return(
@@ -9,7 +8,7 @@ export const Information = () => {
        <PersonalInfo>place of birth:</PersonalInfo>
        </Info>
         </>
-    )
-}
+    );
+};
 
-export default Information
+export default Information;
