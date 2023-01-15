@@ -11,6 +11,7 @@ export const theme = {
         stormGrey: "#74788B",
         whisper: "#F5F5FA",
         scienceBlue: "#0044CC",
+        aquamarineBlue: "#78C8E2" 
     },
     breakpoint: {
         mobileMax: 320,
