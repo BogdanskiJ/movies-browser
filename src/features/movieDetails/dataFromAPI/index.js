@@ -31,4 +31,4 @@ export const useDataFromAPI = () => {
     setTimeout(fetchResponse, 1000);
   }, []);
   return dataFromAPI;
-};
+}; 
