@@ -8,7 +8,7 @@ export const useDataFromAPI = () => {
       release_date: "",
     },
     state: "loading"
-  });
+  }); 
 
   useEffect(() => {
     const fetchResponse = async () => {
