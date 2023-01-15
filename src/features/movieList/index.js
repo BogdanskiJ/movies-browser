@@ -1,92 +1,55 @@
+import { useEffect, useState } from "react";
 import Pagination from "../../common/pagination";
 import { theme } from "../../theme";
-import { Movie } from "./Movie";
+import { useDataFromAPI } from "./dataFromAPI";
+import { useGenresFromAPI } from "./genresList";
+import Movie from "./Movie";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
 
+const MovieList = ({ }) => {
 
-export const MovieList = ({ movieTitle, movieYear, tag1, tag2, tag3, tag4, movieRating, votesNumber }) => (
-  <MovieListPage theme={theme}>
-    <PopularMoviesBox>
-      <PopularMoviesName>
-        Popular movies
-      </PopularMoviesName>
-      <MoviesList>
-        <Movie
-          movieTitle={movieTitle}
-          movieYear={movieYear}
-          tag1={tag1}
-          tag2={tag2}
-          tag3={tag3}
-          tag4={tag4}
-          movieRating={movieRating}
-          votesNumber={votesNumber}
-        />
-        <Movie
-          movieTitle={movieTitle}
-          movieYear={movieYear}
-          tag1={tag1}
-          tag2={tag2}
-          tag3={tag3}
-          tag4={tag4}
-          movieRating={movieRating}
-          votesNumber={votesNumber}
-        />
-        <Movie
-          movieTitle={movieTitle}
-          movieYear={movieYear}
-          tag1={tag1}
-          tag2={tag2}
-          tag3={tag3}
-          tag4={tag4}
-          movieRating={movieRating}
-          votesNumber={votesNumber}
-        />
-        <Movie
-          movieTitle={movieTitle}
-          movieYear={movieYear}
-          tag1={tag1}
-          tag2={tag2}
-          tag3={tag3}
-          tag4={tag4}
-          movieRating={movieRating}
-          votesNumber={votesNumber}
-        />
-        <Movie
-          movieTitle={movieTitle}
-          movieYear={movieYear}
-          tag1={tag1}
-          tag2={tag2}
-          tag3={tag3}
-          tag4={tag4}
-          movieRating={movieRating}
-          votesNumber={votesNumber}
-        />
-        <Movie
-          movieTitle={movieTitle}
-          movieYear={movieYear}
-          tag1={tag1}
-          tag2={tag2}
-          tag3={tag3}
-          tag4={tag4}
-        />
-        <Movie
-          movieTitle={movieTitle}
-          movieYear={movieYear}
-          tag1={tag1}
-          tag2={tag2}
-          tag3={tag3}
-          tag4={tag4}
-        />
-        <Movie
-          movieTitle={movieTitle}
-          movieYear={movieYear}
-          tag1={tag1}
-          tag2={tag2}
-          tag3={tag3}
-          tag4={tag4}
-        />
-      </MoviesList>
-      <Pagination />
-    </PopularMoviesBox>
-  </MovieListPage>
-);
+  const dataFromAPI = useDataFromAPI();
+  const genresFromAPI = useGenresFromAPI([]);
+
+  const [moviesArray, setMoviesArray] = useState([]);
+  useEffect(() => {
+    setMoviesArray(dataFromAPI.data.results);
+  }, [dataFromAPI]);
+
+  const [genresArray, setGenresArray] = useState([]);
+  useEffect(() => {
+    setGenresArray(genresFromAPI.genres.genres);
+  }, [genresFromAPI]);
+
+
+  return (
+    <MovieListPage theme={theme}>
+      <PopularMoviesBox>
+        <PopularMoviesName>
+          Popular Movies
+        </PopularMoviesName>
+        <MoviesList
+        >
+          {(moviesArray !== undefined
+            ?
+            (moviesArray.map(movie => <Movie
+              genresArray={genresArray}
+              movieTitle={movie.title}
+              key={movie.id}
+              movieRating={movie.vote_average}
+              votesNumber={movie.vote_count}
+              movieTagArray={movie.genre_ids}
+              movieYear={movie.release_date}
+              moviePosterApiLink={movie.poster_path}
+            >
+            </Movie>))
+            :
+            (""))
+          }
+        </MoviesList>
+        <Pagination />
+      </PopularMoviesBox>
+    </MovieListPage>
+  );
+}
+export default MovieList;
