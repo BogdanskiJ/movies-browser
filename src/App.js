@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Navigation } from "./common/Navigation";
-import { MovieList } from "./features/movieList";
+import MovieList from "./features/movieList";
 import { People } from "./features/people/PeoplePage";
 
 export const App = () => (
