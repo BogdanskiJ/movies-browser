@@ -1,5 +1,5 @@
 import React from "react";
-import { MaxRating, MovieDescription, MovieDetail, MovieDetailsss, MovieRating, MovieTags, MovieTitle, MovieYear, Poster, Rating, Tag, VotesNumber } from "./styled";
+import { MaxRating, MovieDescription, MovieDetail, MovieRating, MovieTitle, Rating,  VotesNumber } from "./styled";
 import { ReactComponent as Star } from '../../../../images/star.svg'
 
 export const MovieMainPosterRating = ({ movieTitle, movieRating, votesNumber, maxRating }) => (
