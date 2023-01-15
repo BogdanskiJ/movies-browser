@@ -6,7 +6,7 @@ export const useDataFromAPI = () => {
   const [dataFromAPI, setDataFromAPI] = useState({
     data: {},
     state: "loading"
-  });
+  }); 
 
   useEffect(() => {
     const fetchResponse = async () => {
@@ -29,4 +29,4 @@ export const useDataFromAPI = () => {
     setTimeout(fetchResponse, 1000);
   }, []);
   return dataFromAPI;
-};
+}; 
