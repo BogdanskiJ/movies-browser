@@ -1,24 +1,36 @@
 import { Info, Photo, Tile, Wrapper, Name, Script } from "./styled";
 import Information from "./PersonalInfo";
+import { useEffect, useState } from "react";
 
 export const Descritpion = () => {
+  const [details, setDetails] = useState([]);
+
+  const url_img = "https://image.tmdb.org/t/p/w500";
+
+  useEffect(() => {
+    fetch(
+      "https://api.themoviedb.org/3/person/2?api_key=9515ffc857c67f1558538dad140abb29&language=en-US"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setDetails(data);
+      });
+  }, []);
   return (
     <>
       <Wrapper>
         <Tile>
-          <Photo></Photo>
+          <Photo src={url_img+details.profile_path}></Photo>
           <Info>
-            <Name>Liu Yifei</Name>
-            <Information />
-            <Script>
-              Liu Yifei was born in Wuhan, Hubei, Province of China on August
-              25th, 1987. She began modeling at the age of 8 and was trained in
-              singing, dancing and the piano. Moving to the United States at 10
-              with her mother, Liu lived there for four years.
-            </Script>
+            <Name>{details.name}</Name>
+            <Information birthday={details.birthday} place_of_birth={details.place_of_birth} />
+            <Script>{details.biography}</Script>
           </Info>
         </Tile>
       </Wrapper>
     </>
   );
 };
+
+export default Descritpion;

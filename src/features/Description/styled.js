@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     width: 1368px;
+    margin: auto;
 `;
 
 export const Tile = styled.div`
@@ -14,7 +15,7 @@ export const Tile = styled.div`
     background-color: ${({ theme}) => theme.color.white};
 `;
 
-export const Photo = styled.div`
+export const Photo = styled.img`
     grid-column: 1/2;
     width: 399px;
     height: 564px;
@@ -35,6 +36,7 @@ export const Name = styled.h2`
     font-weight: 600;
     font-size: 36px;
     margin: 0;
+    color: ${({ theme}) => theme.color.black};
 `;
 
 export const Script = styled.p`

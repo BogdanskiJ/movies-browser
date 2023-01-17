@@ -1,11 +1,11 @@
-import { Info, PersonalInfo } from "./styled";
+import { Info, PersonalInfo, Result } from "./styled";
 
-export const Information = () => {
+export const Information = ({place_of_birth, birthday}) => {
     return(
         <>
        <Info>
-       <PersonalInfo>date of birth:</PersonalInfo>
-       <PersonalInfo>place of birth:</PersonalInfo>
+       <PersonalInfo>date of birth: <Result>{birthday}</Result></PersonalInfo>
+       <PersonalInfo>place of birth: <Result>{place_of_birth}</Result></PersonalInfo>
        </Info>
         </>
     );
