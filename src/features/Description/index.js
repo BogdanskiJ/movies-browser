@@ -1,6 +1,7 @@
 import { Info, Photo, Tile, Wrapper, Name, Script } from "./styled";
 import Information from "./PersonalInfo";
 import { useEffect, useState } from "react";
+import { Projects } from "./Projects";
 
 export const Descritpion = () => {
   const [details, setDetails] = useState([]);
@@ -28,6 +29,7 @@ export const Descritpion = () => {
             <Script>{details.biography}</Script>
           </Info>
         </Tile>
+        <Projects />
       </Wrapper>
     </>
   );
