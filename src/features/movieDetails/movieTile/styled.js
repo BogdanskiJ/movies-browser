@@ -98,11 +98,13 @@ export const MovieProduction = styled.div`
         color: ${({ theme }) => theme.color.waterloo};
     }
 `;
+
 export const Production = styled.div`
     @media (max-width: 756px) {
         display:none;
     }
 `;
+
 export const ReleaseData = styled.div`
     @media (max-width: 756px) {
         display:none;
@@ -188,7 +190,6 @@ export const StarBox = styled.div`
     }
 `;
 
-
 export const Rating = styled.div`
     font-weight: 500;
     font-size: 22px;
@@ -225,7 +226,6 @@ export const MovieStory = styled.div`
     font-weight: 400;
     font-size: 20px;
     line-height: 160%;
-
     @media (max-width: 756px) {
         font-weight: 400;
         font-size: 14px;
@@ -246,10 +246,6 @@ export const MovieMainInfo = styled.div`
     display: flex;
     gap: 24px;
     flex-direction: column;
-    /* font-weight: 400;
-    font-size: 20px;
-    line-height: 160%; */
-
     @media (max-width: 756px) {
         padding: 0;
     } 
