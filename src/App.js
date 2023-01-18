@@ -4,7 +4,6 @@ import { Navigation } from "./common/Navigation";
 import Descritpion from "./features/Description";
 import MovieList from "./features/movieList";
 import { People } from "./features/people/PeoplePage";
-import { useEffect, useState } from "react";
 
 export const App = () => {
 
@@ -13,7 +12,7 @@ export const App = () => {
     <>
     <HashRouter>
       <Navigation />
-      {/* <Switch>
+      <Switch>
         <Route path="/movies">
           <MovieList />
         </Route>
@@ -23,10 +22,10 @@ export const App = () => {
         <Route path="/">
           <Redirect to="/movies" />
         </Route>
-      </Switch> */}
+      </Switch>
     </HashRouter>
     
-    <Descritpion />
+    {/* <Descritpion /> */}
    </>
   );
 };
