@@ -1,60 +1,42 @@
-import React from "react";
-import { theme } from "../../theme";
-import { PaginationBox, PaginationLeftButton, PaginationRightButton } from "./styled";
-import { ReactComponent as NextArrow } from '../../images/nextArrow.svg';
-import { ReactComponent as PrevArrow } from '../../images/prevArrow.svg';
-import { PaginationPageNumber } from "./PaginationNumberPage";
+import Next from "./next";
+import Previous from "./previous";
+import {
+  PrevButton,
+  StyledSpan,
+  Wrapper,
+  Number,
+  NextButton,
+  TextBox,
+} from "./styled";
 
-
-function Pagination() {
-    const windowWidth = window.innerWidth;
-    return (
-        <PaginationBox theme={theme}>
-            {(windowWidth > 753)
-                ?
-                <>
-                    <PaginationLeftButton >
-                        <PrevArrow />
-                        First
-                    </PaginationLeftButton>
-
-                    <PaginationLeftButton>
-                        <PrevArrow />
-                        Previous
-                    </PaginationLeftButton>
-
-                    <PaginationPageNumber />
-
-                    <PaginationRightButton>
-                        Next
-                        <NextArrow />
-                    </PaginationRightButton>
-
-                    <PaginationRightButton>
-                        Last
-                        <NextArrow />
-                    </PaginationRightButton>
-                </>
-                :
-                <>
-                    <PaginationLeftButton >
-                        <PrevArrow />
-                        <PrevArrow />
-                    </PaginationLeftButton>
-                    <PaginationLeftButton>
-                        <PrevArrow />
-                    </PaginationLeftButton>
-                    <PaginationPageNumber />
-                    <PaginationRightButton>
-                        <NextArrow />
-                    </PaginationRightButton>
-                    <PaginationRightButton>
-                        <NextArrow />
-                        <NextArrow />
-                    </PaginationRightButton></>}
-        </PaginationBox>
-    );
+export const Pagination = () => {
+  return (
+    <>
+      <Wrapper>
+        <PrevButton>
+          <Previous />
+          First
+        </PrevButton>
+        <PrevButton>
+          <Previous />
+          Previous
+        </PrevButton>
+        <TextBox>
+          <StyledSpan>
+            Page <Number>1</Number> of <Number>500</Number>
+          </StyledSpan>
+        </TextBox>
+        <NextButton>
+          Next
+          <Next />
+        </NextButton>
+        <NextButton>
+          Last
+          <Next />
+        </NextButton>
+      </Wrapper>
+    </>
+  );
 };
+
 export default Pagination;
-
-
