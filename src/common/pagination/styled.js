@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   height: 36px;
   margin: auto;
   margin-bottom: 100px;
+  margin-top: 24px;
 `;
 
 export const PrevButton = styled.button`

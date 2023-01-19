@@ -1,10 +1,12 @@
 import Movie from "../../movieList/Movie";
-import { MovieDetail } from "../../movieList/Movie/styled";
 import { TileWrapper, Title, Wrapper } from "./styled";
 import { useState, useEffect } from "react";
+import { MovieFile } from "../MovieFile";
+
 
 export const Projects = () => {
-    const [details, setDetails] = useState([]);
+    const [castDetails, setCastDetails] = useState([]);
+    const [crewDetails, setCrewDetails] = useState([])
 
     const url_img = "https://image.tmdb.org/t/p/w500";
     
@@ -14,19 +16,21 @@ export const Projects = () => {
       )
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
-          setDetails(data);
+          console.log(data.cast);
+          setCastDetails(data.cast)
+          setCrewDetails(data.crew);
         });
     }, []);
   return (
     <>
       <Wrapper>
-        <Title>Movies - cast ()</Title>
+        <Title>Movies - cast ({castDetails.length})</Title>
         <TileWrapper>
-          <Movie movieTitle={details.title}/>
-          <Movie />
-          <Movie />
-          <Movie />
+          {castDetails.map((detail) => <Movie movieTitle={detail.title} movieRating={detail.vote_average} votesNumber={detail.vote_count}/>)}
+        </TileWrapper>
+        <Title>Movies - crew ({crewDetails.length})</Title>
+        <TileWrapper>
+          {crewDetails.map((crewDetail) => <Movie movieTitle={crewDetail.title} movieRating={crewDetail.vote_average} votesNumber={crewDetail.vote_count}/>)}
         </TileWrapper>
       </Wrapper>
     </>

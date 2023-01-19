@@ -6,8 +6,10 @@ flex-direction: column;
 margin-top: 64px; 
 `
 export const TileWrapper = styled.div`
-display: flex;
-justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  margin-bottom: 24px;
 `
 
 export const Title = styled.span`
