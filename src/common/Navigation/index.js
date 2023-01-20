@@ -1,6 +1,6 @@
 import iconNavigation from "./IconNavigation/video.svg";
 import iconSearch from "./IconSearch/search.svg";
-import { Container, Icon, IconSearch, Input, Logo, Name, StyledNavigation, StyledNavLink, Subpages } from "./styled";
+import { Container, Icon, IconSearch, Input, Logo, Name, Search, StyledNavigation, StyledNavLink, Subpages } from "./styled";
 import { useQueryParameter, useReplaceQueryParameter } from "../../queryParameters";
 import searchQueryParamName from "../../searchQueryParamName";
 import { useLocation } from "react-router-dom";
@@ -37,21 +37,19 @@ export const Navigation = () => {
                             <StyledNavLink to="/people">People</StyledNavLink>
                         </li>
                     </Subpages>
-                    <div>
+                    <Search>
                         <li>
                             <IconSearch src={iconSearch} alt="" />
-                        </li>
-                        <li>
                             <Input
                                 placeholder={
-                                    `Search for ${location.pathname === "/movies" ? 
-                                    "movies..." : "people..."}
+                                    `Search for ${location.pathname === "/movies" ?
+                                        "movies..." : "people..."}
                             `}
                                 value={query || ""}
                                 onChange={onInputChange}
                             />
                         </li>
-                    </div>
+                    </Search>
                 </Container>
             </StyledNavigation>
         </nav>
