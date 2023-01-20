@@ -12,7 +12,7 @@ export const App = () => {
     <>
     <HashRouter>
       <Navigation />
-      {/* <Switch>
+      <Switch>
         <Route path="/movies">
           <MovieList />
         </Route>
@@ -22,10 +22,8 @@ export const App = () => {
         <Route path="/">
           <Redirect to="/movies" />
         </Route>
-      </Switch> */}
+      </Switch>
     </HashRouter>
-    
-    <Descritpion />
    </>
   );
 };
