@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { keyAPI, languageAPI, movieDetailApiLink, movieId, movieListPopularApiLink, movieListPopularPageApiLink } from "../../../apiSet";
+import { keyAPI, languageAPI, movieDetailApiLink, movieId } from "../../../../apiSet";
 
-export const useDataFromAPI = () => {
+export const useMovieTailAPI = () => {
 
   const [dataFromAPI, setDataFromAPI] = useState({
-    data: {},
+    data: {
+      release_date: "",
+    },
     state: "loading"
   }); 
 
   useEffect(() => {
     const fetchResponse = async () => {
       try {
-        const response = await fetch(`${movieListPopularApiLink}${keyAPI}${languageAPI}${movieListPopularPageApiLink}`);
+        const response = await fetch(`${movieDetailApiLink}${movieId}?${keyAPI}${languageAPI}`);
         if (!response.ok) {
           throw new Error(response.statusText);
         }
@@ -29,4 +31,4 @@ export const useDataFromAPI = () => {
     setTimeout(fetchResponse, 1000);
   }, []);
   return dataFromAPI;
-}; 
+};

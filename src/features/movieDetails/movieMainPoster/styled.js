@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MovieBigPoster = styled.div`
+export const MovieBigPoster = styled.div`  
     max-width: 1920px;
     width:100%;
     height:770px;

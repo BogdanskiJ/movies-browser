@@ -1,7 +1,7 @@
 import { Tile, Name, Photo, NameBox, Poster } from "./styled";
 
 
-export const PeopleTile = ({ name, profile_path }) => {
+export const PeopleTile = ({ name, profile_path, character }) => {
   const url_img = "https://image.tmdb.org/t/p/w500"
   return (
     <Tile>
@@ -10,6 +10,7 @@ export const PeopleTile = ({ name, profile_path }) => {
       </Poster>
       <NameBox>
         <Name>{name}</Name>
+        <Name>{character}</Name>
       </NameBox>
     </Tile>
   );

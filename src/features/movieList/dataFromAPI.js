@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { keyAPI, languageAPI, movieDetailApiLink, movieId } from "../../../apiSet";
+import { keyAPI, languageAPI, movieDetailApiLink, movieId, movieListPopularApiLink, movieListPopularPageApiLink } from "../../apiSet";
 
 export const useDataFromAPI = () => {
 
   const [dataFromAPI, setDataFromAPI] = useState({
-    data: {
-      release_date: "",
-    },
+    data: {},
     state: "loading"
   }); 
 
   useEffect(() => {
     const fetchResponse = async () => {
       try {
-        const response = await fetch(`${movieDetailApiLink}${movieId}${keyAPI}${languageAPI}`);
+        const response = await fetch(`${movieListPopularApiLink}${keyAPI}${languageAPI}&page=${movieListPopularPageApiLink}`);
         if (!response.ok) {
           throw new Error(response.statusText);
         }

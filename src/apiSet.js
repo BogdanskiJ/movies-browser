@@ -4,9 +4,10 @@ export const keyAPI = "api_key=9515ffc857c67f1558538dad140abb29";
 
 export const languageAPI = "&language=en-US";
 
-export const movieId = "746176?";
+export const movieId = "22621";
 export const movieDetailApiLink = "https://api.themoviedb.org/3/movie/";
 
-export const movieListPopularApiLink= "https://api.themoviedb.org/3/movie/popular?"
-export const movieListPopularPageApiLink= "&page=1"
-
+export const movieListPopularApiLink = "https://api.themoviedb.org/3/movie/popular?"
+export const movieListPopularPageApiLink = ({ apiPage }) => {
+    return (apiPage)
+};
