@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Tail = styled.div`
     max-width:1368px;
-    margin:auto;
+    margin:0 16px;
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     display: grid;
     grid-template-columns: minmax(100px,auto) 1fr;

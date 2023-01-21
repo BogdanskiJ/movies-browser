@@ -55,11 +55,9 @@ export const MovieTitle = styled.h2`
     line-height: 130%;
     margin:0;
     color: ${({ theme }) => theme.color.woodsmoke};
-
     &:hover{
     color: ${({ theme }) => theme.color.aquamarineBlue};
     }
-
     @media (max-width: 756px) {
         font-size: 16px;
         margin:0;

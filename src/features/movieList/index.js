@@ -12,14 +12,28 @@ const MovieList = ({ }) => {
   const genresFromAPI = useGenresFromAPI([]);
 
   const [moviesArray, setMoviesArray] = useState([]);
+  const [genresArray, setGenresArray] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [moviePerPage] = useState(8);
+  const [apiPage, setApiPage]= useState(1);
+
   useEffect(() => {
     setMoviesArray(dataFromAPI.data.results);
   }, [dataFromAPI]);
 
-  const [genresArray, setGenresArray] = useState([]);
   useEffect(() => {
     setGenresArray(genresFromAPI.genres.genres);
   }, [genresFromAPI]);
+
+  const indexOfLastPost = currentPage * moviePerPage;
+  const indexOfFirstPost = indexOfLastPost - moviePerPage;
+
+
+  const paginate = () => {
+    setCurrentPage(currentPage+1);
+    setApiPage(apiPage+1)
+  }
 
 
   return (
@@ -30,9 +44,10 @@ const MovieList = ({ }) => {
         </PopularMoviesName>
         <MoviesList
         >
-          {(moviesArray !== undefined
+
+          {((moviesArray !== undefined && moviesArray !== 0)
             ?
-            (moviesArray.map(movie => <Movie
+            ((moviesArray.slice(indexOfFirstPost, indexOfLastPost)).map(movie => <Movie
               genresArray={genresArray}
               movieTitle={movie.title}
               key={movie.id}
@@ -47,7 +62,16 @@ const MovieList = ({ }) => {
             (""))
           }
         </MoviesList>
-        <Pagination />
+        {((moviesArray !== undefined && moviesArray !== 0)
+          ?
+          (<Pagination
+            moviePerPage={moviePerPage}
+            totalPost={moviesArray.length}
+            paginate={paginate}
+          />)
+          :
+          (""))
+        }
       </PopularMoviesBox>
     </MovieListPage>
   );
