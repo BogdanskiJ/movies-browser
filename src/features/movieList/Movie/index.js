@@ -2,6 +2,7 @@ import React from "react";
 import { theme } from "../../../theme";
 import { MovieDescriptionBox, MovieDetail, MovieRating, MovieTags, MovieTitle, MovieTitleBox, MovieYear, Poster, PosterBox, Rating, Tag, VotesNumber } from "./styled";
 import { ReactComponent as Star } from '../../../images/star.svg';
+import { movieId } from "../../../apiSet";
 
 const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApiLink, movieTagArray, genresArray }) => {
 
@@ -11,13 +12,13 @@ const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApi
 
   return (
     <MovieDetail theme={theme} >
-      <PosterBox href="https://google.pl" alt={movieTitle} title={movieTitle}>
+      <PosterBox to={`/movies/${movieId}`} alt={movieTitle} title={movieTitle}>
         {/* po zmergowaniu wszystkich komponentów link do google trzeba zaminić na link do movieDetail z odpowiednim id filmu */}
         <Poster src={`https://image.tmdb.org/t/p/w342/${moviePosterApiLink}`} alt="" />
       </PosterBox>
       {/* Należy dodać w <Poster src> jeszcze pobieranie odpowiedniej wielkości obrazu w zależności od rozdzielczości */}
       <MovieDescriptionBox>
-        <MovieTitleBox href="https://google.pl" title={movieTitle}>
+        <MovieTitleBox to={`/movies/${movieId}`} title={movieTitle}>
           {/* po zmergowaniu wszystkich komponentów link do google trzeba zaminić na link do movieDetail z odpowiednim id filmu */}
           <MovieTitle>
             {movieTitle}
