@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const MovieDetail = styled.div`
@@ -18,7 +19,7 @@ export const MovieDetail = styled.div`
     };
 `;
 
-export const PosterBox = styled.a`
+export const PosterBox = styled(NavLink)`
 `;
 
 export const Poster = styled.img`
@@ -45,7 +46,7 @@ export const MovieDescriptionBox = styled.div`
     };
 `;
 
-export const MovieTitleBox = styled.a`
+export const MovieTitleBox = styled(NavLink)`
     text-decoration:none;
 `;
 
