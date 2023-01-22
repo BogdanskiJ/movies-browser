@@ -8,7 +8,7 @@ export const MainWrapper = styled.div`
   width: 1368px;
   margin: auto;
   display: grid;
-  padding: 56px;
+  padding-top: 56px;
   align-items: center;
   background-color: ${({ theme }) => theme.color.whisper};
 

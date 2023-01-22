@@ -25,7 +25,7 @@ const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApi
         </MovieTitleBox>
 
         <MovieYear>
-          {movieYear.slice(0, 4)}
+          {/* {movieYear.slice(0, 4)} */}
         </MovieYear>
         <MovieTags>
           {

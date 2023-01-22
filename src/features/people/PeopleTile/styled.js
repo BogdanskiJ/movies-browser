@@ -12,6 +12,7 @@ export const Tile = styled.div`
   margin: 24px;
   margin-left: 0;
   margin-bottom: 0;
+  filter: drop-shadow(0px 4px 12px rgba(186, 199, 213, 0.5));
 `;
 
 export const NameBox = styled.div`

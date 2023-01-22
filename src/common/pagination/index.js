@@ -1,60 +1,63 @@
-import React from "react";
-import { theme } from "../../theme";
-import { PaginationBox, PaginationLeftButton, PaginationRightButton } from "./styled";
-import { ReactComponent as NextArrow } from '../../images/nextArrow.svg';
-import { ReactComponent as PrevArrow } from '../../images/prevArrow.svg';
-import { PaginationPageNumber } from "./PaginationNumberPage";
+import { useState, useEffect } from "react";
+import Next from "./next";
+import Previous from "./previous";
+import {
+  PrevButton,
+  StyledSpan,
+  Wrapper,
+  Number,
+  NextButton,
+  TextBox,
+} from "./styled";
 
 
-function Pagination() {
-    const windowWidth = window.innerWidth;
-    return (
-        <PaginationBox theme={theme}>
-            {(windowWidth > 753)
-                ?
-                <>
-                    <PaginationLeftButton >
-                        <PrevArrow />
-                        First
-                    </PaginationLeftButton>
+export const Pagination = () => {
+    const [currentPage, setCurrentPage] = useState(1);
+    const [recordsPerPage] = useState(8)
+    const [data, setData] = useState([])
 
-                    <PaginationLeftButton>
-                        <PrevArrow />
-                        Previous
-                    </PaginationLeftButton>
+    const indexOfLastRecord = currentPage * recordsPerPage;
+    const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+    // const currentRecord = data.slice(indexOfFirstRecord, indexOfLastRecord)
+    const Pages = Math.ceil(data.length / recordsPerPage)
+    
+    const getData = async () => {
+        const response = await fetch(`https://api.themoviedb.org/3/person/popular?api_key=9515ffc857c67f1558538dad140abb29&language=en-US&page=${currentPage}`);
+        const data = await response.json()
+        setData(data)
+        console.log(data)
+    }
 
-                    <PaginationPageNumber />
-
-                    <PaginationRightButton>
-                        Next
-                        <NextArrow />
-                    </PaginationRightButton>
-
-                    <PaginationRightButton>
-                        Last
-                        <NextArrow />
-                    </PaginationRightButton>
-                </>
-                :
-                <>
-                    <PaginationLeftButton >
-                        <PrevArrow />
-                        <PrevArrow />
-                    </PaginationLeftButton>
-                    <PaginationLeftButton>
-                        <PrevArrow />
-                    </PaginationLeftButton>
-                    <PaginationPageNumber />
-                    <PaginationRightButton>
-                        <NextArrow />
-                    </PaginationRightButton>
-                    <PaginationRightButton>
-                        <NextArrow />
-                        <NextArrow />
-                    </PaginationRightButton></>}
-        </PaginationBox>
-    );
+    useEffect(() => {
+        getData()
+    }, [currentPage])
+  return (
+    <>
+      <Wrapper>
+        <PrevButton>
+          <Previous />
+          First
+        </PrevButton>
+        <PrevButton>
+          <Previous />
+          Previous
+        </PrevButton>
+        <TextBox>
+          <StyledSpan>
+            Page <Number>{currentPage}</Number> of <Number>{data.total_pages}</Number>
+          </StyledSpan>
+        </TextBox>
+        <NextButton onClick={() =>setCurrentPage(currentPage + 1)}>
+          Next
+          <Next />
+        </NextButton>
+        <NextButton>
+          Last
+          <Next />
+        </NextButton>
+      </Wrapper>
+    </>
+  );
 };
+
 export default Pagination;
-
-
