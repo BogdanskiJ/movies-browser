@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+
+
 export const StyledNavigation = styled.ul`
     align-items: center;
     display: flex;
@@ -9,7 +11,7 @@ export const StyledNavigation = styled.ul`
     min-height: 94px;
     width: auto;
     background-color: ${({theme}) => theme.color.black};
-    margin: 0px;
+    margin: 0;
     list-style-type: none;
     color: ${({theme}) => theme.color.white};
     padding: 0px;
@@ -57,6 +59,7 @@ export const Name = styled.li`
     line-height: 40px;
     letter-spacing: -1.5px;
     text-transform: capitalize;
+    margin: 0;
 
     @media (max-width:790px){
         font-size: 13px;

@@ -23,7 +23,7 @@ export const MovieTail = ({ movieTitle, movieYear, releaseData, votesNumber, max
             {(countryProductionArray !== undefined ? (countryProductionArray.map(country => <ProductionInfo key={country.name}>{country.name}</ProductionInfo>)) : (""))
             }
           </CountryAndDate>
-          <CountryAndDate><ReleaseData>Release date:</ReleaseData>
+          <CountryAndDate><ReleaseData>Release date:</ReleaseData> 
             <ProductionInfo>{releaseData}
             </ProductionInfo>
           </CountryAndDate>
