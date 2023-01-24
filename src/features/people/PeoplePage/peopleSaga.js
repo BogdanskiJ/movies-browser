@@ -5,7 +5,7 @@ import { fetchPeopleList, setPeopleList } from "./peopleListSlice";
 function* fetchPeopleListHandler() {
   try {
     const peopleList = yield call(getPeopleList);
-    yield put(setPeopleList(peopleList));
+    yield put(setPeopleList(peopleList.results));
   } catch (error) {
     yield call(alert, "cos poszlo nie tak");
   }

@@ -13,20 +13,6 @@ export const People = () => {
   const { people } = useSelector(selectPeopleListState);
   const dispatch = useDispatch();
 
-  // const getData = async () => {
-  //   const response = await fetch(
-  //     `https://api.themoviedb.org/3/person/popular?api_key=9515ffc857c67f1558538dad140abb29&language=en-US&page=${currentPage}`
-  //   );
-  //   const data = await response.json();
-  //   setActors(data.results);
-  //   setCurrentPage(response);
-  //   console.log(data.total_results);
-  // };
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-
   return (
     <>
       <Background>
