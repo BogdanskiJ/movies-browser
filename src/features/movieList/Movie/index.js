@@ -12,20 +12,16 @@ const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApi
   return (
     <MovieDetail theme={theme} >
       <PosterBox href="https://google.pl" alt={movieTitle} title={movieTitle}>
-        {/* po zmergowaniu wszystkich komponentów link do google trzeba zaminić na link do movieDetail z odpowiednim id filmu */}
         <Poster src={`https://image.tmdb.org/t/p/w342/${moviePosterApiLink}`} alt="" />
       </PosterBox>
-      {/* Należy dodać w <Poster src> jeszcze pobieranie odpowiedniej wielkości obrazu w zależności od rozdzielczości */}
       <MovieDescriptionBox>
         <MovieTitleBox href="https://google.pl" title={movieTitle}>
-          {/* po zmergowaniu wszystkich komponentów link do google trzeba zaminić na link do movieDetail z odpowiednim id filmu */}
           <MovieTitle>
             {movieTitle}
           </MovieTitle>
         </MovieTitleBox>
-
         <MovieYear>
-          {/* {movieYear.slice(0, 4)} */}
+          {movieYear.slice(0, 4)}
         </MovieYear>
         <MovieTags>
           {

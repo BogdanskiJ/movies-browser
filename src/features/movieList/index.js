@@ -10,17 +10,12 @@ import { selectMovieListState, setCurrentPageAPI } from "./movieListSlice";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
 
 const MovieList = ({ }) => {
-  const dispatch = useDispatch();
 
   const dataFromAPI = useDataFromAPI();
-  console.log(dataFromAPI)
   const genresFromAPI = useGenresFromAPI([]);
 
   const [moviesArray, setMoviesArray] = useState([]);
   const [genresArray, setGenresArray] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [moviePerPage] = useState(8);
-  const [apiPage, setApiPage] = useState(1);
 
   useEffect(() => {
     setMoviesArray(dataFromAPI.data.results);
@@ -34,8 +29,6 @@ const MovieList = ({ }) => {
   useEffect(() => {
     setGenresArray(genresFromAPI.genres.genres);
   }, [genresFromAPI]);
-
-  // dispatch(setCurrentPageAPI(+1))
 
   return (
     <MovieListPage theme={theme}>
