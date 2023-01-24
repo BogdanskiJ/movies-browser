@@ -19,6 +19,7 @@ export const MovieDetail = styled.div`
 `;
 
 export const PosterBox = styled.a`
+background: ${({ theme }) => theme.color.silver};
 `;
 
 export const Poster = styled.img`
