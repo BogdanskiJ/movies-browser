@@ -7,6 +7,7 @@ export const MovieListPage = styled.div`
 
     @media (max-width: 756px) {
         padding-top:24px;
+        padding-bottom: 30px;
     };
 `;
 
