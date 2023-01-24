@@ -7,9 +7,9 @@ const peopleListSlice = createSlice({
     },
     reducers: {
         fetchPeopleList: () => {},
-        // setPeopleList: (state, {payload: people}) => {
-        //     state.people = people 
-        // }
+        setPeopleList: (state, {payload: people}) => {
+            state.people = people 
+        }
     },
 });
 
