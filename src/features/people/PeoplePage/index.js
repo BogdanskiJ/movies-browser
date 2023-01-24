@@ -1,21 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Pagination from "../../../common/pagination";
 import { PeopleTile } from "../PeopleTile";
+import { fetchPeopleList, selectPeopleList, selectPeopleListStatus } from "./peopleListSlice";
 import { Background, Info, MainWrapper, TileWrapper } from "./styled";
 
 
 export const People = () => {
-  const [actors, setActors] = useState([])
- 
+  const dispatch = useDispatch();
+  const people = useSelector(selectPeopleList);
+  const status = useSelector(selectPeopleListStatus);
 
-  useEffect(() =>{
-    fetch("https://api.themoviedb.org/3/person/popular?api_key=9515ffc857c67f1558538dad140abb29&language=en-US&page=1")
-    .then((res) => res.json())
-    .then(data => {
-      console.log(data.results)
-      setActors(data.results)
-    })
-  }, [])
+  useEffect(() => {
+    dispatch(fetchPeopleList());
+  }, [dispatch]);
 
   return (
     <>
@@ -23,7 +21,11 @@ export const People = () => {
         <MainWrapper>
           <Info>Popular people</Info>
           <TileWrapper>
-            {actors.map((actor) => <PeopleTile name={actor.name} key={actor.id} {...actor} />)}
+            {people.map(person => <PeopleTile
+              name={person.name}
+              key={person.id}
+              id={person.id}
+            />)}
           </TileWrapper>
           <Pagination />
         </MainWrapper>
