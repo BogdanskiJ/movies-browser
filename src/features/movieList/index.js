@@ -1,40 +1,41 @@
 import { useEffect, useState } from "react";
-import Pagination from "../../common/pagination";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router";
+import Pagination from "./pagination/index";
 import { theme } from "../../theme";
-import { useDataFromAPI } from "./dataFromAPI";
+import { useDataFromAPI, useNextDataFromAPI } from "./dataFromAPI";
 import { useGenresFromAPI } from "./genresList";
 import Movie from "./Movie";
+import { selectMovieListState, setCurrentPageAPI } from "./movieListSlice";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
 
 const MovieList = ({ }) => {
+  const dispatch = useDispatch();
 
   const dataFromAPI = useDataFromAPI();
+  console.log(dataFromAPI)
   const genresFromAPI = useGenresFromAPI([]);
 
   const [moviesArray, setMoviesArray] = useState([]);
   const [genresArray, setGenresArray] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [moviePerPage] = useState(8);
-  const [apiPage, setApiPage]= useState(1);
+  const [apiPage, setApiPage] = useState(1);
 
   useEffect(() => {
     setMoviesArray(dataFromAPI.data.results);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }, [dataFromAPI]);
 
   useEffect(() => {
     setGenresArray(genresFromAPI.genres.genres);
   }, [genresFromAPI]);
 
-  const indexOfLastPost = currentPage * moviePerPage;
-  const indexOfFirstPost = indexOfLastPost - moviePerPage;
-
-
-  const paginate = () => {
-    setCurrentPage(currentPage+1);
-    setApiPage(apiPage+1)
-  }
-
+  // dispatch(setCurrentPageAPI(+1))
 
   return (
     <MovieListPage theme={theme}>
@@ -44,10 +45,9 @@ const MovieList = ({ }) => {
         </PopularMoviesName>
         <MoviesList
         >
-
           {((moviesArray !== undefined && moviesArray !== 0)
             ?
-            ((moviesArray.slice(indexOfFirstPost, indexOfLastPost)).map(movie => <Movie
+            (moviesArray.map(movie => <Movie
               genresArray={genresArray}
               movieTitle={movie.title}
               key={movie.id}
@@ -65,9 +65,7 @@ const MovieList = ({ }) => {
         {((moviesArray !== undefined && moviesArray !== 0)
           ?
           (<Pagination
-            moviePerPage={moviePerPage}
-            totalPost={moviesArray.length}
-            paginate={paginate}
+            total_pages={dataFromAPI.data.total_pages}
           />)
           :
           (""))
