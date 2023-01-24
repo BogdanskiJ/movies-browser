@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { keyAPI, languageAPI, movieDetailApiLink, movieId, movieListPopularApiLink, movieListPopularPageApiLink } from "../.././apiSet";
 
 export const useGenresFromAPI = () => {
 
@@ -30,4 +29,3 @@ export const useGenresFromAPI = () => {
   }, []);
   return genresFromAPI;
 };
-
