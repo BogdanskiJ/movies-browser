@@ -3,8 +3,9 @@ import Pagination from "../../../common/pagination";
 import { PeopleTile } from "../PeopleTile";
 import { Background, Info, MainWrapper, TileWrapper } from "./styled";
 import { useSelector } from "react-redux";
-import { selectPeopleListState } from "./peopleListSlice";
+import { fetchPeopleList, selectPeopleListState, setPeopleList } from "./peopleListSlice";
 import { useDispatch } from "react-redux";
+import { getPeopleList } from "./getPeopleList";
 
 export const People = () => {
 
@@ -12,6 +13,10 @@ export const People = () => {
 
   const { people } = useSelector(selectPeopleListState);
   const dispatch = useDispatch();
+
+useEffect(() => {
+  dispatch(fetchPeopleList())
+},[])
 
   return (
     <>

@@ -33,7 +33,7 @@ export const Pagination = () => {
             Page <Number>{currentPage}</Number> of <Number>500</Number>
           </StyledSpan>
         </TextBox>
-        <NextButton onClick={() => dispatch(fetchPeopleList())}>
+        <NextButton>
           Next
           <Next />
         </NextButton>
