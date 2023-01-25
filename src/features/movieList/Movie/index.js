@@ -23,7 +23,7 @@ const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApi
           </MovieTitle>
         </MovieTitleBox>
         <MovieYear>
-          {movieYear.slice(0, 4)}
+          {/* {movieYear.slice(0, 4)} */}
         </MovieYear>
         <MovieTags>
           {
