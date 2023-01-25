@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PageNumberBox = styled.div`
-    margin:24px;
+    margin:12px;
     justify-content:center;
     display: flex;
     flex-direction: row;

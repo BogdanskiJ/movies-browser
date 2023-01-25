@@ -12,3 +12,7 @@ export const PersonalInfo = styled.span`
     color: #74788B;
     margin-bottom: 8px;
 `;
+
+export const Result = styled.span`
+color: ${({ theme}) => theme.color.black};
+`
