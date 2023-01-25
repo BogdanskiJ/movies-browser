@@ -38,7 +38,7 @@ export const People = () => {
           <Info>Popular people</Info>
           <TileWrapper>
             {actors.map((actor) => (
-              <PeopleTile name={actor.name} key={actor.id} {...actor} />
+              <PeopleTile name={actor.name} key={actor.id} id={actor.id} {...actor} />
             ))}
           </TileWrapper>
           <Pagination currentPage={currentPage}/>
