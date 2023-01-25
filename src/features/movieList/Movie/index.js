@@ -2,23 +2,21 @@ import React from "react";
 import { theme } from "../../../theme";
 import { MovieDescriptionBox, MovieDetail, MovieRating, MovieTags, MovieTitle, MovieTitleBox, MovieYear, Poster, PosterBox, Rating, Tag, VotesNumber } from "./styled";
 import { ReactComponent as Star } from '../../../images/star.svg';
-import { movieId } from "../../../apiSet";
 
-const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApiLink, movieTagArray, genresArray }) => {
-
+const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApiLink, movieTagArray, genresArray, id }) => {
   const genreSort = (a, b) => {
     if (a === b.id) { return (b.name) }
   }
 
   return (
     <MovieDetail theme={theme} >
-      <PosterBox to={`/movies/${movieId}`} alt={movieTitle} title={movieTitle}>
+      <PosterBox to={`/movies/${id}`} alt={movieTitle} title={movieTitle} id={id}>
         {/* po zmergowaniu wszystkich komponentów link do google trzeba zaminić na link do movieDetail z odpowiednim id filmu */}
         <Poster src={`https://image.tmdb.org/t/p/w342/${moviePosterApiLink}`} alt="" />
       </PosterBox>
       {/* Należy dodać w <Poster src> jeszcze pobieranie odpowiedniej wielkości obrazu w zależności od rozdzielczości */}
       <MovieDescriptionBox>
-        <MovieTitleBox to={`/movies/${movieId}`} title={movieTitle}>
+        <MovieTitleBox to={`/movies/${id}`} title={movieTitle} id={id}>
           {/* po zmergowaniu wszystkich komponentów link do google trzeba zaminić na link do movieDetail z odpowiednim id filmu */}
           <MovieTitle>
             {movieTitle}
