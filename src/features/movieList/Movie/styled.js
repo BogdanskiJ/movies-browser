@@ -25,7 +25,8 @@ export const PosterBox = styled(NavLink)`
 export const Poster = styled.img`
     border-radius: 5px;
     max-width:292px;
-
+    height:434px;
+    background: ${({ theme }) => theme.color.silver};
     @media (max-width: 756px) {
         width: 114px;
         height: 169px;

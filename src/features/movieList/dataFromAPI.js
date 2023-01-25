@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { keyAPI, languageAPI, movieDetailApiLink, movieId, movieListPopularApiLink, movieListPopularPageApiLink } from "../../apiSet";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { keyAPI, languageAPI, movieListPopularApiLink } from "../../apiSet";
+import { selectMovieListState } from "./movieListSlice";
 
 export const useDataFromAPI = () => {
-
+  const { currentPage } = useSelector(selectMovieListState);
   const [dataFromAPI, setDataFromAPI] = useState({
     data: {},
     state: "loading"
-  }); 
-
+  });
   useEffect(() => {
     const fetchResponse = async () => {
       try {
-        const response = await fetch(`${movieListPopularApiLink}${keyAPI}${languageAPI}&page=${movieListPopularPageApiLink}`);
+        const response = await fetch(`${movieListPopularApiLink}${keyAPI}${languageAPI}&page=${currentPage}`);
         if (!response.ok) {
           throw new Error(response.statusText);
         }
@@ -19,14 +20,14 @@ export const useDataFromAPI = () => {
         setDataFromAPI({
           data,
           state: "success"
-        });
+        })
       } catch {
         setDataFromAPI({
           state: "fail"
         });
       }
     };
-    setTimeout(fetchResponse, 1000);
-  }, []);
+    setTimeout(fetchResponse, 500);
+  }, [currentPage]);
   return dataFromAPI;
-}; 
+};

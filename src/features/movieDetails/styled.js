@@ -18,6 +18,7 @@ export const MovieDetailsPage = styled.div`
 
 export const CastBox = styled.div`
     max-width:1368px;
+    width:100%;
     margin:0 16px;
     display: flex;
     gap: 32px;
@@ -30,6 +31,7 @@ export const CastBox = styled.div`
 `;
 
 export const Title = styled.div`
+    width:100%;
     font-weight: 600;
     font-size: 36px;
     line-height: 120%;
