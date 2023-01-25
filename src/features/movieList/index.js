@@ -49,6 +49,7 @@ const MovieList = ({ }) => {
               movieTagArray={movie.genre_ids}
               movieYear={movie.release_date}
               moviePosterApiLink={movie.poster_path}
+              id={movie.id}
             >
             </Movie>))
             :

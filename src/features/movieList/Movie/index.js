@@ -4,8 +4,7 @@ import { MovieDescriptionBox, MovieDetail, MovieRating, MovieTags, MovieTitle, M
 import { ReactComponent as Star } from '../../../images/star.svg';
 import movieListEmptyPoster from "../../../images/movieListEmptyPoster.svg";
 
-const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApiLink, movieTagArray, genresArray }) => {
-
+const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApiLink, movieTagArray, genresArray, id }) => {
   const genreSort = (a, b) => {
     if (a === b.id) { return (b.name) }
   }
@@ -13,11 +12,12 @@ const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApi
 
   return (
     <MovieDetail theme={theme} >
-      <PosterBox href="https://google.pl" alt={movieTitle} title={movieTitle}>
-        <Poster src={(moviePosterApiLink !== null ? (url_img + moviePosterApiLink) : movieListEmptyPoster)} alt="" />
+      <PosterBox to={`/movies/${id}`} alt={movieTitle} title={movieTitle} id={id}>
+        {/* po zmergowaniu wszystkich komponentów link do google trzeba zaminić na link do movieDetail z odpowiednim id filmu */}
+        <Poster src={`https://image.tmdb.org/t/p/w342/${moviePosterApiLink}`} alt="" />
       </PosterBox>
       <MovieDescriptionBox>
-        <MovieTitleBox href="https://google.pl" title={movieTitle}>
+        <MovieTitleBox to={`/movies/${id}`} title={movieTitle} id={id}>
           <MovieTitle>
             {movieTitle}
           </MovieTitle>
