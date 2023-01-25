@@ -1,16 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const peopleListSlice = createSlice({
-    name: "peopleList",
-    initialState: {
-        people: [],
-        status: "loading",
-        query: "",
+  name: "people",
+  initialState: {
+    people: [],
+  },
+  reducers: {
+    fetchPeopleList: () => {},
+    setPeopleList: (state, { payload: people }) => {
+      state.people = people;
     },
-    reducers: {
-
+    setPeopleListSucces: (state, { payload: people }) => {
+      state.loading = false;
+      state.people = people;
     },
+  },
 });
 
-export const selectPeopleListState = state => state.peopleList;
+export const { fetchPeopleList, setPeopleList, setPeopleListSucces } =
+  peopleListSlice.actions;
+export const selectPeopleListState = (state) => state.peopleList;
 export default peopleListSlice.reducer;
