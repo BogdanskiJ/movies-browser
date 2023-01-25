@@ -3,15 +3,17 @@ import Information from "./PersonalInfo";
 import { useEffect, useState } from "react";
 import { Projects } from "./Projects";
 import Movie from "../movieList/Movie";
+import { useParams } from "react-router";
 
 export const Descritpion = () => {
+  const {id} = useParams();
   const [details, setDetails] = useState([]);
   const [info, setInfo] = useState([])
 
   const url_img = "https://image.tmdb.org/t/p/w500";
 
-  const getDetails = async () => {
-    const response = await fetch("https://api.themoviedb.org/3/person/2?api_key=9515ffc857c67f1558538dad140abb29&language=en-US");
+  const getDetails = async (id) => {
+    const response = await fetch(`https://api.themoviedb.org/3/person/${id}?api_key=9515ffc857c67f1558538dad140abb29&language=en-U`);
     const data = await response.json()
     setDetails(data)
     // console.log(data)
@@ -21,8 +23,8 @@ useEffect(() => {
     getDetails()
 }, [])
 
-const getInfo = async () => {
-  const res = await fetch("https://api.themoviedb.org/3/person/2/movie_credits?api_key=9515ffc857c67f1558538dad140abb29&language=en-US")
+const getInfo = async (id) => {
+  const res = await fetch(`https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=9515ffc857c67f1558538dad140abb29&language=en-US`)
   const info = await res.json()
   console.log(info)
   setInfo(info)
