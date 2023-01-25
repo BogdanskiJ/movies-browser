@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { keyAPI, languageAPI, movieDetailApiLink, movieId } from "../../../../apiSet";
+import { keyAPI, languageAPI, movieDetailApiLink } from "../../../../apiSet";
 
 export const useMovieTailAPI = () => {
 
@@ -8,12 +8,12 @@ export const useMovieTailAPI = () => {
       release_date: "",
     },
     state: "loading"
-  }); 
+  });
 
   useEffect(() => {
-    const fetchResponse = async () => {
+    const fetchResponse = async (id) => {
       try {
-        const response = await fetch(`${movieDetailApiLink}${movieId}?${keyAPI}${languageAPI}`);
+        const response = await fetch(`${movieDetailApiLink}${id}?${keyAPI}${languageAPI}`);
         if (!response.ok) {
           throw new Error(response.statusText);
         }
