@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
 const MovieDetails = () => {
-  const {id} = useParams();
+  const { id } = useParams();
 
   const dataFromAPI = useDataFromAPI();
 
@@ -19,7 +19,7 @@ const MovieDetails = () => {
   // 1 trzeba dodać pobieranie odpowiedniej wielkości obrazu w zależności od @media
 
   // 2 trzeba dodać sprawdzanie czy wystepuje plakat itp
-  
+
   return (
     (movieDetails !== undefined)
       ?
@@ -35,7 +35,7 @@ const MovieDetails = () => {
           <MovieTail
             movieTilePoster={`https://image.tmdb.org/t/p/w1280/${dataFromAPI.data.poster_path}`}
             movieTitle={movieDetails.title}
-            movieYear={movieDetails.release_date.toString().slice(0, 4)}
+            // movieYear={movieDetails.release_date.toString().slice(0, 4)}
             countryProductionArray={movieDetails.production_countries}
             releaseData={movieDetails.release_date}
             tagArray={movieDetails.genres}
