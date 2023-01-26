@@ -33,7 +33,7 @@ export const NameBox = styled.div`
 
 export const Name = styled.a`
   text-decoration:none;
-  color: ${({ theme }) => theme.color.woodsmoke};
+  color: ${({ theme }) => theme.color.woodSmoke};
   font-weight: 500;
   font-size: 22px;
   display: flex;

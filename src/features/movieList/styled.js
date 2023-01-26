@@ -32,10 +32,9 @@ export const PopularMoviesName = styled.h1`
     font-weight: 600;
     font-size: 36px;
     line-height: 120%;
-    color: ${({ theme }) => theme.color.woodsmoke};
+    color: ${({ theme }) => theme.color.woodSmoke};
 
     @media (max-width: 1353px) {
-        align-self:center;
     };
 
     @media (max-width: 756px) {

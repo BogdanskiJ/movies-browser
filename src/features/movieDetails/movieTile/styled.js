@@ -156,7 +156,7 @@ export const Tag = styled.div`
     line-height: 100%;
     padding: 8px 16px;
     border-radius: 5px;
-    color: ${({ theme }) => theme.color.woodsmoke};
+    color: ${({ theme }) => theme.color.woodSmoke};
     background: ${({ theme }) => theme.color.mystic};
     @media (max-width: 756px) {
         font-weight: 400;
