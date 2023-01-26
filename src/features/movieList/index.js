@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate } from "react-router";
+import { Navigate, useParams } from "react-router";
 import Pagination from "./pagination/index";
 import { theme } from "../../theme";
 import { useDataFromAPI, useNextDataFromAPI } from "./dataFromAPI";
@@ -10,7 +10,7 @@ import { selectMovieListState, setCurrentPageAPI } from "./movieListSlice";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
 
 const MovieList = ({ }) => {
-
+  
   const dataFromAPI = useDataFromAPI();
   const genresFromAPI = useGenresFromAPI([]);
 

@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const MovieDetailsPage = styled.div`
     max-width:1920px;
     margin:auto;
-    margin-top: 93px;
     display:flex;
     flex-direction: column;
     gap: 64px;
@@ -58,4 +57,3 @@ export const MovieDetailsPeople = styled.div`
 display: flex;
 gap:24px;
 `;
-
