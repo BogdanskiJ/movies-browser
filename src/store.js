@@ -3,7 +3,7 @@ import movieListReducer from "./features/movieList/movieListSlice";
 import movieDetailsReducer from "./features/movieDetails/movieDetailsSlice";
 import peopleListReducer from "./features/people/PeoplePage/peopleListSlice";
 import createSagaMiddleware from "@redux-saga/core";
-import { watchFetchPeopleList } from "./features/people/PeoplePage/peopleSaga";
+import rootSaga from "./rootSaga";
 
 const sagaMiddleWare = createSagaMiddleware();
 
@@ -16,6 +16,6 @@ const store = configureStore({
     middleware: [sagaMiddleWare]
 });
 
-sagaMiddleWare.run(watchFetchPeopleList)
+sagaMiddleWare.run(rootSaga)
 
 export default store;
