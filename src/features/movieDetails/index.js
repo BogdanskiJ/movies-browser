@@ -1,53 +1,41 @@
 import { theme } from "../../theme";
-import { useMovieTailAPI } from "./movieTile/movieTailAPI/index";
-import { Cast } from "./people/movieDetailsPeopleTile";
+import { useDataFromAPI } from "../movieList/dataFromAPI";
 import { MovieMainPoster } from "./movieMainPoster";
 import { MovieTail } from "./movieTile";
-import { MovieDetailsPage, TileBox } from "./styled";
+import { MovieDetailsPage } from "./styled";
 import { useEffect, useState } from "react";
-import { useMovieDetailPeopleAPI } from "./people/movieDetailPeopleAPI";
-import { CastBox, Title } from "./styled";
+import { useParams } from "react-router";
 
 const MovieDetails = () => {
+  const { id } = useParams();
 
-  const movieTailAPI = useMovieTailAPI();
-  const castAPI = useMovieDetailPeopleAPI();
+  const dataFromAPI = useDataFromAPI();
 
   const [movieDetails, setMovieDetails] = useState();
-  const [castArray, setCastArray] = useState({});
-  const [crewArray, setCrewArray] = useState({});
-
   useEffect(() => {
-    setMovieDetails(movieTailAPI.data);
-  }, [movieTailAPI]);
+    setMovieDetails(dataFromAPI.data);
+  }, [dataFromAPI]);
 
-  useEffect(() => {
-    setCastArray(castAPI.data.cast);
-  }, [castAPI]);
+  // 1 trzeba dodać pobieranie odpowiedniej wielkości obrazu w zależności od @media
 
-  useEffect(() => {
-    setCrewArray(castAPI.data.crew);
-  }, [castAPI]);
+  // 2 trzeba dodać sprawdzanie czy wystepuje plakat itp
 
   return (
     (movieDetails !== undefined)
       ?
       (
         <MovieDetailsPage theme={theme}>
-          {movieTailAPI.data.backdrop_path === null ?
-            "" :
-            <MovieMainPoster
-              movieBackgroundPosterW1280={`https://image.tmdb.org/t/p/original/${movieTailAPI.data.backdrop_path}`}
-              movieTitle={movieDetails.title}
-              movieRating={parseFloat(movieDetails.vote_average).toFixed(2)}
-              votesNumber={movieDetails.vote_count}
-              maxRating={"10"}
-            />
-          }
-          <MovieTail
-            movieTilePoster={`https://image.tmdb.org/t/p/w1280/${movieTailAPI.data.poster_path}`}
+          <MovieMainPoster
+            movieBackgroundPosterW1280={`https://image.tmdb.org/t/p/original/${dataFromAPI.data.backdrop_path}`}
             movieTitle={movieDetails.title}
-            movieYear={movieDetails.release_date.toString().slice(0, 4)}
+            movieRating={parseFloat(movieDetails.vote_average).toFixed(2)}
+            votesNumber={movieDetails.vote_count}
+            maxRating={"10"}
+          />
+          <MovieTail
+            movieTilePoster={`https://image.tmdb.org/t/p/w1280/${dataFromAPI.data.poster_path}`}
+            movieTitle={movieDetails.title}
+            // movieYear={movieDetails.release_date.toString().slice(0, 4)}
             countryProductionArray={movieDetails.production_countries}
             releaseData={movieDetails.release_date}
             tagArray={movieDetails.genres}
@@ -56,52 +44,12 @@ const MovieDetails = () => {
             maxRating={"10"}
             movieStory={movieDetails.overview}
           />
-          <>
-            {((castArray !== undefined)
-              ?
-              <CastBox>
-                <Title>Cast</Title>
-                <TileBox>
-                  {(castArray.map(cast =>
-                    <Cast
-                      key={cast.id}
-                      name={cast.name}
-                      profile_path={cast.profile_path}
-                      character={cast.character}
-                    />
-                  ))}
-                </TileBox>
-              </CastBox>
-              :
-              ("")
-            )}
-          </>
-          <>
-            {((crewArray !== undefined)
-              ?
-              <CastBox>
-                <Title>Crew</Title>
-                <TileBox>
-                  {(crewArray.map(crew =>
-                    <Cast
-                      key={crew.credit_id}
-                      name={crew.name}
-                      profile_path={crew.profile_path}
-                      character={crew.department}
-                    />
-                  ))}
-                </TileBox>
-
-              </CastBox>
-              :
-              ("")
-            )}
-          </>
         </MovieDetailsPage>
       )
       :
       ("")
   )
 };
+
 
 export default MovieDetails;

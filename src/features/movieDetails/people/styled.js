@@ -33,7 +33,7 @@ export const NameBox = styled.div`
 
 export const Name = styled.a`
   text-decoration:none;
-  color: ${({ theme }) => theme.color.woodSmoke};
+  color: ${({ theme }) => theme.color.woodsmoke};
   font-weight: 500;
   font-size: 22px;
   display: flex;
@@ -56,21 +56,23 @@ export const MovieName = styled.h3`
     text-align: center;
     flex-wrap: wrap;
     margin: 0;
+
     @media (max-width: 500px) {
       font-weight: 400;
-font-size: 13px;
-line-height: 130%;
+      font-size: 13px;
+      line-height: 130%;
     }
 `;
 
 export const Poster = styled.a`
-  width: 177px;
-  height: 231px;
-  top: -6px;
+    width: 177px;
+    height: 231px;
+    top: -6px;
+
   @media (max-width: 500px) {
-    width: 114px;
-    height: 169px;
-    display:flex;
+      width: 114px;
+      height: 169px;
+      display:flex;
     }
 `;
 

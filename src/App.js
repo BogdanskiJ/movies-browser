@@ -1,6 +1,8 @@
 import React from "react";
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Navigation } from "./common/Navigation";
+
+import Descritpion from "./features/Description";
 import MovieList from "./features/movieList";
 import { People } from "./features/people/PeoplePage";
 
@@ -12,6 +14,9 @@ export const App = () => {
     <HashRouter>
       <Navigation />
       <Switch>
+      <Route path="/people/:id">
+          <Descritpion />
+        </Route>
         <Route path="/movies">
           <MovieList />
         </Route>
@@ -26,5 +31,6 @@ export const App = () => {
    </>
   );
 };
+
 
 export default App;

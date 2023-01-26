@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Tile = styled.div`
@@ -24,14 +25,22 @@ export const NameBox = styled.div`
   text-align: center;
 `;
 
+export const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+`;
+
 export const Name = styled.h3`
-  color: ${({ theme }) => theme.color.woodSmoke};
-  font-weight: 500;
-  font-size: 22px;
   display: flex;
   text-align: center;
   flex-wrap: wrap;
   margin: 0;
+  color: ${({ theme }) => theme.color.woodSmoke};
+  font-weight: 500;
+  font-size: 22px;
+
+  &:hover{
+    color: ${({ theme }) => theme.color.aquamarineBlue};
+  };
 `;
 
 export const Poster = styled.div`

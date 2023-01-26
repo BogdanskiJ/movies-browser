@@ -3,9 +3,11 @@ import styled from "styled-components";
 export const MovieListPage = styled.div`
     background-color: ${({ theme }) => theme.color.whisper};
     padding-top:60px;
+    padding-bottom: 60px;
 
     @media (max-width: 756px) {
         padding-top:24px;
+        padding-bottom: 30px;
     };
 `;
 
