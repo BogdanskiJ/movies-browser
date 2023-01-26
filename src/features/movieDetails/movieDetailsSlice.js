@@ -6,6 +6,7 @@ const movieDetailsSlice = createSlice({
         movieDetails: [],
         movieId: null,
         status: "loading",
+
     },
     reducers: {
         setMovieId: (state, { payload: id }) => {
