@@ -7,6 +7,7 @@ import PaginationPageNumber from "./PaginationNumberPage";
 import { useDispatch, useSelector } from "react-redux";
 import { selectMovieListState } from "../movieListSlice";
 import { setCurrentPage } from "../../../features/movieList/movieListSlice";
+import { useParams } from "react-router";
 
 const Pagination = () => {
     const dispatch = useDispatch();
@@ -14,12 +15,32 @@ const Pagination = () => {
 
     return (
         <PaginationBox theme={theme}>
-            <PaginationLeftButtonMin onClick={() => dispatch(setCurrentPage(1 - currentPage))}>
-                <PrevArrow />
-                <PrevArrow />
+            <PaginationLeftButtonMin
+                disabled={currentPage === 1}
+                onClick={() => dispatch(setCurrentPage(1 - currentPage))}>
+                {(currentPage === 1) ?
+                    (<>
+                        <PrevArrow fill="#7E839A" />
+                        <PrevArrow fill="#7E839A" />
+                    </>) :
+                    (<>
+                        <PrevArrow fill="#0044CC" />
+                        <PrevArrow fill="#0044CC" />
+                    </>)
+                }
             </PaginationLeftButtonMin>
-            <PaginationLeftButtonPreviousPage onClick={() => dispatch(setCurrentPage(1 - currentPage))}>
-                <PrevArrow />
+
+            <PaginationLeftButtonPreviousPage
+                disabled={currentPage === 1}
+                onClick={() => dispatch(setCurrentPage(1 - currentPage))}>
+                {(currentPage === 1) ?
+                    (<>
+                        <PrevArrow fill="#7E839A" />
+                    </>) :
+                    (<>
+                        <PrevArrow fill="#0044CC" />
+                    </>)
+                }
                 <PaginationButtonText>
                     First
                 </PaginationButtonText>
@@ -27,7 +48,14 @@ const Pagination = () => {
             <PaginationLeftButton
                 disabled={currentPage === 1}
                 onClick={() => dispatch(setCurrentPage(-1))}>
-                <PrevArrow />
+                {(currentPage === 1) ?
+                    (<>
+                        <PrevArrow fill="#7E839A" />
+                    </>) :
+                    (<>
+                        <PrevArrow fill="#0044CC" />
+                    </>)
+                }
                 <PaginationButtonText>
                     Previous
                 </PaginationButtonText>
@@ -39,17 +67,43 @@ const Pagination = () => {
                 <PaginationButtonText>
                     Next
                 </PaginationButtonText>
-                <NextArrow />
+                {(currentPage === 500) ?
+                    (<>
+                        <NextArrow fill="#7E839A" />
+                    </>) :
+                    (<>
+                        <NextArrow fill="#0044CC" />
+                    </>)
+                }
             </PaginationRightButton>
-            <PaginationRightButtonNextPage onClick={() => dispatch(setCurrentPage(lastPage - currentPage))}>
+            <PaginationRightButtonNextPage
+                disabled={currentPage === 500}
+                onClick={() => dispatch(setCurrentPage(lastPage - currentPage))}>
                 <PaginationButtonText>
                     Last
                 </PaginationButtonText>
-                <NextArrow />
+                {(currentPage === 500) ?
+                    (<>
+                        <NextArrow fill="#7E839A" />
+                    </>) :
+                    (<>
+                        <NextArrow fill="#0044CC" />
+                    </>)
+                }
             </PaginationRightButtonNextPage>
-            <PaginationRightButtonMax onClick={() => dispatch(setCurrentPage(lastPage - currentPage))}>
-                <NextArrow />
-                <NextArrow />
+            <PaginationRightButtonMax
+                disabled={currentPage === 500}
+                onClick={() => dispatch(setCurrentPage(lastPage - currentPage))}>
+                {(currentPage === 500) ?
+                    (<>
+                        <NextArrow fill="#7E839A" />
+                        <NextArrow fill="#7E839A" />
+                    </>) :
+                    (<>
+                        <NextArrow fill="#0044CC" />
+                        <NextArrow fill="#0044CC" />
+                    </>)
+                }
             </PaginationRightButtonMax>
         </PaginationBox>
     );

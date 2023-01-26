@@ -25,7 +25,7 @@ export const Number = styled.span`
     font-weight: 600;
     font-size: 16px;
     line-height: 150%;
-    color: ${({ theme }) => theme.color.woodsmoke};
+    color: ${({ theme }) => theme.color.woodSmoke};
 
     @media (max-width: 756px) {
         font-weight: 600;

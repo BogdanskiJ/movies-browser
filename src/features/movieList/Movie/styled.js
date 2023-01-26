@@ -56,7 +56,7 @@ export const MovieTitle = styled.h2`
     font-size: 22px;
     line-height: 130%;
     margin:0;
-    color: ${({ theme }) => theme.color.woodsmoke};
+    color: ${({ theme }) => theme.color.woodSmoke};
     &:hover{
     color: ${({ theme }) => theme.color.aquamarineBlue};
     }
@@ -107,7 +107,7 @@ export const Tag = styled.li`
     padding: 8px 16px;
     margin: 0;
     border-radius: 5px;
-    color: ${({ theme }) => theme.color.woodsmoke};
+    color: ${({ theme }) => theme.color.woodSmoke};
     background: ${({ theme }) => theme.color.mystic};
 
     @media (max-width: 756px) {
@@ -142,7 +142,7 @@ export const Rating = styled.div`
     font-weight: 600;
     font-size: 16px;
     line-height: 150%;
-    color: ${({ theme }) => theme.color.woodsmoke};
+    color: ${({ theme }) => theme.color.woodSmoke};
 
     @media (max-width: 756px) {
         padding: 0;
