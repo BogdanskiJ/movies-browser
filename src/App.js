@@ -21,14 +21,17 @@ export const App = () => {
         <Route path="/movies/:id">
           <MovieDetails />
         </Route>
-        <Route path="/movies">
+        <Route path="/popular-movies/:page">
+          <MovieList />
+        </Route>
+        <Route path="/popular-movies">
           <MovieList />
         </Route>
         <Route path="/people">
           <People />
         </Route>
         <Route path="/">
-          <Redirect to="/movies" />
+          <Redirect to="/popular-movies" />
         </Route>
       </Switch>
     </HashRouter>

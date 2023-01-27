@@ -29,6 +29,6 @@ export const useMovieDetailPeopleAPI = () => {
             }
         };
         setTimeout(fetchResponse, 1000);
-    }, []);
+    }, [id]);
     return movieDetailPeopleAPI;
 };

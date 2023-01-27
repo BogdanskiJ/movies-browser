@@ -9,11 +9,10 @@ const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApi
     if (a === b.id) { return (b.name) }
   }
   const url_img = "https://image.tmdb.org/t/p/w342/"
-  console.log(id)
+
   return (
     <MovieDetail theme={theme} >
       <PosterBox to={`/movies/${id}`} alt={movieTitle} title={movieTitle} id={id}>
-        {/* po zmergowaniu wszystkich komponentów link do google trzeba zaminić na link do movieDetail z odpowiednim id filmu */}
         <Poster src={(moviePosterApiLink !== null ? (url_img + moviePosterApiLink) : movieListEmptyPoster)} alt="" />
       </PosterBox>
       <MovieDescriptionBox>

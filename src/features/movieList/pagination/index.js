@@ -1,24 +1,22 @@
 import React from "react";
 import { theme } from "../../../theme";
-import { NextArrowMinView, PaginationBox, PaginationButtonText, PaginationLeftButton, PaginationLeftButtonMin, PaginationLeftButtonPreviousPage, PaginationRightButton, PaginationRightButtonLastPage, PaginationRightButtonMax, PaginationRightButtonNextPage, PrevArrowMinView } from "./styled";
+import { PaginationBox, PaginationButtonText, PaginationLeftButton, PaginationLeftButtonMin, PaginationLeftButtonPreviousPage, PaginationRightButton, PaginationRightButtonMax, PaginationRightButtonNextPage } from "./styled";
 import { ReactComponent as NextArrow } from '../../../images/nextArrow.svg';
 import { ReactComponent as PrevArrow } from '../../../images/prevArrow.svg';
 import PaginationPageNumber from "./PaginationNumberPage";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectMovieListState } from "../movieListSlice";
-import { setCurrentPage } from "../../../features/movieList/movieListSlice";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 
 const Pagination = () => {
-    const dispatch = useDispatch();
-    const { lastPage, currentPage } = useSelector(selectMovieListState);
-
+    const { page } = useParams();
+    const { lastPage, firstPage } = useSelector(selectMovieListState);
     return (
         <PaginationBox theme={theme}>
             <PaginationLeftButtonMin
-                disabled={currentPage === 1}
-                onClick={() => dispatch(setCurrentPage(1 - currentPage))}>
-                {(currentPage === 1) ?
+                disabled={(Number(page) === 1) || (page === undefined)}
+                to={`/popular-movies/${firstPage}`}>
+                {((Number(page) === 1) || (page === undefined)) ?
                     (<>
                         <PrevArrow fill="#7E839A" />
                         <PrevArrow fill="#7E839A" />
@@ -31,9 +29,9 @@ const Pagination = () => {
             </PaginationLeftButtonMin>
 
             <PaginationLeftButtonPreviousPage
-                disabled={currentPage === 1}
-                onClick={() => dispatch(setCurrentPage(1 - currentPage))}>
-                {(currentPage === 1) ?
+                disabled={(Number(page) === 1) || (page === undefined)}
+                to={`/popular-movies/${firstPage}`}>
+                {((Number(page) === 1) || (page === undefined)) ?
                     (<>
                         <PrevArrow fill="#7E839A" />
                     </>) :
@@ -46,9 +44,9 @@ const Pagination = () => {
                 </PaginationButtonText>
             </PaginationLeftButtonPreviousPage>
             <PaginationLeftButton
-                disabled={currentPage === 1}
-                onClick={() => dispatch(setCurrentPage(-1))}>
-                {(currentPage === 1) ?
+                disabled={(Number(page) === 1) || (page === undefined)}
+                to={`/popular-movies/${Number(page) - 1}`}>
+                {((Number(page) === 1) || (page === undefined)) ?
                     (<>
                         <PrevArrow fill="#7E839A" />
                     </>) :
@@ -62,12 +60,12 @@ const Pagination = () => {
             </PaginationLeftButton>
             <PaginationPageNumber />
             <PaginationRightButton
-                disabled={currentPage === 500}
-                onClick={() => dispatch(setCurrentPage(+1))}>
+                disabled={(Number(page) === 500)}
+                to={page !== undefined ? (`/popular-movies/${Number(page) + 1}`) : (`/popular-movies/${2}`)}>
                 <PaginationButtonText>
                     Next
                 </PaginationButtonText>
-                {(currentPage === 500) ?
+                {(Number(page) === 500) ?
                     (<>
                         <NextArrow fill="#7E839A" />
                     </>) :
@@ -77,12 +75,12 @@ const Pagination = () => {
                 }
             </PaginationRightButton>
             <PaginationRightButtonNextPage
-                disabled={currentPage === 500}
-                onClick={() => dispatch(setCurrentPage(lastPage - currentPage))}>
+                disabled={(Number(page) === 500)}
+                to={`/popular-movies/${lastPage}`}>
                 <PaginationButtonText>
                     Last
                 </PaginationButtonText>
-                {(currentPage === 500) ?
+                {(Number(page) === 500) ?
                     (<>
                         <NextArrow fill="#7E839A" />
                     </>) :
@@ -92,9 +90,9 @@ const Pagination = () => {
                 }
             </PaginationRightButtonNextPage>
             <PaginationRightButtonMax
-                disabled={currentPage === 500}
-                onClick={() => dispatch(setCurrentPage(lastPage - currentPage))}>
-                {(currentPage === 500) ?
+                disabled={(Number(page) === 500)}
+                to={`/popular-movies/${lastPage}`}>
+                {(Number(page) === 500) ?
                     (<>
                         <NextArrow fill="#7E839A" />
                         <NextArrow fill="#7E839A" />
