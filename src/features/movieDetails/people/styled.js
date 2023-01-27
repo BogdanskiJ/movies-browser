@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Tile = styled.div`
@@ -31,7 +32,7 @@ export const NameBox = styled.div`
     }
 `;
 
-export const Name = styled.a`
+export const Name = styled(NavLink)`
   text-decoration:none;
   color: ${({ theme }) => theme.color.woodSmoke};
   font-weight: 500;
@@ -64,11 +65,11 @@ export const MovieName = styled.h3`
     }
 `;
 
-export const Poster = styled.a`
+export const Poster = styled(NavLink)`
     width: 177px;
     height: 231px;
     top: -6px;
-
+    text-decoration:none;
   @media (max-width: 500px) {
       width: 114px;
       height: 169px;
