@@ -1,5 +1,11 @@
 import Movie from "../../movieList/Movie";
-import { MovieScroll, TileWrapper, TileWrappers, Title, Wrapper } from "./styled";
+import {
+  MovieScroll,
+  TileWrapper,
+  TileWrappers,
+  Title,
+  Wrapper,
+} from "./styled";
 import { useState, useEffect } from "react";
 
 export const Projects = () => {
@@ -14,7 +20,7 @@ export const Projects = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.cast);
+        // console.log(data.cast);
         setCastDetails(data.cast);
         setCrewDetails(data.crew);
       });
@@ -24,8 +30,8 @@ export const Projects = () => {
       <Wrapper>
         <Title>Movies - cast ({castDetails.length})</Title>
 
-      {/* <MovieScroll> */}
-      <TileWrapper>
+        {/* <MovieScroll> */}
+        <TileWrapper>
           {castDetails.map((detail) => (
             <Movie
               key={detail.id}
@@ -35,7 +41,7 @@ export const Projects = () => {
             />
           ))}
         </TileWrapper>
-      {/* </MovieScroll> */}
+        {/* </MovieScroll> */}
 
         <Title>Movies - crew ({crewDetails.length})</Title>
         <TileWrapper>
@@ -47,7 +53,6 @@ export const Projects = () => {
               votesNumber={crewDetail.vote_count}
             />
           ))}
-          <Movie />
         </TileWrapper>
       </Wrapper>
     </>

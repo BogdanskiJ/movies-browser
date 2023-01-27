@@ -11,7 +11,7 @@ import {
   TextBox,
 } from "./styled";
 import { useDispatch } from "react-redux";
-import { fetchPeopleList } from "../../features/people/PeoplePage/peopleListSlice";
+import { fetchPeopleDetails } from "../../features/Description/peopleDetailsSlice";
 
 export const Pagination = () => {
     const [currentPage, setCurrentPage] = useState(1);
