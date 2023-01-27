@@ -1,38 +1,24 @@
 import Movie from "../../movieList/Movie";
-import {
-  MovieScroll,
-  TileWrapper,
-  TileWrappers,
-  Title,
-  Wrapper,
-} from "./styled";
-import { useState, useEffect } from "react";
+import { TileWrapper, Title, Wrapper } from "./styled";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProjects, selectProjectsState } from "./projectsSlice";
 
 export const Projects = () => {
-  const [castDetails, setCastDetails] = useState([]);
-  const [crewDetails, setCrewDetails] = useState([]);
-
-  const url_img = "https://image.tmdb.org/t/p/w500";
+  const { crew, cast } = useSelector(selectProjectsState);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/person/2/movie_credits?api_key=9515ffc857c67f1558538dad140abb29&language=en-US"
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data.cast);
-        setCastDetails(data.cast);
-        setCrewDetails(data.crew);
-      });
+    dispatch(fetchProjects());
   }, []);
+
   return (
     <>
       <Wrapper>
-        <Title>Movies - cast ({castDetails.length})</Title>
+        <Title>Movies - cast ({cast.length})</Title>
 
-        {/* <MovieScroll> */}
         <TileWrapper>
-          {castDetails.map((detail) => (
+          {cast.map((detail) => (
             <Movie
               key={detail.id}
               movieTitle={detail.title}
@@ -41,11 +27,10 @@ export const Projects = () => {
             />
           ))}
         </TileWrapper>
-        {/* </MovieScroll> */}
 
-        <Title>Movies - crew ({crewDetails.length})</Title>
+        <Title>Movies - crew ({crew.length})</Title>
         <TileWrapper>
-          {crewDetails.map((crewDetail) => (
+          {crew.map((crewDetail) => (
             <Movie
               key={crewDetail.id}
               movieTitle={crewDetail.title}

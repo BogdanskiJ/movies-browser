@@ -1,4 +1,4 @@
-import { Info, Photo, Tile, Wrapper, Name, Script } from "./styled";
+import { Info, Photo, Tile, Wrapper, Name, Script, Background } from "./styled";
 import Information from "./PersonalInfo";
 import { useEffect, useState } from "react";
 import { Projects } from "./Projects";
@@ -9,6 +9,7 @@ import {
   fetchPeopleDetails,
   selectPeopleDetailsState,
 } from "./peopleDetailsSlice";
+import { fetchProjects } from "./Projects/projectsSlice";
 
 export const Descritpion = () => {
   const { id } = useParams();
@@ -25,21 +26,23 @@ export const Descritpion = () => {
 
   return (
     <>
-      <Wrapper>
-        <Tile>
-          <Photo src={url_img + details.profile_path}></Photo>
-          <Info>
-            <Name>{details.name}</Name>
-            <Information
-              birthday={details.birthday}
-              place_of_birth={details.place_of_birth}
-            />
-            <Script>{details.biography}</Script>
-          </Info>
-        </Tile>
-        <Projects />
-        <button onClick={() => dispatch(fetchPeopleDetails())}>sss</button>
-      </Wrapper>
+      <Background>
+        <Wrapper>
+          <Tile>
+            <Photo src={url_img + details.profile_path}></Photo>
+            <Info>
+              <Name>{details.name}</Name>
+              <Information
+                birthday={details.birthday}
+                place_of_birth={details.place_of_birth}
+              />
+              <Script>{details.biography}</Script>
+            </Info>
+          </Tile>
+          <Projects />
+          <button onClick={() => dispatch(fetchProjects())}>sss</button>
+        </Wrapper>
+      </Background>
     </>
   );
 };
