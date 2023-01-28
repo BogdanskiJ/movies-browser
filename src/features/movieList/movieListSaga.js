@@ -17,7 +17,7 @@ function* fetchMovieListHandler() {
 function* fetchGenresListHandler() {
     try{
         const genres = yield call(getGenres);
-        yield put(fetchGenresListSuccess(genres));
+        yield put(fetchGenresListSuccess(genres.genres));
     }catch (error) {
         yield put(fetchGenresListError());
         yield call(alert, "Failed to download data. Try later!");
