@@ -3,28 +3,26 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useParams } from "react-router";
 import Pagination from "./pagination/index";
 import { theme } from "../../theme";
-import { useDataFromAPI, useNextDataFromAPI } from "./dataFromAPI";
 import { useGenresFromAPI } from "./genresList";
 import Movie from "./Movie";
-import { selectMovieListState, setCurrentPageAPI } from "./movieListSlice";
+import { fetchMovieList, selectMovieList, selectMovieListState, setCurrentPageAPI } from "./movieListSlice";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
 
 const MovieList = ({ }) => {
-  
-  const dataFromAPI = useDataFromAPI();
+  const dispatch = useDispatch(); 
   const genresFromAPI = useGenresFromAPI([]);
-
-  const [moviesArray, setMoviesArray] = useState([]);
   const [genresArray, setGenresArray] = useState([]);
 
+  const movies = useSelector(selectMovieList);
+
   useEffect(() => {
-    setMoviesArray(dataFromAPI.data.results);
+    dispatch(fetchMovieList());
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: 'smooth'
     });
-  }, [dataFromAPI]);
+  }, [dispatch]);
 
   useEffect(() => {
     setGenresArray(genresFromAPI.genres.genres);
@@ -38,9 +36,9 @@ const MovieList = ({ }) => {
         </PopularMoviesName>
         <MoviesList
         >
-          {((moviesArray !== undefined && moviesArray !== 0)
+          {((movies !== undefined && movies !== 0)
             ?
-            (moviesArray.map(movie => <Movie
+            (movies.map(movie => <Movie
               genresArray={genresArray}
               movieTitle={movie.title}
               key={movie.id}
@@ -56,10 +54,10 @@ const MovieList = ({ }) => {
             (""))
           }
         </MoviesList>
-        {((moviesArray !== undefined && moviesArray !== 0)
+        {((movies !== undefined && movies !== 0)
           ?
           (<Pagination
-            total_pages={dataFromAPI.data.total_pages}
+            // total_pages={dataFromAPI.data.total_pages}
           />)
           :
           (""))
