@@ -9,7 +9,7 @@ export const MovieTail = ({ movieTitle, movieYear, releaseData, votesNumber, max
 
     <Tail theme={theme}>
       <PosterBox>
-        <Poster src={movieTilePoster} alt="" />
+        <Poster src={movieTilePoster} title={movieTitle} alt="" />
       </PosterBox>
       <MovieDescription>
         <MovieTitle>

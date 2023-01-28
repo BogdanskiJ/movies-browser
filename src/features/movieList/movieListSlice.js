@@ -11,15 +11,15 @@ const movieListSlice = createSlice({
         firstPage:1,
         lastPage: 500,
         id:1,
+        page:1,
     },
     reducers: {
-        setCurrentPage: (state, { payload: actions }) => {
-            state.currentPage = state.currentPage + actions;
-           // console.log(state.currentPage)
-        },
+        // setCurrentPage: (state, { payload: actions }) => {
+        //     state.currentPage = state.currentPage + actions;
+        // },
     },
 });
 
-export const { setCurrentPage } = movieListSlice.actions;
+export const {  } = movieListSlice.actions;
 export const selectMovieListState = state => state.movieList;
 export default movieListSlice.reducer;
