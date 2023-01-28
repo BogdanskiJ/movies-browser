@@ -70,6 +70,7 @@ const MovieDetails = () => {
                       name={cast.name}
                       profile_path={cast.profile_path}
                       character={cast.character}
+                      id={cast.id}
                     />
                   ))}
                 </TileBox>
@@ -90,6 +91,7 @@ const MovieDetails = () => {
                       name={crew.name}
                       profile_path={crew.profile_path}
                       character={crew.department}
+                      id={crew.id}
                     />
                   ))}
                 </TileBox>

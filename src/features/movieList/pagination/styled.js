@@ -38,6 +38,7 @@ export const PaginationLeftButton = styled(NavLink)`
         {
             background: ${({ theme }) => theme.color.mystic};
             pointer-events: none;
+            cursor: default;
         }
     `} 
 `;
@@ -65,6 +66,7 @@ export const PaginationLeftButtonPreviousPage = styled(NavLink)`
         {
             background: ${({ theme }) => theme.color.mystic};
             pointer-events: none;
+            cursor: default;
         }
     `} 
 `;
@@ -94,6 +96,7 @@ export const PaginationLeftButtonMin = styled(NavLink)`
         {
             background: ${({ theme }) => theme.color.mystic};
             pointer-events: none;
+            cursor: default;
         }
     `} 
 `;
@@ -121,6 +124,7 @@ export const PaginationRightButton = styled(NavLink)`
         {
             background: ${({ theme }) => theme.color.mystic};
             pointer-events: none;
+            cursor: default;
         }
     `} 
 `;
@@ -157,6 +161,7 @@ export const PaginationRightButtonMax = styled(NavLink)`
         {
             background: ${({ theme }) => theme.color.mystic};
             pointer-events: none;
+            cursor: default;
         }
     `} 
 `;
@@ -183,6 +188,7 @@ export const PaginationRightButtonNextPage = styled(NavLink)`
         {
             background: ${({ theme }) => theme.color.mystic};
             pointer-events: none;
+            cursor: default;
         }
     `} 
 `;
