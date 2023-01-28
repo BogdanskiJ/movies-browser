@@ -4,6 +4,8 @@ const peopleListSlice = createSlice({
     name: "people",
     initialState: {
         people: [],
+        query: "",
+        totalResults: 0,
     },
     reducers: {
         fetchPeopleList: (state) => { 
@@ -23,4 +25,6 @@ export const { fetchPeopleList, setPeopleList, setPeopleListSucces, setPeopleLis
     peopleListSlice.actions;
 export const selectPeopleListState = (state) => state.peopleList;
 export const selectLoadingStatus = state => selectPeopleListState(state).loading;
+export const selectPeopleTotalResults = state => selectPeopleListState(state).totalResults;
+export const selectPeopleQuery = state => selectPeopleListState(state).query;
 export default peopleListSlice.reducer;
