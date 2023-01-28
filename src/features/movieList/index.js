@@ -1,32 +1,25 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useParams } from "react-router";
 import Pagination from "./pagination/index";
 import { theme } from "../../theme";
-import { useGenresFromAPI } from "./genresList";
 import Movie from "./Movie";
-import { fetchMovieList, selectMovieList, selectMovieListState, setCurrentPageAPI } from "./movieListSlice";
+import { fetchGenresList, fetchMovieList, selectGenresList, selectMovieList, setCurrentPageAPI } from "./movieListSlice";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
 
 const MovieList = ({ }) => {
-  const dispatch = useDispatch(); 
-  const genresFromAPI = useGenresFromAPI([]);
-  const [genresArray, setGenresArray] = useState([]);
-
+  const dispatch = useDispatch();
   const movies = useSelector(selectMovieList);
+  const genres = useSelector(selectGenresList);
 
   useEffect(() => {
     dispatch(fetchMovieList());
+    dispatch(fetchGenresList());
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: 'smooth'
     });
   }, [dispatch]);
-
-  useEffect(() => {
-    setGenresArray(genresFromAPI.genres.genres);
-  }, [genresFromAPI]);
 
   return (
     <MovieListPage theme={theme}>
@@ -39,7 +32,7 @@ const MovieList = ({ }) => {
           {((movies !== undefined && movies !== 0)
             ?
             (movies.map(movie => <Movie
-              genresArray={genresArray}
+              genres={genres}
               movieTitle={movie.title}
               key={movie.id}
               movieRating={movie.vote_average}
@@ -57,7 +50,7 @@ const MovieList = ({ }) => {
         {((movies !== undefined && movies !== 0)
           ?
           (<Pagination
-            // total_pages={dataFromAPI.data.total_pages}
+          // total_pages={dataFromAPI.data.total_pages}
           />)
           :
           (""))
