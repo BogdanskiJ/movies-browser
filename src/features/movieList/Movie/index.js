@@ -30,7 +30,7 @@ const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApi
             ((movieTagArray !== undefined && genres !== undefined) ?
               (movieTagArray.map(tag =>
                 <Tag key={tag}>
-                  {/* {genres.map(tagName => genreSort(tag, tagName))} */}
+                  {genres.map(tagName => genreSort(tag, tagName))}
                 </Tag>
               )) : "")
           }
