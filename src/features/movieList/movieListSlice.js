@@ -49,4 +49,5 @@ export const { setCurrentPage,
 export const selectMovieListState = state => state.movieList;
 export const selectMovieList = state => selectMovieListState(state).movies;
 export const selectGenresList = state => selectMovieListState(state).genres;
+export const selectMovieListStatus = state => selectMovieListState(state).status;
 export default movieListSlice.reducer;
