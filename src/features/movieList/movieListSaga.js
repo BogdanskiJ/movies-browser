@@ -1,6 +1,6 @@
 import { call, delay, put, takeLatest } from "@redux-saga/core/effects";
-import { getMovieList } from "../../getApi";
-import { fetchMovieList, fetchMovieListError, fetchMovieListSuccess } from "./movieListSlice";
+import { getGenres, getMovieList } from "../../getApi";
+import { fetchGenresList, fetchGenresListError, fetchGenresListSuccess, fetchMovieList, fetchMovieListError, fetchMovieListSuccess } from "./movieListSlice";
 
 
 function* fetchMovieListHandler() {
@@ -14,6 +14,17 @@ function* fetchMovieListHandler() {
     };
 };
 
-export function* watchFetchMovieList() {
+function* fetchGenresListHandler() {
+    try{
+        const genres = yield call(getGenres);
+        yield put(fetchGenresListSuccess(genres));
+    }catch (error) {
+        yield put(fetchGenresListError());
+        yield call(alert, "Failed to download data. Try later!");
+    };
+};
+
+export function* movieListSaga() {
     yield takeLatest(fetchMovieList.type, fetchMovieListHandler);
+    yield takeLatest(fetchGenresList.type, fetchGenresListHandler);
 };
