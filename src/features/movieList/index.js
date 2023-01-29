@@ -1,71 +1,58 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useParams } from "react-router";
 import Pagination from "./pagination/index";
 import { theme } from "../../theme";
-import { useDataFromAPI, useNextDataFromAPI } from "./dataFromAPI";
-import { useGenresFromAPI } from "./genresList";
 import Movie from "./Movie";
-import { selectMovieListState, setCurrentPageAPI } from "./movieListSlice";
+import { fetchGenresList, fetchMovieList, selectGenresList, selectMovieList, selectMovieListStatus, setCurrentPageAPI } from "./movieListSlice";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
+import { LoadingPage } from "../../common/LoadingPage";
+import { ErrorPage } from "../../common/ErrorPage";
 
 const MovieList = ({ }) => {
-  
-  const dataFromAPI = useDataFromAPI();
-  const genresFromAPI = useGenresFromAPI([]);
-
-  const [moviesArray, setMoviesArray] = useState([]);
-  const [genresArray, setGenresArray] = useState([]);
+  const dispatch = useDispatch();
+  const movies = useSelector(selectMovieList);
+  const genres = useSelector(selectGenresList);
+  const status = useSelector(selectMovieListStatus);
 
   useEffect(() => {
-    setMoviesArray(dataFromAPI.data.results);
+    dispatch(fetchMovieList());
+    dispatch(fetchGenresList());
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: 'smooth'
     });
-  }, [dataFromAPI]);
-
-  useEffect(() => {
-    setGenresArray(genresFromAPI.genres.genres);
-  }, [genresFromAPI]);
+  }, [dispatch]);
 
   return (
-    <MovieListPage theme={theme}>
-      <PopularMoviesBox>
-        <PopularMoviesName>
-          Popular Movies
-        </PopularMoviesName>
-        <MoviesList
-        >
-          {((moviesArray !== undefined && moviesArray !== 0)
-            ?
-            (moviesArray.map(movie => <Movie
-              genresArray={genresArray}
-              movieTitle={movie.title}
-              key={movie.id}
-              movieRating={movie.vote_average}
-              votesNumber={movie.vote_count}
-              movieTagArray={movie.genre_ids}
-              movieYear={movie.release_date}
-              moviePosterApiLink={movie.poster_path}
-              id={movie.id}
-            >
-            </Movie>))
-            :
-            (""))
-          }
-        </MoviesList>
-        {((moviesArray !== undefined && moviesArray !== 0)
-          ?
-          (<Pagination
-            total_pages={dataFromAPI.data.total_pages}
-          />)
-          :
-          (""))
-        }
-      </PopularMoviesBox>
-    </MovieListPage>
+    <>
+      {status === "loading" ? <LoadingPage title={"Loading..."} />
+        : status === "error" ? <ErrorPage />
+          : (
+            <MovieListPage theme={theme}>
+              <PopularMoviesBox>
+                <PopularMoviesName>
+                  Popular Movies
+                </PopularMoviesName>
+                <MoviesList>
+                  {(movies.map(movie => <Movie
+                    genres={genres}
+                    movieTitle={movie.title}
+                    key={movie.id}
+                    movieRating={movie.vote_average}
+                    votesNumber={movie.vote_count}
+                    movieTagArray={movie.genre_ids}
+                    movieYear={movie.release_date}
+                    moviePosterApiLink={movie.poster_path}
+                    id={movie.id}
+                  >
+                  </Movie>))}
+                </MoviesList>
+                <Pagination />
+              </PopularMoviesBox>
+            </MovieListPage>
+          )}
+    </>
   );
-}
+};
 export default MovieList;

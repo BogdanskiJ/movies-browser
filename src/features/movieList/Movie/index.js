@@ -4,7 +4,7 @@ import { MovieDescriptionBox, MovieDetail, MovieRating, MovieTags, MovieTitle, M
 import { ReactComponent as Star } from '../../../images/star.svg';
 import movieListEmptyPoster from "../../../images/movieListEmptyPoster.svg";
 
-const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApiLink, movieTagArray, genresArray, id }) => {
+const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApiLink, movieTagArray, genres, id }) => {
   const genreSort = (a, b) => {
     if (a === b.id) { return (b.name) }
   }
@@ -26,10 +26,10 @@ const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApi
         </MovieYear>
         <MovieTags>
           {
-            ((movieTagArray !== undefined && genresArray !== undefined) ?
+            ((movieTagArray !== undefined && genres !== undefined) ?
               (movieTagArray.map(tag =>
                 <Tag key={tag}>
-                  {genresArray.map(tagName => genreSort(tag, tagName))}
+                  {genres.map(tagName => genreSort(tag, tagName))}
                 </Tag>
               )) : "")
           }
