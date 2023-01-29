@@ -2,7 +2,9 @@
 
 Movie Browser is a database about movies and actors. It allows you to get information about any movie you want. 
 
-<img alt="Movies Browser" src="/public/movies.png" width="18%" margin="auto" />
+<p align="center">
+  <img alt="Movies Browser" src="/public/movies.png" width="18%" />
+</p>
 
 ## Table of content
 Dodać odnośniki
