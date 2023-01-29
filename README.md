@@ -7,7 +7,7 @@ Movie Browser is a database about movies and actors. It allows you to get inform
 </p>
 
 ## Table of content
-Dodać odnośniki
+
 * [Movies Browser - Demo](#Movies-Browser-Demo)
 * [General Info](#General-Info)
 * [How it works](#How-it-works)
