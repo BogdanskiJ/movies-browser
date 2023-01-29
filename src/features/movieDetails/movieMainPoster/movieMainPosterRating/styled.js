@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const MovieDescription = styled.div`
     display: flex;
     padding-left: 15%;
+    padding-right: 15%;
     flex-direction: column;
     justify-content: flex-end;
     height: inherit;
