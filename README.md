@@ -12,7 +12,7 @@ Dodać odnośniki
 * [Technologies](#Technologies)
 * [Developers](#Developers)
 * [Available Scripts](#Available-Scripts)
-* [The Movie Database API - License](#The-Movie-Database-API-License)
+* [The Movie Database License](#The-Movie-Database-License)
 
 ## Movies Browser - Demo
 
@@ -108,7 +108,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-## The Movie Database API - License
+## The Movie Database License
 
 Project is based on the TMDB API. 
 ![TMDB](public/tmdb.svg)
