@@ -2,17 +2,19 @@
 
 Movie Browser is a database about movies and actors. It allows you to get information about any movie you want. 
 
-<img alt="Movies Browser" src="/public/movies.png" width="50%" />
+<p align="center">
+  <img alt="Movies Browser" src="/public/movies.png" width="18%" />
+</p>
 
 ## Table of content
-Dodać odnośniki
+
 * [Movies Browser - Demo](#Movies-Browser-Demo)
 * [General Info](#General-Info)
 * [How it works](#How-it-works)
 * [Technologies](#Technologies)
 * [Developers](#Developers)
 * [Available Scripts](#Available-Scripts)
-* [The Movie Database API - License](#The-Movie-Database-API-License)
+* [The Movie Database License](#The-Movie-Database-License)
 
 ## Movies Browser - Demo
 
@@ -108,7 +110,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-## The Movie Database API - License
+## The Movie Database License
 
 Project is based on the TMDB API. 
 ![TMDB](public/tmdb.svg)
