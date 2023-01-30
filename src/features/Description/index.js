@@ -40,7 +40,6 @@ export const Descritpion = () => {
             </Info>
           </Tile>
           <Projects />
-          <button onClick={() => dispatch(fetchProjects())}>sss</button>
         </Wrapper>
       </Background>
     </>

@@ -16,4 +16,5 @@ const peopleDetailsSlice = createSlice({
 export const { fetchPeopleDetails, setPeopleDetails } =
   peopleDetailsSlice.actions;
 export const selectPeopleDetailsState = (state) => state.peopleDetails;
+// export const getActorById = (state, actorId) => 
 export default peopleDetailsSlice.reducer;

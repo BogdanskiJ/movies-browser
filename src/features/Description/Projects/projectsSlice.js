@@ -5,6 +5,7 @@ const projectsSlice = createSlice({
   initialState: {
     cast: [],
     crew: [],
+    genres: [],
   },
   reducers: {
     fetchProjects: () => {},
@@ -13,11 +14,15 @@ const projectsSlice = createSlice({
     },
     setCrew: (state, {payload:crew}) => {
         state.crew = crew
+    },
+    fetchGenres: () => {},
+    setGenres: (state, {payload:genres}) => {
+        state.genres = genres
     }
   },
 });
 
-export const { fetchProjects, setCast, setCrew } =
+export const { fetchProjects, setCast, setCrew, fetchGenres, setGenres } =
   projectsSlice.actions;
 export const selectProjectsState = (state) => state.projects;
 export default projectsSlice.reducer;

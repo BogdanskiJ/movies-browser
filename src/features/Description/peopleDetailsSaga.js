@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from "redux-saga/effects";
-import { getPeopleList } from "../people/PeoplePage/getPeopleList";
+
 import { getDetails } from "./getDetails";
 import { fetchPeopleDetails, setPeopleDetails } from "./peopleDetailsSlice";
 
