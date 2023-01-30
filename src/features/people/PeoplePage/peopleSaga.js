@@ -7,8 +7,8 @@ function* fetchPeopleListHandler() {
   try {
     yield delay(500);
     const query = yield (selectPeopleQuery);
-    const peopleList = yield query === "" ? call(getPeopleList) : call(searchPeople, query);
-    yield put(setPeopleListSucces(peopleList.results));
+    const people = yield query === "" ? call(getPeopleList) : call(searchPeople, query);
+    yield put(setPeopleListSucces(people));
   } catch (error) {
     yield put(setPeopleListError());
     yield call(alert, "Something went wrong...");
