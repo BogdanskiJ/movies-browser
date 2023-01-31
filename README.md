@@ -1,4 +1,4 @@
-# Movies Browser [![The Movie Database](/public/tmdb-long.svg)]
+# Movies Browser [!The Movie Database(/public/tmdb-long.svg)]
 
 Movie Browser is a database about movies and actors. It allows you to get information about any movie you want. 
 
