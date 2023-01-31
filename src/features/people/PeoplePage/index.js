@@ -22,7 +22,7 @@ export const People = () => {
 
   return (
     <>
-      {loadingStatus === true ? <LoadingPage title={"Loading..."} />
+      {loadingStatus === true ? <LoadingPage title={"Search results for 'Popular People'"} />
         : loadingStatus === false && people === null ? <ErrorPage />
           : (
             <>
