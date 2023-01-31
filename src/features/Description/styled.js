@@ -47,3 +47,13 @@ export const Script = styled.p`
   font-size: 20px;
   color: ${({ theme }) => theme.color.black};
 `;
+
+export const ReadMoreButton = styled.button`
+color: ${({ theme }) => theme.color.black} ;
+background-color: ${({ theme }) => theme.color.mystic};
+border: none;
+padding: 10px;
+width: 130px;
+align-self: flex-end;
+border-radius: 5%;
+`

@@ -14,7 +14,6 @@ import {
   Tag,
   VotesNumber,
 } from "./styled";
-import List from "./List";
 import { ReactComponent as Star } from "../../../images/star.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGenres, selectProjectsState } from "../Projects/projectsSlice";
@@ -62,8 +61,6 @@ const MovieDetailTile = ({
         <MovieYear>
           {character} ({movieYear})
         </MovieYear>
-        {/* {genres.map((genre) => <List name={genre.name}/>)}
-         */}
               <MovieTags>
          {(projects !== undefined && genres !== undefined) ?
               (projects.map(tag =>

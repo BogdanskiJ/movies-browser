@@ -1,24 +1,38 @@
-import { Info, Photo, Tile, Wrapper, Name, Script, Background } from "./styled";
+import {
+  Info,
+  Photo,
+  Tile,
+  Wrapper,
+  Name,
+  Script,
+  Background,
+  ReadMoreButton,
+} from "./styled";
 import Information from "./PersonalInfo";
 import { useEffect, useState } from "react";
 import { Projects } from "./Projects";
-import Movie from "../movieList/Movie";
-import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchPeopleDetails,
   selectPeopleDetailsState,
+  shortenText,
 } from "./peopleDetailsSlice";
-import { fetchProjects } from "./Projects/projectsSlice";
+import ScriptBox from "./ScriptBox";
 
 export const Descritpion = () => {
-  const { id } = useParams();
+  const [ReadMore, setReadMore] = useState(false);
+  const toggleButton = () => {
+    setReadMore((state) => !state);
+  };
 
   const dispatch = useDispatch();
 
   const url_img = "https://image.tmdb.org/t/p/w500";
 
   const { details } = useSelector(selectPeopleDetailsState);
+  const { biography } = useSelector(selectPeopleDetailsState);
+  // const subBio = biography.substring(0, 800)
+
 
   useEffect(() => {
     dispatch(fetchPeopleDetails());
@@ -36,7 +50,18 @@ export const Descritpion = () => {
                 birthday={details.birthday}
                 place_of_birth={details.place_of_birth}
               />
-              <Script>{details.biography}</Script>
+
+              <Script>{ReadMore ? biography : biography}</Script>
+              <ReadMoreButton onClick={toggleButton}>
+                {" "}
+                {ReadMore ? "...read less" : "read more"}{" "}
+              </ReadMoreButton>
+        
+                {/* <ScriptBox
+                  biography={detail.biography}
+                  subBiography={detail.biography.substring(0, 400)}
+                />; */}
+             
             </Info>
           </Tile>
           <Projects />
