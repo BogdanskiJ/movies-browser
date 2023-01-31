@@ -10,7 +10,6 @@ function* fetchMovieListHandler() {
         yield put(fetchMovieListSuccess(movies));
     } catch (error) {
         yield put(fetchMovieListError());
-        yield call(alert, "Failed to download data. Try later!");
     };
 };
 
@@ -20,7 +19,6 @@ function* fetchGenresListHandler() {
         yield put(fetchGenresListSuccess(genres.genres));
     }catch (error) {
         yield put(fetchGenresListError());
-        yield call(alert, "Failed to download data. Try later!");
     };
 };
 

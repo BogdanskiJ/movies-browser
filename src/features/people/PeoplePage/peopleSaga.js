@@ -9,12 +9,11 @@ function* fetchPeopleListHandler() {
     yield put(setPeopleListSucces(peopleList.results));
   } catch (error) {
     yield put(setPeopleListError());
-    yield call(alert, "Something went wrong...");
-  }
-}
+  };
+};
 
 export function* watchFetchPeopleList() {
   yield takeEvery(fetchPeopleList.type, fetchPeopleListHandler);
-}
+};
 
 
