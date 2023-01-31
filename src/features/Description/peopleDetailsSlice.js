@@ -4,20 +4,16 @@ const peopleDetailsSlice = createSlice({
   name: "details",
   initialState: {
     details: [],
-    biography: [],
   },
   reducers: {
     fetchPeopleDetails: () => {},
     setPeopleDetails: (state, {payload: details}) => {
       state.details = details
     },
-    setBioDetails: (state, {payload: biography}) => {
-      state.biography = biography
-    },
   },
 });
 
-export const { fetchPeopleDetails, setPeopleDetails, setBioDetails, shortenText } =
+export const { fetchPeopleDetails, setPeopleDetails } =
   peopleDetailsSlice.actions;
 export const selectPeopleDetailsState = (state) => state.peopleDetails;
 // export const getActorById = (state, actorId) => 

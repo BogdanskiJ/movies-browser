@@ -29,10 +29,9 @@ export const Descritpion = () => {
 
   const url_img = "https://image.tmdb.org/t/p/w500";
 
-  const { details } = useSelector(selectPeopleDetailsState);
-  const { biography } = useSelector(selectPeopleDetailsState);
-  // const subBio = biography.substring(0, 800)
+  const { details  } = useSelector(selectPeopleDetailsState);
 
+  const biographyText = details.biography ? details.biography.substring(0,800) : "";
 
   useEffect(() => {
     dispatch(fetchPeopleDetails());
@@ -51,17 +50,11 @@ export const Descritpion = () => {
                 place_of_birth={details.place_of_birth}
               />
 
-              <Script>{ReadMore ? biography : biography}</Script>
+              <Script>{ReadMore ? details.biography : biographyText+"..."}</Script>
               <ReadMoreButton onClick={toggleButton}>
                 {" "}
                 {ReadMore ? "...read less" : "read more"}{" "}
               </ReadMoreButton>
-        
-                {/* <ScriptBox
-                  biography={detail.biography}
-                  subBiography={detail.biography.substring(0, 400)}
-                />; */}
-             
             </Info>
           </Tile>
           <Projects />
