@@ -1,45 +1,34 @@
 import { theme } from "../../theme";
-import { useMovieTailAPI } from "./movieTile/movieTailAPI";
 import { Cast } from "./people/movieDetailsPeopleTile";
 import { MovieMainPoster } from "./movieMainPoster";
 import { MovieTail } from "./movieTile";
 import { MovieDetailsPage, TileBox } from "./styled";
-import { useEffect, useState } from "react";
-import { useMovieDetailPeopleAPI } from "./people/movieDetailPeopleAPI";
+import { useEffect } from "react";
 import { CastBox, Title } from "./styled";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMovieDetails, selectCredits, selectMovieDetails, setMovieId } from "./movieDetailsSlice";
+import { useParams } from "react-router";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
-
-  const movieTailAPI = useMovieTailAPI();
-  const castAPI = useMovieDetailPeopleAPI();
-
-  const [movieDetails, setMovieDetails] = useState();
-  const [castArray, setCastArray] = useState({});
-  const [crewArray, setCrewArray] = useState({});
+  const movieDetails = useSelector(selectMovieDetails);
+  const credits = useSelector(selectCredits);
+  const { id } = useParams();
 
   useEffect(() => {
-    setMovieDetails(movieTailAPI.data);
-  }, [movieTailAPI]);
-
-  useEffect(() => {
-    setCastArray(castAPI.data.cast);
-  }, [castAPI]);
-
-  useEffect(() => {
-    setCrewArray(castAPI.data.crew);
-  }, [castAPI]);
+    dispatch(fetchMovieDetails());
+    dispatch(setMovieId(id));
+  }, [dispatch, id]);
 
   return (
     (movieDetails !== undefined)
       ?
       (
         <MovieDetailsPage theme={theme}>
-          {movieTailAPI.data.backdrop_path === null ?
+          {movieDetails.backdrop_path === null ?
             "" :
             <MovieMainPoster
-              movieBackgroundPosterW1280={`https://image.tmdb.org/t/p/original/${movieTailAPI.data.backdrop_path}`}
+              movieBackgroundPosterW1280={`https://image.tmdb.org/t/p/original/${movieDetails.backdrop_path}`}
               movieTitle={movieDetails.title}
               movieRating={parseFloat(movieDetails.vote_average).toFixed(2)}
               votesNumber={movieDetails.vote_count}
@@ -47,9 +36,9 @@ const MovieDetails = () => {
             />
           }
           <MovieTail
-            movieTilePoster={`https://image.tmdb.org/t/p/w1280/${movieTailAPI.data.poster_path}`}
+            movieTilePoster={`https://image.tmdb.org/t/p/w1280/${movieDetails.poster_path}`}
             movieTitle={movieDetails.title}
-            movieYear={movieDetails.release_date.toString().slice(0, 4)}
+            movieYear={movieDetails.release_date}
             countryProductionArray={movieDetails.production_countries}
             releaseData={movieDetails.release_date}
             tagArray={movieDetails.genres}
@@ -59,20 +48,20 @@ const MovieDetails = () => {
             movieStory={movieDetails.overview}
           />
           <>
-            {((castArray !== undefined)
+            {((credits.cast !== undefined)
               ?
               <CastBox>
                 <Title>Cast</Title>
                 <TileBox>
-                  {(castArray.map(cast =>
+                  {credits.cast.map(cast =>
                     <Cast
-                      key={cast.id}
+                      key={cast.credits_id}
                       name={cast.name}
                       profile_path={cast.profile_path}
                       character={cast.character}
                       id={cast.id}
                     />
-                  ))}
+                  )}
                 </TileBox>
               </CastBox>
               :
@@ -80,12 +69,12 @@ const MovieDetails = () => {
             )}
           </>
           <>
-            {((crewArray !== undefined)
+            {((credits.crew !== undefined)
               ?
               <CastBox>
                 <Title>Crew</Title>
                 <TileBox>
-                  {(crewArray.map(crew =>
+                  {(credits.crew.map(crew =>
                     <Cast
                       key={crew.credit_id}
                       name={crew.name}
@@ -95,7 +84,6 @@ const MovieDetails = () => {
                     />
                   ))}
                 </TileBox>
-
               </CastBox>
               :
               ("")
