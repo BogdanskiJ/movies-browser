@@ -1,5 +1,5 @@
 # Movies Browser  <span align="center">
-  <img alt="Movies Browser" src="/public/movies.png" width="18%" />
+  <img alt="Movies Browser" src="/public/tmdb-long.svg" width="18%" />
 </span> ![The Movie Database](/public/tmdb-long.svg)
 
 Movie Browser is a database about movies and actors. It allows you to get information about any movie you want. 
