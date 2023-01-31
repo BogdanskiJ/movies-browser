@@ -1,4 +1,4 @@
-# Movies Browser  <span align="center">
+  <span align="center"> # Movies Browser
   <img alt="Movies Browser" src="/public/tmdb-long.svg" width="50%" />
 </span>
 
