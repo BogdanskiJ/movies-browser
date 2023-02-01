@@ -9,6 +9,7 @@ import { LoadingPage } from "../../../common/LoadingPage";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { useQueryParameter } from "../../../queryParameters";
 import searchQueryParamName from "../../../searchQueryParamName";
+import NoResultPage from "../../../common/NoResultPage";
 
 export const People = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -34,7 +35,8 @@ export const People = () => {
                 <MainWrapper>
                   <Info>
                     {!query ? "Popular people"
-                      : `Search for "${query}" (${totalResults})`}
+                      : totalResults === 0 ? <NoResultPage />
+                        : `Search results for "${query}" (${totalResults})`}
                   </Info>
                   <TileWrapper>
                     {people.map((actor) => (
