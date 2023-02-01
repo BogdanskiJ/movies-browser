@@ -9,8 +9,9 @@ export const ErrorPage = () => (
         <Error>Ooops! Something went wrong...</Error>
         <Info>Please check your network connection <br /> and try again</Info>
         <Container>
-            <Button>Back to home page</Button>
+            <a href="https://www.google.pl">
+                <Button>Back to home page</Button>
+            </a>
         </Container>
-
     </>
 );

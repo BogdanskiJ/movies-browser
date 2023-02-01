@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 export const PaginationBox = styled.div`
@@ -14,7 +15,8 @@ export const PaginationBox = styled.div`
     };
 `;
 
-export const PaginationLeftButton = styled.button`
+export const PaginationLeftButton = styled(NavLink)`
+    text-decoration:none;
     align-items: center;
     display:flex;
     padding: 8px 16px;
@@ -25,19 +27,24 @@ export const PaginationLeftButton = styled.button`
     border-radius: 5px;
     border-color:none;
     border-style:none;
-    background: ${({ theme }) => theme.color.mystic};
-    color: ${({ theme }) => theme.color.woodsmoke};
-
+    background: ${({ theme }) => theme.color.pattensBlue};
+    color: ${({ theme }) => theme.color.woodSmoke};
+    cursor: pointer;
     @media (max-width: 756px) {
         padding: 7.5px 12px;
     };
     
     ${({ disabled }) => disabled && css`
-    button:disabled,
+        {
+            background: ${({ theme }) => theme.color.mystic};
+            pointer-events: none;
+            cursor: default;
+        }
     `} 
 `;
 
-export const PaginationLeftButtonPreviousPage = styled.button`
+export const PaginationLeftButtonPreviousPage = styled(NavLink)`
+    text-decoration:none;
     align-items: center;
     display:flex;
     padding: 8px 16px;
@@ -48,16 +55,24 @@ export const PaginationLeftButtonPreviousPage = styled.button`
     border-radius: 5px;
     border-color:none;
     border-style:none;
-    background: ${({ theme }) => theme.color.mystic};
-    color: ${({ theme }) => theme.color.woodsmoke};
-
+    background: ${({ theme }) => theme.color.pattensBlue};
+    color: ${({ theme }) => theme.color.woodSmoke};
+    cursor: pointer;
     @media (max-width: 756px) {
         display:none
     };
 
+    ${({ disabled }) => disabled && css`
+        {
+            background: ${({ theme }) => theme.color.mystic};
+            pointer-events: none;
+            cursor: default;
+        }
+    `} 
 `;
 
-export const PaginationLeftButtonMin = styled.button`
+export const PaginationLeftButtonMin = styled(NavLink)`
+    text-decoration:none;
     align-items: center;
     display:flex;
     padding: 8px 16px;
@@ -68,18 +83,26 @@ export const PaginationLeftButtonMin = styled.button`
     border-radius: 5px;
     border-color:none;
     border-style:none;
-    background: ${({ theme }) => theme.color.mystic};
-    color: ${({ theme }) => theme.color.woodsmoke};
-
+    background: ${({ theme }) => theme.color.pattensBlue};
+    color: ${({ theme }) => theme.color.woodSmoke};
+    cursor: pointer;
     @media (min-width: 756px) {
         display:none
     };
     @media (max-width: 756px) {
         padding: 7.5px 12px;
     };
+    ${({ disabled }) => disabled && css`
+        {
+            background: ${({ theme }) => theme.color.mystic};
+            pointer-events: none;
+            cursor: default;
+        }
+    `} 
 `;
 
-export const PaginationRightButton = styled.button`
+export const PaginationRightButton = styled(NavLink)`
+    text-decoration:none;
     align-items: center;
     display: flex;
     padding: 8px 16px;
@@ -91,16 +114,21 @@ export const PaginationRightButton = styled.button`
     border-color:none;
     border-style:none;
     background: ${({ theme }) => theme.color.pattensBlue};
-    color: ${({ theme }) => theme.color.woodsmoke};
-
+    color: ${({ theme }) => theme.color.woodSmoke};
+    cursor: pointer;
     @media (max-width: 756px) {
         padding: 7.5px 12px;
     }; 
 
     ${({ disabled }) => disabled && css`
-    button:disabled,
+        {
+            background: ${({ theme }) => theme.color.mystic};
+            pointer-events: none;
+            cursor: default;
+        }
     `} 
 `;
+
 
 export const PaginationButtonText = styled.div`
     @media (max-width: 756px) {
@@ -108,7 +136,8 @@ export const PaginationButtonText = styled.div`
     }; 
 `;
 
-export const PaginationRightButtonMax = styled.button`
+export const PaginationRightButtonMax = styled(NavLink)`
+    text-decoration:none;
     align-items: center;
     display: flex;
     padding: 8px 16px;
@@ -120,17 +149,25 @@ export const PaginationRightButtonMax = styled.button`
     border-color:none;
     border-style:none;
     background: ${({ theme }) => theme.color.pattensBlue};
-    color: ${({ theme }) => theme.color.woodsmoke};
-
+    color: ${({ theme }) => theme.color.woodSmoke};
+    cursor: pointer;
     @media (min-width: 756px) {
         display:none
     }; 
     @media (max-width: 756px) {
         padding: 7.5px 12px;
     }; 
+    ${({ disabled }) => disabled && css`
+        {
+            background: ${({ theme }) => theme.color.mystic};
+            pointer-events: none;
+            cursor: default;
+        }
+    `} 
 `;
 
-export const PaginationRightButtonNextPage = styled.button`
+export const PaginationRightButtonNextPage = styled(NavLink)`
+    text-decoration:none;
     align-items: center;
     display: flex;
     padding: 8px 16px;
@@ -142,9 +179,16 @@ export const PaginationRightButtonNextPage = styled.button`
     border-color:none;
     border-style:none;
     background: ${({ theme }) => theme.color.pattensBlue};
-    color: ${({ theme }) => theme.color.woodsmoke};
-
+    color: ${({ theme }) => theme.color.woodSmoke};
+    cursor: pointer;
     @media (max-width: 756px) {
         display:none
     }; 
+    ${({ disabled }) => disabled && css`
+        {
+            background: ${({ theme }) => theme.color.mystic};
+            pointer-events: none;
+            cursor: default;
+        }
+    `} 
 `;
