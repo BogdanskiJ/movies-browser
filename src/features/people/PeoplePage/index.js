@@ -20,9 +20,9 @@ export const People = () => {
   const totalResults = useSelector(selectPeopleTotalResults);
 
   useEffect(() => {
+    dispatch(getQuery(query))
     dispatch(fetchPeopleList());
-    dispatch(getQuery(query));
-  }, [])
+  }, [query, dispatch])
 
   return (
     <>
