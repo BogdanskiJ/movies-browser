@@ -1,7 +1,8 @@
-export const getPeopleList = async () => {
 
+
+export const getDetails = async () => {
   const response = await fetch(
-    `https://api.themoviedb.org/3/person/popular?api_key=9515ffc857c67f1558538dad140abb29&language=en-US&page=1`
+    `https://api.themoviedb.org/3/person/3?api_key=9515ffc857c67f1558538dad140abb29&language=en-US`
   );
   const data = await response.json();
 
