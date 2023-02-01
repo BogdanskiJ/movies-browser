@@ -16,9 +16,9 @@ const MovieDetails = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    dispatch(fetchMovieDetails());
     dispatch(setMovieId(id));
-  }, [dispatch, id]);
+    dispatch(fetchMovieDetails());
+  }, [id, dispatch]);
 
   return (
     (movieDetails !== undefined)
