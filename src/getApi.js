@@ -1,14 +1,13 @@
 import { keyAPI, languageAPI, movieDetailApiLink, movieListPopularApiLink } from "./apiSet";
-import { setCurrentPage } from "./features/movieList/movieListSlice";
 
 const searchMovies = `https://api.themoviedb.org/3/search/movie?${keyAPI}&language=en-US&page=1&include_adult=false`;
 
 const searchPeople = `https://api.themoviedb.org/3/search/person?${keyAPI}=en-US&page=1&include_adult=false`;
 
 
-export const getMovieList = async () => {
+export const getMovieList = async (page) => {
     try {
-        const response = await fetch(`${movieListPopularApiLink}${keyAPI}${languageAPI}&page=${setCurrentPage}`);
+        const response = await fetch(`${movieListPopularApiLink}${keyAPI}${languageAPI}&page=${page}`);
 
         if (!response.ok) {
             throw new Error(response.statusText);

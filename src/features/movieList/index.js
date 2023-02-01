@@ -3,26 +3,29 @@ import { useDispatch, useSelector } from "react-redux";
 import Pagination from "./pagination/index";
 import { theme } from "../../theme";
 import Movie from "./Movie";
-import { fetchGenresList, fetchMovieList, selectGenresList, selectMovieList, selectMovieListStatus, setCurrentPageAPI } from "./movieListSlice";
+import { fetchGenresList, fetchMovieList, selectGenresList, selectMovieList, selectMovieListStatus, setPage } from "./movieListSlice";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
+import { useParams } from "react-router-dom";
 
 const MovieList = ({ }) => {
   const dispatch = useDispatch();
   const movies = useSelector(selectMovieList);
   const genres = useSelector(selectGenresList);
   const status = useSelector(selectMovieListStatus);
+  const { page } = useParams();
 
   useEffect(() => {
-    dispatch(fetchMovieList());
+    dispatch(setPage(page));
+    dispatch(fetchMovieList(page));
     dispatch(fetchGenresList());
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: 'smooth'
     });
-  }, [dispatch]);
+  }, [page, dispatch]);
 
   return (
     <>
