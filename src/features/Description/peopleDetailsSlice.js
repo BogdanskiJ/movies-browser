@@ -13,7 +13,7 @@ const peopleDetailsSlice = createSlice({
   },
 });
 
-export const { fetchPeopleDetails, setPeopleDetails } =
+export const { fetchPeopleDetails, setPeopleDetails, setHide } =
   peopleDetailsSlice.actions;
 export const selectPeopleDetailsState = (state) => state.peopleDetails;
 // export const getActorById = (state, actorId) => 

@@ -15,9 +15,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchPeopleDetails,
   selectPeopleDetailsState,
-  shortenText,
 } from "./peopleDetailsSlice";
-import ScriptBox from "./ScriptBox";
+
 
 export const Descritpion = () => {
   const [ReadMore, setReadMore] = useState(false);
@@ -31,7 +30,7 @@ export const Descritpion = () => {
 
   const { details  } = useSelector(selectPeopleDetailsState);
 
-  const biographyText = details.biography ? details.biography.substring(0,800) : "";
+  const biographyText = details.biography ? details.biography.substring(0,1100) : "";
 
   useEffect(() => {
     dispatch(fetchPeopleDetails());
