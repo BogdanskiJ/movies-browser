@@ -27,7 +27,7 @@ export const People = () => {
 
   return (
     <>
-      {loadingStatus === true ? <LoadingPage title={"Search results for 'Popular People'"} />
+      {loadingStatus === true ? <LoadingPage title={"Search results for \"Popular People\""} />
         : loadingStatus === false && people === null ? <ErrorPage />
           : (
             <>
@@ -43,7 +43,7 @@ export const People = () => {
                       <PeopleTile name={actor.name} key={actor.id} {...actor} />
                     ))}
                   </TileWrapper>
-                  <Pagination currentPage={currentPage} />
+                  {/* <Pagination currentPage={currentPage} /> */}
                 </MainWrapper>
               </Background>
             </>

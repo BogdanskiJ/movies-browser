@@ -15,7 +15,10 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchPeopleDetails,
   selectPeopleDetailsState,
+  selectPeopleDetailsStatus,
 } from "./peopleDetailsSlice";
+import { LoadingPage } from "../../common/LoadingPage";
+import { ErrorPage } from "../../common/ErrorPage";
 
 
 export const Descritpion = () => {
@@ -28,9 +31,10 @@ export const Descritpion = () => {
 
   const url_img = "https://image.tmdb.org/t/p/w500";
 
-  const { details  } = useSelector(selectPeopleDetailsState);
+  const { details } = useSelector(selectPeopleDetailsState);
+  const status = useSelector(selectPeopleDetailsStatus);
 
-  const biographyText = details.biography ? details.biography.substring(0,1100) : "";
+  const biographyText = details.biography ? details.biography.substring(0, 1100) : "";
 
   useEffect(() => {
     dispatch(fetchPeopleDetails());
@@ -38,27 +42,31 @@ export const Descritpion = () => {
 
   return (
     <>
-      <Background>
-        <Wrapper>
-          <Tile>
-            <Photo src={url_img + details.profile_path}></Photo>
-            <Info>
-              <Name>{details.name}</Name>
-              <Information
-                birthday={details.birthday}
-                place_of_birth={details.place_of_birth}
-              />
+      {status === "loading" ? <LoadingPage title={"Search results for \"People Details\""} />
+        : status === "error" ? <ErrorPage />
+          : (
+            <Background>
+              <Wrapper>
+                <Tile>
+                  <Photo src={url_img + details.profile_path}></Photo>
+                  <Info>
+                    <Name>{details.name}</Name>
+                    <Information
+                      birthday={details.birthday}
+                      place_of_birth={details.place_of_birth}
+                    />
 
-              <Script>{ReadMore ? details.biography : biographyText+"..."}</Script>
-              <ReadMoreButton onClick={toggleButton}>
-                {" "}
-                {ReadMore ? "...read less" : "read more"}{" "}
-              </ReadMoreButton>
-            </Info>
-          </Tile>
-          <Projects />
-        </Wrapper>
-      </Background>
+                    <Script>{ReadMore ? details.biography : biographyText + "..."}</Script>
+                    <ReadMoreButton onClick={toggleButton}>
+                      {" "}
+                      {ReadMore ? "...read less" : "read more"}{" "}
+                    </ReadMoreButton>
+                  </Info>
+                </Tile>
+                <Projects />
+              </Wrapper>
+            </Background>
+          )}
     </>
   );
 };
