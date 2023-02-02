@@ -13,7 +13,7 @@ export default function* rootSaga() {
         watchFetchPeopleList(),
         watchPeopleDetails(),
         watchFetchProjects(),
-        watchFetchGenres()
+        watchFetchGenres(),
          movieListSaga(),
         movieDetailsSaga(),
     ])

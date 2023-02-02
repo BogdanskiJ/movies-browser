@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Pagination from "../../../common/pagination";
 import { PeopleTile } from "../PeopleTile";
-import { Background, Info, MainWrapper, TileWrapper } from "./styled";
+import { Background, Info, MainWrapper, TileWrapper, Box } from "./styled";
 import { useSelector } from "react-redux";
 import { fetchPeopleList, selectLoadingStatus, selectPeopleListState } from "./peopleListSlice";
 import { useDispatch } from "react-redux";
@@ -27,15 +27,20 @@ export const People = () => {
           : (
             <>
               <Background>
-                <MainWrapper>
+              
+               <MainWrapper>
                   <Info>Popular people</Info>
+                  {/* <Box> */}
                   <TileWrapper>
                     {people.map((actor) => (
                       <PeopleTile name={actor.name} key={actor.id} {...actor} />
                     ))}
                   </TileWrapper>
-                  <Pagination currentPage={currentPage} />
+                  {/* </Box> */}
+                  {/* <Pagination currentPage={currentPage} /> */}
+                 
                 </MainWrapper>
+              
               </Background>
             </>
           )}
