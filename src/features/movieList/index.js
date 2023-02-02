@@ -35,7 +35,7 @@ const MovieList = ({ }) => {
 
   return (
     <>
-      {status === "loading" ? <LoadingPage title={"Search results for 'Popular Movies'"} />
+      {status === "loading" ? <LoadingPage title={"Search results for \"Popular Movies\""} />
         : status === "error" ? <ErrorPage />
           : (
             <MovieListPage theme={theme}>
