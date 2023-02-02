@@ -22,12 +22,14 @@ const movieDetailsSlice = createSlice({
         setMovieId: (state, { payload: id }) => {
             state.movieId = id;
         },
-        fetchCredits: () => {},
+        fetchCredits: (state) => {
+            state.status = "loading";
+        },
         fetchCreditsSuccess: (state, {payload: credits}) => {
             state.credits = credits;
         },
         fetchCreditsError: (state) => {
-            state.credits = null;
+            state.status = "error";
         },
     },
 });

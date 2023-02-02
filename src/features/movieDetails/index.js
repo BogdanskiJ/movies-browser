@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { CastBox, Title } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovieDetails, selectCredits, selectMovieDetails, setMovieId } from "./movieDetailsSlice";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
@@ -16,9 +16,9 @@ const MovieDetails = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    dispatch(fetchMovieDetails());
     dispatch(setMovieId(id));
-  }, [dispatch, id]);
+    dispatch(fetchMovieDetails());
+  }, [id, dispatch]);
 
   return (
     (movieDetails !== undefined)
