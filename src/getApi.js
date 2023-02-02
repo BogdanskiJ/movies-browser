@@ -79,3 +79,24 @@ export const searchMovies = async (query) => {
         console.log(error);
     };
 };
+
+export const searchPeople = async (query) => {
+
+    if (!query) {
+        return;
+    };
+
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/search/person?${keyAPI}&language=en-US&query=${query}&page=1`);
+
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        };
+
+        return await response.json();
+
+    } catch (error) {
+        console.log(error);
+    };
+};
+
