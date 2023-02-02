@@ -6,7 +6,6 @@ export const Tile = styled.div`
   padding: 16px;
   padding-bottom: 26px;
   gap: 12px;
-  width: 208px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +15,6 @@ export const Tile = styled.div`
   filter: drop-shadow(0px 4px 12px rgba(186, 199, 213, 0.5));
 
   @media (max-width: 767px) {
-    width: 154px;
     border-radius: 5px;
     margin: 0;
     padding: 8px;
