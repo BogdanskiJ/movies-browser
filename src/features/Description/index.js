@@ -16,9 +16,11 @@ import {
   fetchPeopleDetails,
   selectPeopleDetailsState,
   selectPeopleDetailsStatus,
+  setPeopleId,
 } from "./peopleDetailsSlice";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
+import { useParams } from "react-router-dom";
 
 
 export const Descritpion = () => {
@@ -33,12 +35,14 @@ export const Descritpion = () => {
 
   const { details } = useSelector(selectPeopleDetailsState);
   const status = useSelector(selectPeopleDetailsStatus);
+  const { id } = useParams();
 
   const biographyText = details.biography ? details.biography.substring(0, 1100) : "";
 
   useEffect(() => {
+    dispatch(setPeopleId(id));
     dispatch(fetchPeopleDetails());
-  }, []);
+  }, [id, dispatch]);
 
   return (
     <>
