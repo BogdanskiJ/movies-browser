@@ -1,20 +1,21 @@
-import { call, delay, put, takeEvery } from "redux-saga/effects";
+import { call, delay, put, select, takeEvery } from "redux-saga/effects";
+import { searchPeople } from "../../../getApi";
 import { getPeopleList } from "./getPeopleList";
-import { fetchPeopleList, setPeopleList, setPeopleListError, setPeopleListSucces } from "./peopleListSlice";
+import { fetchPeopleList, selectPeopleQuery, setPeopleListError, setPeopleListSucces } from "./peopleListSlice";
 
 function* fetchPeopleListHandler() {
   try {
+    const query = yield select(selectPeopleQuery);
     yield delay(500);
-    const peopleList = yield call(getPeopleList);
-    yield put(setPeopleListSucces(peopleList.results));
+    const people = yield !query ? call(getPeopleList) : call(searchPeople, query);
+    yield put(setPeopleListSucces(people));
   } catch (error) {
     yield put(setPeopleListError());
-    yield call(alert, "Something went wrong...");
-  }
-}
+  };
+};
 
 export function* watchFetchPeopleList() {
   yield takeEvery(fetchPeopleList.type, fetchPeopleListHandler);
-}
+};
 
 

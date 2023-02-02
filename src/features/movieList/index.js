@@ -3,11 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import Pagination from "./pagination/index";
 import { theme } from "../../theme";
 import Movie from "./Movie";
-import { fetchGenresList, fetchMovieList, selectGenresList, selectMovieList, selectMovieListStatus, setPage } from "./movieListSlice";
+
+import { fetchGenresList, fetchMovieList, selectGenresList, selectMovieList, selectMovieListStatus, setPage, getQuery, selectMovieTotalResults, setCurrentPageAP } from "./movieListSlice";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 import { useParams } from "react-router-dom";
+import { useQueryParameter } from "../../queryParameters";
+import searchQueryParamName from "../../searchQueryParamName";
+import NoResultPage from "../../common/NoResultPage";
 
 const MovieList = ({ }) => {
   const dispatch = useDispatch();
@@ -29,13 +33,15 @@ const MovieList = ({ }) => {
 
   return (
     <>
-      {status === "loading" ? <LoadingPage title={"Loading..."} />
+      {status === "loading" ? <LoadingPage title={"Search results for 'Popular Movies'"} />
         : status === "error" ? <ErrorPage />
           : (
             <MovieListPage theme={theme}>
               <PopularMoviesBox>
                 <PopularMoviesName>
-                  Popular Movies
+                  {!query ? "Popular Movies"
+                    : totalResults === 0 ? <NoResultPage />
+                      : `Search results for "${query}" (${totalResults})`}
                 </PopularMoviesName>
                 <MoviesList>
                   {(movies.map(movie => <Movie

@@ -1,4 +1,4 @@
-# Movies Browser [![The Movie Database](/public/tmdb-long.svg)]
+ # Movies Browser <img alt="Movies Browser" src="/public/tmdb-long.svg" width="50%" />
 
 Movie Browser is a database about movies and actors. It allows you to get information about any movie you want. 
 
@@ -8,7 +8,7 @@ Movie Browser is a database about movies and actors. It allows you to get inform
 
 ## Table of content
 
-* [Movies Browser - Demo](#Movies-Browser-Demo)
+* [Movies Browser Demo](#Movies-Browser-Demo)
 * [General Info](#General-Info)
 * [How it works](#How-it-works)
 * [Technologies](#Technologies)
@@ -16,7 +16,7 @@ Movie Browser is a database about movies and actors. It allows you to get inform
 * [Available Scripts](#Available-Scripts)
 * [The Movie Database License](#The-Movie-Database-License)
 
-## Movies Browser - Demo
+## Movies Browser Demo
 
 [Movies Browser](https://kubabogd.github.io/movies-browser/)
 
@@ -41,7 +41,7 @@ The movie browser is a project created to allow you to browse the currently popu
 ## Developers
 
 This project exist thanks to this people.  
-[Developers](#https://github.com/Kubabogd/movies-browser/graphs/contributors)
+[Developers](https://github.com/Kubabogd/movies-browser/graphs/contributors)
 
 ## Available Scripts
 
