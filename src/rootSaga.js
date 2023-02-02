@@ -1,5 +1,5 @@
 
-import {all} from "redux-saga/effects"
+import { all } from "redux-saga/effects"
 import { watchPeopleDetails } from "./features/Description/peopleDetailsSaga"
 import { watchFetchGenres, watchFetchProjects } from "./features/Description/Projects/projectsSaga"
 
@@ -13,8 +13,8 @@ export default function* rootSaga() {
         watchFetchPeopleList(),
         watchPeopleDetails(),
         watchFetchProjects(),
-        watchFetchGenres()
-         movieListSaga(),
+        watchFetchGenres(),
+        movieListSaga(),
         movieDetailsSaga(),
     ])
 }
