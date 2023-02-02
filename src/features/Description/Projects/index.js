@@ -2,16 +2,19 @@ import MovieDetailTile from "../MovieDetailTile";
 import { TileWrapper, Title, Wrapper } from "./styled";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchGenres, fetchProjects, selectProjectsState } from "./projectsSlice";
+import { fetchGenres, fetchProjects, selectProjectsState, setProjectsId } from "./projectsSlice";
+import { useParams } from "react-router-dom";
 
 export const Projects = () => {
   const { crew, cast } = useSelector(selectProjectsState);
   const dispatch = useDispatch();
+  const {id} = useParams();
 
   useEffect(() => {
+    dispatch(setProjectsId(id));
     dispatch(fetchProjects());
     dispatch(fetchGenres())
-  }, []);
+  }, [id, dispatch]);
 
   return (
     <>
