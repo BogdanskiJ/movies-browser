@@ -1,13 +1,13 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import { getDetails } from "./getDetails";
-import { fetchPeopleDetails, setPeopleDetails } from "./peopleDetailsSlice";
+import { fetchPeopleDetails, fetchPeopleDetailsError, setPeopleDetails } from "./peopleDetailsSlice";
 
 function* fetchPeopleDetailsHandler() {
   try {
     const peopleDetails = yield call(getDetails);
     yield put(setPeopleDetails(peopleDetails));
   } catch (error) {
-    yield call(alert, "cos poszlo nie tak");
+    yield put(fetchPeopleDetailsError());
   }
 }
 
