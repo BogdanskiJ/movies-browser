@@ -21,24 +21,20 @@ export const Navigation = () => {
             <StyledNavigation>
                 <Container>
                     <NavigationWrapper>
-                        <Logo>
+                        <Logo to="/popular-movies">
                             <Icon src={iconNavigation} alt="" />
                             <Name>
                                 Movies Browser
                             </Name>
                         </Logo>
                         <Subpages>
-                            <li>
-                                <StyledNavLink to="/popular-movies">Movies</StyledNavLink>
-                            </li>
-                            <li>
-                                <StyledNavLink to="/people">People</StyledNavLink>
-                            </li>
+                            <StyledNavLink to="/popular-movies">Movies</StyledNavLink>
+                            <StyledNavLink to="/people">People</StyledNavLink>
                         </Subpages>
                     </NavigationWrapper>
                     <Search>
                         <Input
-                            placeholder={`Search for ${location.pathname === "/popular-movies" ?
+                            placeholder={`Search for ${(location.pathname).slice(0, 15) === "/popular-movies" ?
                                 "movies..." : "people..."}
                             `}
                             value={query || ""}
