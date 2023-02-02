@@ -40,7 +40,7 @@ export const People = () => {
                   </Info>
                   <TileWrapper>
                     {people.map((actor) => (
-                      <PeopleTile name={actor.name} key={actor.id} {...actor} />
+                      <PeopleTile name={actor.name} key={actor.id} {...actor} id={actor.id} />
                     ))}
                   </TileWrapper>
                   <Pagination currentPage={currentPage} />
