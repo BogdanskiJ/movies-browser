@@ -25,11 +25,18 @@ const movieDetailsSlice = createSlice({
         fetchCredits: (state) => {
             state.status = "loading";
         },
-        fetchCreditsSuccess: (state, {payload: credits}) => {
+        fetchCreditsSuccess: (state, { payload: credits }) => {
             state.credits = credits;
         },
         fetchCreditsError: (state) => {
             state.status = "error";
+        },
+        goOnTop: () => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
         },
     },
 });
@@ -42,6 +49,7 @@ export const {
     fetchCredits,
     fetchCreditsSuccess,
     fetchCreditsError,
+    goOnTop,
 } = movieDetailsSlice.actions;
 
 export const selectMovieDetailsState = state => state.movieDetails;

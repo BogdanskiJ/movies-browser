@@ -6,21 +6,23 @@ import { MovieDetailsPage, TileBox } from "./styled";
 import { useEffect } from "react";
 import { CastBox, Title } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMovieDetails, selectCredits, selectMovieDetails, selectMovieDetailStatus, setMovieId } from "./movieDetailsSlice";
+import { fetchMovieDetails, goOnTop, selectCredits, selectMovieDetails, selectMovieDetailStatus, setMovieId } from "./movieDetailsSlice";
 import { useParams } from "react-router-dom";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
+import { nanoid } from "@reduxjs/toolkit";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
   const movieDetails = useSelector(selectMovieDetails);
   const credits = useSelector(selectCredits);
-  const { id } = useParams();
   const status = useSelector(selectMovieDetailStatus);
+  const { id } = useParams();
 
   useEffect(() => {
     dispatch(setMovieId(id));
     dispatch(fetchMovieDetails());
+    dispatch(goOnTop())
   }, [id, dispatch]);
 
   return (
@@ -45,7 +47,7 @@ const MovieDetails = () => {
                   <MovieTail
                     movieTilePoster={`https://image.tmdb.org/t/p/w1280/${movieDetails.poster_path}`}
                     movieTitle={movieDetails.title}
-                    movieYear={movieDetails.release_date}
+                    movieYear={movieDetails.release_date.slice(0, 4)}
                     countryProductionArray={movieDetails.production_countries}
                     releaseData={movieDetails.release_date}
                     tagArray={movieDetails.genres}
@@ -62,7 +64,7 @@ const MovieDetails = () => {
                         <TileBox>
                           {credits.cast.map(cast =>
                             <Cast
-                              key={cast.credits_id}
+                              key={nanoid()}
                               name={cast.name}
                               profile_path={cast.profile_path}
                               character={cast.character}
@@ -83,7 +85,7 @@ const MovieDetails = () => {
                         <TileBox>
                           {(credits.crew.map(crew =>
                             <Cast
-                              key={crew.credit_id}
+                              key={nanoid()}
                               name={crew.name}
                               profile_path={crew.profile_path}
                               character={crew.department}
