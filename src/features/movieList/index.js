@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import Pagination from "./pagination/index";
 import { theme } from "../../theme";
 import Movie from "./Movie";
-import { fetchGenresList, fetchMovieList, getQuery, selectGenresList, selectMovieList, selectMovieListStatus, selectMovieTotalResults, setCurrentPageAPI } from "./movieListSlice";
+
+import { fetchGenresList, fetchMovieList, selectGenresList, selectMovieList, selectMovieListStatus, setPage, getQuery, selectMovieTotalResults, setCurrentPageAP } from "./movieListSlice";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
+import { useParams } from "react-router-dom";
 import { useQueryParameter } from "../../queryParameters";
 import searchQueryParamName from "../../searchQueryParamName";
 import NoResultPage from "../../common/NoResultPage";
@@ -16,19 +18,18 @@ const MovieList = ({ }) => {
   const movies = useSelector(selectMovieList);
   const genres = useSelector(selectGenresList);
   const status = useSelector(selectMovieListStatus);
-  const query = useQueryParameter(searchQueryParamName);
-  const totalResults = useSelector(selectMovieTotalResults);
+  const { page } = useParams();
 
   useEffect(() => {
-    dispatch(getQuery(query));
-    dispatch(fetchMovieList());
+    dispatch(setPage(page));
+    dispatch(fetchMovieList(page));
     dispatch(fetchGenresList());
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: 'smooth'
     });
-  }, [query, dispatch]);
+  }, [page, dispatch]);
 
   return (
     <>
