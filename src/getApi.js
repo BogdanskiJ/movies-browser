@@ -1,14 +1,9 @@
 import { keyAPI, languageAPI, movieDetailApiLink, movieListPopularApiLink } from "./apiSet";
-import { setCurrentPage } from "./features/movieList/movieListSlice";
 
-const searchMovies = `https://api.themoviedb.org/3/search/movie?${keyAPI}&language=en-US&page=1&include_adult=false`;
+export const getMovieList = async (page) => {
 
-const searchPeople = `https://api.themoviedb.org/3/search/person?${keyAPI}=en-US&page=1&include_adult=false`;
-
-
-export const getMovieList = async () => {
     try {
-        const response = await fetch(`${movieListPopularApiLink}${keyAPI}${languageAPI}&page=${setCurrentPage}`);
+        const response = await fetch(`${movieListPopularApiLink}${keyAPI}${languageAPI}&page=${page}`);
 
         if (!response.ok) {
             throw new Error(response.statusText);
@@ -65,3 +60,43 @@ export const getCredits = async (id) => {
         console.log(error);
     };
 };
+
+export const searchMovies = async (query) => {
+    if (!query) {
+        return;
+    };
+
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/search/movie?${keyAPI}${languageAPI}&query=${query}&page=1`);
+
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        };
+
+        return await response.json();
+
+    } catch (error) {
+        console.log(error);
+    };
+};
+
+export const searchPeople = async (query) => {
+
+    if (!query) {
+        return;
+    };
+
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/search/person?${keyAPI}&language=en-US&query=${query}&page=1`);
+
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        };
+
+        return await response.json();
+
+    } catch (error) {
+        console.log(error);
+    };
+};
+

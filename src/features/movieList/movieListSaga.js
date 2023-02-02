@@ -1,23 +1,25 @@
-import { call, delay, put, takeLatest } from "@redux-saga/core/effects";
-import { getGenres, getMovieList } from "../../getApi";
-import { fetchGenresList, fetchGenresListError, fetchGenresListSuccess, fetchMovieList, fetchMovieListError, fetchMovieListSuccess } from "./movieListSlice";
-
+import { call, delay, put, select, takeLatest } from "redux-saga/effects";
+import { selectPage, fetchGenresList, fetchGenresListError, fetchGenresListSuccess, fetchMovieList, fetchMovieListError, fetchMovieListSuccess, selectMovieQuery } from "./movieListSlice";
+import { getGenres, getMovieList, searchMovies } from "../../getApi";
 
 function* fetchMovieListHandler() {
     try {
+        const page = yield select(selectPage);
         yield delay(500);
-        const movies = yield call(getMovieList);
+        const movies = yield call(getMovieList, page);
+        const query = yield select(selectMovieQuery);
         yield put(fetchMovieListSuccess(movies));
     } catch (error) {
         yield put(fetchMovieListError());
     };
 };
 
+
 function* fetchGenresListHandler() {
-    try{
+    try {
         const genres = yield call(getGenres);
         yield put(fetchGenresListSuccess(genres.genres));
-    }catch (error) {
+    } catch (error) {
         yield put(fetchGenresListError());
     };
 };
