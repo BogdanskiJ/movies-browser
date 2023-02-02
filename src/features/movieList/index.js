@@ -53,7 +53,7 @@ const MovieList = ({ }) => {
                     movieRating={movie.vote_average}
                     votesNumber={movie.vote_count}
                     movieTagArray={movie.genre_ids}
-                    movieYear={movie.release_date}
+                    movieYear={movie.release_date.slice(0, 4)}
                     moviePosterApiLink={movie.poster_path}
                     id={movie.id}
                   >
