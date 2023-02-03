@@ -7,6 +7,7 @@ import {
   Script,
   Background,
   ReadMoreButton,
+  BigBox,
 } from "./styled";
 import Information from "./PersonalInfo";
 import { useEffect, useState } from "react";
@@ -19,7 +20,6 @@ import {
 } from "./peopleDetailsSlice";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
-
 
 export const Descritpion = () => {
   const [ReadMore, setReadMore] = useState(false);
@@ -34,7 +34,9 @@ export const Descritpion = () => {
   const { details } = useSelector(selectPeopleDetailsState);
   const status = useSelector(selectPeopleDetailsStatus);
 
-  const biographyText = details.biography ? details.biography.substring(0, 1100) : "";
+  const biographyText = details.biography
+    ? details.biography.substring(0, 1100)
+    : "";
 
   useEffect(() => {
     dispatch(fetchPeopleDetails());
@@ -42,31 +44,36 @@ export const Descritpion = () => {
 
   return (
     <>
-      {status === "loading" ? <LoadingPage title={"Search results for \"People Details\""} />
-        : status === "error" ? <ErrorPage />
-          : (
-            <Background>
-              <Wrapper>
-                <Tile>
-                  <Photo src={url_img + details.profile_path}></Photo>
-                  <Info>
-                    <Name>{details.name}</Name>
-                    <Information
-                      birthday={details.birthday}
-                      place_of_birth={details.place_of_birth}
-                    />
-
-                    <Script>{ReadMore ? details.biography : biographyText + "..."}</Script>
-                    <ReadMoreButton onClick={toggleButton}>
-                      {" "}
-                      {ReadMore ? "...read less" : "read more"}{" "}
-                    </ReadMoreButton>
-                  </Info>
-                </Tile>
-                <Projects />
-              </Wrapper>
-            </Background>
-          )}
+      {status === "loading" ? (
+        <LoadingPage title={'Search results for "People Details"'} />
+      ) : status === "error" ? (
+        <ErrorPage />
+      ) : (
+        <Background>
+          <Wrapper>
+            <Tile>
+              <Photo src={url_img + details.profile_path}></Photo>
+              {/* <BigBox> */}
+                <Info>
+                  <Name>{details.name}</Name>
+                  <Information
+                    birthday={details.birthday}
+                    place_of_birth={details.place_of_birth}
+                  />
+                </Info>
+              {/* </BigBox> */}
+              <Script>
+                {ReadMore ? details.biography : biographyText + "..."}
+                <ReadMoreButton onClick={toggleButton}>
+                  {" "}
+                  {ReadMore ? "...read less" : "read more"}{" "}
+                </ReadMoreButton>
+              </Script>
+            </Tile>
+            <Projects />
+          </Wrapper>
+        </Background>
+      )}
     </>
   );
 };

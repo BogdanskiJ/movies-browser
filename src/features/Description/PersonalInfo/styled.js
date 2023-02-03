@@ -4,6 +4,10 @@ export const Info = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 24px;
+    @media (max-width: 767px) {
+        flex-direction: c;
+        flex-wrap: wrap;
+    }
 `;
 
 export const PersonalInfo = styled.span`
@@ -11,6 +15,9 @@ export const PersonalInfo = styled.span`
     font-size: 18px;
     color: #74788B;
     margin-bottom: 8px;
+    @media (max-width: 767px) {
+        font-size: 12px;
+    }
 `;
 
 export const Result = styled.span`
