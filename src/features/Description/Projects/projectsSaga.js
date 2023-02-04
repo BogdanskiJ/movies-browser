@@ -1,11 +1,12 @@
-import { call, put, takeEvery } from "redux-saga/effects";
+import { call, put, select, takeEvery } from "redux-saga/effects";
 import { getGenres } from "./getGenres";
 import { getProjects } from "./getProjects";
-import { fetchProjects, setCast, setCrew, fetchGenres, setGenres } from "./projectsSlice";
+import { fetchProjects, setCast, setCrew, fetchGenres, setGenres, selectProjectsId } from "./projectsSlice";
 
 function* fetchProjectsHandler() {
   try {
-    const projects = yield call(getProjects);
+    const id = yield select(selectProjectsId);
+    const projects = yield call(getProjects, id);
 
     yield put(setCast(projects.cast));
     yield put(setCrew(projects.crew));
