@@ -5,10 +5,8 @@ export const Background = styled.div`
 `;
 
 export const MainWrapper = styled.div`
-  width: 1368px;
+  max-width: 1368px;
   margin: auto;
-  /* display: grid; */
-
   padding-top: 56px;
   align-items: center;
   background-color: ${({ theme }) => theme.color.whisper};
@@ -35,6 +33,7 @@ export const Info = styled.h2`
 
 export const TileWrapper = styled.div`
   display: grid;
+  gap: 4px;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(4, 1fr);
 
