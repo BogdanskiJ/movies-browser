@@ -35,34 +35,35 @@ const MovieList = ({ }) => {
 
   return (
     <>
-      {status === "loading" ? <LoadingPage title={"Search results for \"Popular Movies\""} />
-        : status === "error" ? <ErrorPage />
-          : (
-            <MovieListPage theme={theme}>
-              <PopularMoviesBox>
-                <PopularMoviesName>
-                  {!query ? "Popular Movies"
-                    : totalResults === 0 ? <NoResultPage />
-                      : `Search results for "${query}" (${totalResults})`}
-                </PopularMoviesName>
-                <MoviesList>
-                  {(movies.map(movie => <Movie
-                    genres={genres}
-                    movieTitle={movie.title}
-                    key={movie.id}
-                    movieRating={movie.vote_average}
-                    votesNumber={movie.vote_count}
-                    movieTagArray={movie.genre_ids}
-                    movieYear={movie.release_date}
-                    moviePosterApiLink={movie.poster_path}
-                    id={movie.id}
-                  >
-                  </Movie>))}
-                </MoviesList>
-                <Pagination />
-              </PopularMoviesBox>
-            </MovieListPage>
-          )}
+      {status === "loading" && !query ? <LoadingPage title={"Search results for \"Popular Movies\""} />
+        : status === "loading" && query ? <LoadingPage title={`Search results for "${query}"`} />
+          : status === "error" ? <ErrorPage />
+            : (
+              <MovieListPage theme={theme}>
+                <PopularMoviesBox>
+                  <PopularMoviesName>
+                    {!query ? "Popular Movies"
+                      : totalResults === 0 ? <NoResultPage />
+                        : `Search results for "${query}" (${totalResults})`}
+                  </PopularMoviesName>
+                  <MoviesList>
+                    {(movies.map(movie => <Movie
+                      genres={genres}
+                      movieTitle={movie.title}
+                      key={movie.id}
+                      movieRating={movie.vote_average}
+                      votesNumber={movie.vote_count}
+                      movieTagArray={movie.genre_ids}
+                      movieYear={movie.release_date}
+                      moviePosterApiLink={movie.poster_path}
+                      id={movie.id}
+                    >
+                    </Movie>))}
+                  </MoviesList>
+                  <Pagination />
+                </PopularMoviesBox>
+              </MovieListPage>
+            )}
     </>
   );
 };

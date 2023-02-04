@@ -33,15 +33,18 @@ export const People = () => {
             <>
               <Background>
                 <MainWrapper>
-                  <Info>Popular people</Info>
+                  <Info>
+                    {!query ? "Popular people"
+                      : totalResults === 0 ? <NoResultPage />
+                        : `Search results for "${query}" (${totalResults})`}
+                  </Info>
                   <TileWrapper>
                     {people.map((actor) => (
                       <PeopleTile name={actor.name} key={actor.id} {...actor} />
                     ))}
                   </TileWrapper>
-                  <Pagination currentPage={currentPage} />
+                  {/* <Pagination currentPage={currentPage} /> */}
                 </MainWrapper>
-              
               </Background>
             </>
           )}
