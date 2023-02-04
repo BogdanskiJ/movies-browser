@@ -27,27 +27,28 @@ export const People = () => {
 
   return (
     <>
-      {loadingStatus === true ? <LoadingPage title={"Search results for \"Popular People\""} />
-        : loadingStatus === false && people === null ? <ErrorPage />
-          : (
-            <>
-              <Background>
-                <MainWrapper>
-                  <Info>
-                    {!query ? "Popular people"
-                      : totalResults === 0 ? <NoResultPage />
-                        : `Search results for "${query}" (${totalResults})`}
-                  </Info>
-                  <TileWrapper>
-                    {people.map((actor) => (
-                      <PeopleTile name={actor.name} key={actor.id} {...actor} id={actor.id} />
-                    ))}
-                  </TileWrapper>
-                  {/* <Pagination currentPage={currentPage} /> */}
-                </MainWrapper>
-              </Background>
-            </>
-          )}
+      {loadingStatus === true && !query ? <LoadingPage title={"Search results for \"Popular People\""} />
+        : loadingStatus === true && query ? <LoadingPage title={`Search results for "${query}"`} />
+          : loadingStatus === false && people === null ? <ErrorPage />
+            : (
+              <>
+                <Background>
+                  <MainWrapper>
+                    <Info>
+                      {!query ? "Popular people"
+                        : totalResults === 0 ? <NoResultPage />
+                          : `Search results for "${query}" (${totalResults})`}
+                    </Info>
+                    <TileWrapper>
+                      {people.map((actor) => (
+                        <PeopleTile name={actor.name} key={actor.id} {...actor} />
+                      ))}
+                    </TileWrapper>
+                    {/* <Pagination currentPage={currentPage} /> */}
+                  </MainWrapper>
+                </Background>
+              </>
+            )}
     </>
   );
 };
