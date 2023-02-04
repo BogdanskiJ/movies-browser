@@ -8,6 +8,7 @@ import {
   Background,
   ReadMoreButton,
   BigBox,
+  TileWrapper,
 } from "./styled";
 import Information from "./PersonalInfo";
 import { useEffect, useState } from "react";
@@ -51,17 +52,17 @@ export const Descritpion = () => {
       ) : (
         <Background>
           <Wrapper>
-            <Tile>
+          <TileWrapper>
+          <Tile>
               <Photo src={url_img + details.profile_path}></Photo>
-              {/* <BigBox> */}
-                <Info>
-                  <Name>{details.name}</Name>
-                  <Information
-                    birthday={details.birthday}
-                    place_of_birth={details.place_of_birth}
-                  />
-                </Info>
-              {/* </BigBox> */}
+              <Info>
+                <Name>{details.name}</Name>
+                <Information
+                  birthday={details.birthday}
+                  place_of_birth={details.place_of_birth}
+                />
+              </Info>
+
               <Script>
                 {ReadMore ? details.biography : biographyText + "..."}
                 <ReadMoreButton onClick={toggleButton}>
@@ -71,6 +72,7 @@ export const Descritpion = () => {
               </Script>
             </Tile>
             <Projects />
+          </TileWrapper>
           </Wrapper>
         </Background>
       )}

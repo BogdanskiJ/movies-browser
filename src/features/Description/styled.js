@@ -7,8 +7,9 @@ export const Background = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 1368px;
+  max-width: 1368px; 
   margin: auto;
+  padding: 16px;
   padding-top: 56px;
 
   @media (max-width: 767px) {
@@ -106,11 +107,16 @@ export const ReadMoreButton = styled.button`
   }
 `;
 
-export const BigBox = styled.div`
-  grid-column: 2/2;
-  @media (max-width: 767px) {
-    /* display: flex;
-    flex-direction: column; */
-  }
+
+export const TileWrapper = styled.div`
+/* width: 1368px; */
+/* padding: 276px;
+padding-top: 0;
+margin-top: 0;
+margin-bottom: 0;
+@media (max-width: 767px) {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+} */
 `;
-export const ScriptBox = styled.div``;
