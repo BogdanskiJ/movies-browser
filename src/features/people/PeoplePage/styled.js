@@ -23,7 +23,7 @@ export const Info = styled.h2`
   font-weight: 600;
   font-size: 36px;
   margin: 0;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-style: normal;
 
   @media (max-width: 767px) {
