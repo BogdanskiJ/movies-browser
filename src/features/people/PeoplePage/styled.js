@@ -8,6 +8,7 @@ export const MainWrapper = styled.div`
   max-width: 1368px;
   margin: auto;
   padding-top: 56px;
+  padding: 20px;
   align-items: center;
   background-color: ${({ theme }) => theme.color.whisper};
 
@@ -33,7 +34,7 @@ export const Info = styled.h2`
 
 export const TileWrapper = styled.div`
   display: grid;
-  gap: 4px;
+  gap: 24px;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(4, 1fr);
 
@@ -43,4 +44,8 @@ export const TileWrapper = styled.div`
     gap: 16px;
     width: 330px;
   } 
+  @media (max-width: 1300px) {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
 `;
