@@ -20,6 +20,7 @@ export const Tile = styled.div`
     padding: 8px;
     padding-bottom: 20px;
     gap: 8px;
+    max-width: 136px;
   }
 `;
 
@@ -48,19 +49,14 @@ export const Name = styled.h3`
   }
 `;
 
-export const Poster = styled.div`
-  /* width: 177px;
-  height: 231px; */
-  /* top: -6px; */
-`;
 
 export const Photo = styled.img`
   border-radius: 5px;
-  width: 177px;
+  width: 176px;
   height: 231px;
 
   @media (max-width: 767px) {
-    width: 128px;
+    width: 120px;
     height: 178px;
   }
 `;

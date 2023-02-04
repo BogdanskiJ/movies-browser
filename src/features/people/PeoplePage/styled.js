@@ -14,9 +14,9 @@ export const MainWrapper = styled.div`
 
   @media (max-width: 767px) {
     width: 304px;
-    padding-top: 24px;
     margin: auto;
-    
+    padding: 0;
+    padding-top: 24px;
   } ;
 `;
 
@@ -44,7 +44,7 @@ export const TileWrapper = styled.div`
     gap: 16px;
     width: 330px;
   } 
-  @media (max-width: 1300px) {
+  @media (min-width: 767px) and (max-width: 1300px) {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(6, 1fr);
   }
