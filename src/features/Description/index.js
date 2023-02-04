@@ -7,6 +7,8 @@ import {
   Script,
   Background,
   ReadMoreButton,
+  BigBox,
+  TileWrapper,
 } from "./styled";
 import Information from "./PersonalInfo";
 import { useEffect, useState } from "react";
@@ -22,7 +24,6 @@ import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 import { useParams } from "react-router-dom";
 
-
 export const Descritpion = () => {
   const [ReadMore, setReadMore] = useState(false);
   const toggleButton = () => {
@@ -37,7 +38,9 @@ export const Descritpion = () => {
   const status = useSelector(selectPeopleDetailsStatus);
   const { id } = useParams();
 
-  const biographyText = details.biography ? details.biography.substring(0, 1100) : "";
+  const biographyText = details.biography
+    ? details.biography.substring(0, 1100)
+    : "";
 
   useEffect(() => {
     dispatch(setPeopleId(id));
@@ -46,31 +49,37 @@ export const Descritpion = () => {
 
   return (
     <>
-      {status === "loading" ? <LoadingPage title={"Search results for \"People Details\""} />
-        : status === "error" ? <ErrorPage />
-          : (
-            <Background>
-              <Wrapper>
-                <Tile>
-                  <Photo src={url_img + details.profile_path}></Photo>
-                  <Info>
-                    <Name>{details.name}</Name>
-                    <Information
-                      birthday={details.birthday}
-                      place_of_birth={details.place_of_birth}
-                    />
+      {status === "loading" ? (
+        <LoadingPage title={'Search results for "People Details"'} />
+      ) : status === "error" ? (
+        <ErrorPage />
+      ) : (
+        <Background>
+          <Wrapper>
+          <TileWrapper>
+          <Tile>
+              <Photo src={url_img + details.profile_path}></Photo>
+              <Info>
+                <Name>{details.name}</Name>
+                <Information
+                  birthday={details.birthday}
+                  place_of_birth={details.place_of_birth}
+                />
+              </Info>
 
-                    <Script>{ReadMore ? details.biography : biographyText + "..."}</Script>
-                    <ReadMoreButton onClick={toggleButton}>
-                      {" "}
-                      {ReadMore ? "...read less" : "read more"}{" "}
-                    </ReadMoreButton>
-                  </Info>
-                </Tile>
-                <Projects />
-              </Wrapper>
-            </Background>
-          )}
+              <Script>
+                {ReadMore ? details.biography : biographyText + "..."}
+                <ReadMoreButton onClick={toggleButton}>
+                  {" "}
+                  {ReadMore ? "...read less" : "read more"}{" "}
+                </ReadMoreButton>
+              </Script>
+            </Tile>
+            <Projects />
+          </TileWrapper>
+          </Wrapper>
+        </Background>
+      )}
     </>
   );
 };

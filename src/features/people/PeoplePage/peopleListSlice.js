@@ -6,6 +6,9 @@ const peopleListSlice = createSlice({
         people: [],
         query: "",
         totalResults: 0,
+        currentPage: 1,
+        firstPage: 1,
+        lastPage: 500,
     },
     reducers: {
         fetchPeopleList: (state) => { 
@@ -23,6 +26,9 @@ const peopleListSlice = createSlice({
             state.loading = true;
             state.query = query;
         },
+        setPage: (state, {payload: page}) => {
+            state.page = page
+        }
     },
 });
 
@@ -32,8 +38,10 @@ export const {
     setPeopleListSucces, 
     setPeopleListError ,
     getQuery,
+    setPage,
 } = peopleListSlice.actions;
 export const selectPeopleListState = state => state.peopleList;
+export const selectPage = state => selectPeopleListState(state).page;
 export const selectLoadingStatus = state => selectPeopleListState(state).loading;
 export const selectPeopleQuery = state => selectPeopleListState(state).query;
 export const selectPeopleTotalResults = state => selectPeopleListState(state).totalResults;

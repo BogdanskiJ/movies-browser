@@ -14,7 +14,7 @@ import { useDispatch } from "react-redux";
 import { fetchPeopleDetails } from "../../features/Description/peopleDetailsSlice";
 
 export const Pagination = () => {
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage ] = useState(1);
     const dispatch = useDispatch();
 
   return (

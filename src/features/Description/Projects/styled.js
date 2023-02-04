@@ -15,11 +15,16 @@ export const TileWrapper = styled.div`
   grid-auto-columns: 25%;
   overflow-x: auto;
   padding-bottom: 10px;
+  @media (max-width: 756px) {
+    grid-auto-columns: 100%;
+    padding-bottom: 15px;
+  }
 
 `
 export const MovieScroll = styled.div`
 display: flex;
 flex-wrap: nowrap;
+
 
 
 `
@@ -29,4 +34,9 @@ font-size: 36px;
 color: ${({ theme}) => theme.color.woodSmoke};
 margin-bottom: 24px;
 margin-right: 10px;
+
+@media (max-width: 756px) {
+  font-size: 20px;
+}
+
 `

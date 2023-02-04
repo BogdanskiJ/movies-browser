@@ -25,6 +25,8 @@ export const People = () => {
     dispatch(fetchPeopleList());
   }, [query, dispatch])
 
+  console.log(people)
+
   return (
     <>
       {loadingStatus === true ? <LoadingPage title={"Search results for \"Popular People\""} />
