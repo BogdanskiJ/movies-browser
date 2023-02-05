@@ -27,27 +27,27 @@ export const People = () => {
 
   return (
     <>
-      {loadingStatus === true ? <LoadingPage title={"Search results for \"Popular People\""} />
-        : loadingStatus === false && people === null ? <ErrorPage />
-          : (
-            <>
-              <Background>
-                <MainWrapper>
-                  <Info>
-                    {!query ? "Popular people"
-                      : totalResults === 0 ? <NoResultPage />
+      {totalResults === 0 ? <NoResultPage />
+        : loadingStatus === true ? <LoadingPage title={"Search results for \"Popular People\""} />
+          : loadingStatus === false && people === null ? <ErrorPage />
+            : (
+              <>
+                <Background>
+                  <MainWrapper>
+                    <Info>
+                      {!query ? "Popular people"
                         : `Search results for "${query}" (${totalResults})`}
-                  </Info>
-                  <TileWrapper>
-                    {people.map((actor) => (
-                      <PeopleTile name={actor.name} key={actor.id} {...actor} />
-                    ))}
-                  </TileWrapper>
-                  {/* <Pagination currentPage={currentPage} /> */}
-                </MainWrapper>
-              </Background>
-            </>
-          )}
+                    </Info>
+                    <TileWrapper>
+                      {people.map((actor) => (
+                        <PeopleTile name={actor.name} key={actor.id} {...actor} />
+                      ))}
+                    </TileWrapper>
+                    {/* <Pagination currentPage={currentPage} /> */}
+                  </MainWrapper>
+                </Background>
+              </>
+            )}
     </>
   );
 };
