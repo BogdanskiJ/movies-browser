@@ -5,9 +5,9 @@ import { getGenres, getMovieList, searchMovies } from "../../getApi";
 function* fetchMovieListHandler() {
     try {
         const page = yield select(selectPage);
-        yield delay(500);
-        const movies = yield call(getMovieList, page);
         const query = yield select(selectMovieQuery);
+        yield delay(500);
+        const movies = yield !query ? call(getMovieList, page) : call(searchMovies, query, page);
         yield put(fetchMovieListSuccess(movies));
     } catch (error) {
         yield put(fetchMovieListError());
