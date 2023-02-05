@@ -23,13 +23,10 @@ const MovieDetailTile = ({
   movieRating,
   votesNumber,
   movieYear,
-  movieTagArray,
-  genresArray,
   id,
   poster_path,
   character,
-  name,
-  projects
+  projects,
 }) => {
   const genreSort = (a, b) => {
     if (a === b.id) {
@@ -61,13 +58,14 @@ const MovieDetailTile = ({
         <MovieYear>
           {character} ({movieYear})
         </MovieYear>
-              <MovieTags>
-         {(projects !== undefined && genres !== undefined) ?
-              (projects.map(tag =>
+        <MovieTags>
+          {projects !== undefined && genres !== undefined
+            ? projects.map((tag) => (
                 <Tag key={tag}>
-                  {genres.map(tagName => genreSort(tag, tagName))}
+                  {genres.map((tagName) => genreSort(tag, tagName))}
                 </Tag>
-              )) : ""}
+              ))
+            : ""}
         </MovieTags>
         <MovieRating>
           <Star />

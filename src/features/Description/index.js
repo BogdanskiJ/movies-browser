@@ -7,8 +7,6 @@ import {
   Script,
   Background,
   ReadMoreButton,
-  BigBox,
-  TileWrapper,
 } from "./styled";
 import Information from "./PersonalInfo";
 import { useEffect, useState } from "react";
@@ -23,6 +21,7 @@ import {
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 import { useParams } from "react-router-dom";
+import emptyPeople from "../../images/emptyPeople.svg";
 
 export const Descritpion = () => {
   const [ReadMore, setReadMore] = useState(false);
@@ -39,7 +38,7 @@ export const Descritpion = () => {
   const { id } = useParams();
 
   const biographyText = details.biography
-    ? details.biography.substring(0, 1100)
+    ? details.biography.substring(0, 300)
     : "";
 
   useEffect(() => {
@@ -56,9 +55,15 @@ export const Descritpion = () => {
       ) : (
         <Background>
           <Wrapper>
-          <TileWrapper>
-          <Tile>
-              <Photo src={url_img + details.profile_path}></Photo>
+            <Tile>
+              <Photo
+                src={
+                  details.profile_path !== null
+                    ? url_img + details.profile_path
+                    : emptyPeople
+                }
+                alt={""}
+              ></Photo>
               <Info>
                 <Name>{details.name}</Name>
                 <Information
@@ -76,7 +81,6 @@ export const Descritpion = () => {
               </Script>
             </Tile>
             <Projects />
-          </TileWrapper>
           </Wrapper>
         </Background>
       )}
