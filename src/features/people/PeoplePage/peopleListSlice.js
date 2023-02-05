@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const peopleListSlice = createSlice({
-    name: "people",
+    name: "peopleList",
     initialState: {
         people: [],
         query: "",
@@ -9,9 +9,13 @@ const peopleListSlice = createSlice({
         currentPage: 1,
         firstPage: 1,
         lastPage: 500,
+        peoplePage: 1,
     },
     reducers: {
-        fetchPeopleList: (state) => { 
+        setPeoplePage: (state, { payload: page }) => {
+            state.peoplePage = page;
+        },
+        fetchPeopleList: (state) => {
             state.loading = true;
         },
         setPeopleListSucces: (state, { payload: people }) => {
@@ -22,21 +26,22 @@ const peopleListSlice = createSlice({
         setPeopleListError: (state) => {
             state.loading = false;
         },
-        getQuery: (state, {payload: query}) => {
+        getQuery: (state, { payload: query }) => {
             state.loading = true;
             state.query = query;
         },
-        setPage: (state, {payload: page}) => {
+        setPage: (state, { payload: page }) => {
             state.page = page
         }
     },
 });
 
-export const { 
-    fetchPeopleList, 
-    setPeopleList, 
-    setPeopleListSucces, 
-    setPeopleListError ,
+export const {
+    setPeoplePage,
+    fetchPeopleList,
+    setPeopleList,
+    setPeopleListSucces,
+    setPeopleListError,
     getQuery,
     setPage,
 } = peopleListSlice.actions;
@@ -46,4 +51,5 @@ export const selectLoadingStatus = state => selectPeopleListState(state).loading
 export const selectPeopleQuery = state => selectPeopleListState(state).query;
 export const selectPeopleTotalResults = state => selectPeopleListState(state).totalResults;
 export const selectPeopleList = state => selectPeopleListState(state).people;
+export const selectPeoplePage = state => selectPeopleListState(state).peoplePage;
 export default peopleListSlice.reducer;

@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
-import Pagination from "../../../common/pagination";
+import Pagination from "../pagination/index";
 import { PeopleTile } from "../PeopleTile";
 import { Background, Info, MainWrapper, TileWrapper, Box } from "./styled";
 import { useSelector } from "react-redux";
-import { fetchPeopleList, selectLoadingStatus, selectPeopleListState, selectPeopleTotalResults, getQuery, selectPeopleList } from "./peopleListSlice";
+import { fetchPeopleList, selectLoadingStatus, selectPeopleListState, selectPeopleTotalResults, getQuery, selectPeopleList, setPeoplePage } from "./peopleListSlice";
 import { useDispatch } from "react-redux";
 import { LoadingPage } from "../../../common/LoadingPage";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { useQueryParameter } from "../../../queryParameters";
 import searchQueryParamName from "../../../searchQueryParamName";
 import NoResultPage from "../../../common/NoResultPage";
+import { useParams } from "react-router-dom";
 
 export const People = () => {
   const [currentPage, setCurrentPage] = useState(1);
-
+  const { page } = useParams();
+  console.log("page w People", page)
   const people = useSelector(selectPeopleList);
   const loadingStatus = useSelector(selectLoadingStatus);
   const dispatch = useDispatch();
@@ -21,9 +23,10 @@ export const People = () => {
   const totalResults = useSelector(selectPeopleTotalResults);
 
   useEffect(() => {
+    dispatch(setPeoplePage(page));
     dispatch(getQuery(query))
     dispatch(fetchPeopleList());
-  }, [query, dispatch])
+  }, [query, page, dispatch])
 
   console.log(people)
 
@@ -45,7 +48,7 @@ export const People = () => {
                       <PeopleTile name={actor.name} key={actor.id} {...actor} />
                     ))}
                   </TileWrapper>
-                  {/* <Pagination currentPage={currentPage} /> */}
+                  <Pagination />
                 </MainWrapper>
               </Background>
             </>
