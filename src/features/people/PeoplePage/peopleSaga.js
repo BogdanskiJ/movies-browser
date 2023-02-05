@@ -5,10 +5,10 @@ import { fetchPeopleList, selectPeoplePage, selectPeopleQuery, setPeopleListErro
 
 function* fetchPeopleListHandler() {
   try {
-    const peoplePage = yield select(selectPeoplePage);
+    const page = yield select(selectPeoplePage);
     const query = yield select(selectPeopleQuery);
     yield delay(500);
-    const people = yield !query ? call(getPeopleList, peoplePage) : call(searchPeople, query);
+    const people = yield !query ? call(getPeopleList, page) : call(searchPeople, query, page);
     yield put(setPeopleListSucces(people));
   } catch (error) {
     yield put(setPeopleListError());
