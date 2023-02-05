@@ -27,9 +27,9 @@ export const People = () => {
 
   return (
     <>
-      {totalResults === 0 ? <NoResultPage />
-        : loadingStatus === true ? <LoadingPage title={"Search results for \"Popular People\""} />
-          : loadingStatus === false && people === null ? <ErrorPage />
+      {loadingStatus === true ? <LoadingPage title={"Search results for \"Popular People\""} />
+        : loadingStatus === false && people === null ? <ErrorPage />
+          : totalResults === 0 ? <NoResultPage />
             : (
               <>
                 <Background>
