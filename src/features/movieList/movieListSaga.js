@@ -14,7 +14,6 @@ function* fetchMovieListHandler() {
     };
 };
 
-
 function* fetchGenresListHandler() {
     try {
         const genres = yield call(getGenres);

@@ -30,8 +30,8 @@ const movieListSlice = createSlice({
         fetchMovieListError: (state) => {
             state.status = "error";
         },
-        fetchGenresList: () => {},
-        fetchGenresListSuccess: (state, {payload: genres}) => {
+        fetchGenresList: () => { },
+        fetchGenresListSuccess: (state, { payload: genres }) => {
             state.genres = genres;
         },
         fetchGenresListError: (state) => {
@@ -40,9 +40,16 @@ const movieListSlice = createSlice({
         fetchCredits: (state) => {
             state.status = "loading";
         },
-        getQuery: (state, {payload: query}) => {
+        getQuery: (state, { payload: query }) => {
             state.loading = true;
             state.query = query;
+        },
+        goOnTop: () => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
         },
     },
 });
@@ -56,6 +63,7 @@ export const { setPage,
     fetchGenresListSuccess,
     fetchGenresListError,
     getQuery,
+    goOnTop,
 } = movieListSlice.actions;
 
 export const selectMovieListState = state => state.movieList;

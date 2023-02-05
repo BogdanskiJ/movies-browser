@@ -29,7 +29,7 @@ export const Container = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap:30px;
+        gap:24px;
         padding-top:24px;
         padding-bottom:16px;
     };
@@ -51,18 +51,14 @@ export const NavigationWrapper = styled.div`
     };
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(NavLink)`
+    text-decoration: none;
+    color: ${({ theme }) => theme.color.white};
     display: flex;
     gap:12px;
     @media (max-width:768px){
         gap:8px;
         align-items:center;
-    };
-`;
-export const IconList = styled.div`
-@media (max-width:768px){
-        margin:0;
-        padding:0;
     };
 `;
 

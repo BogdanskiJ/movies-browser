@@ -35,10 +35,12 @@ export const Title = styled.div`
     font-size: 36px;
     line-height: 120%;
     color: ${({ theme }) => theme.color.black};
+    margin: 0 16px;
     @media (max-width: 500px) {
         font-weight: 600;
         font-size: 20px;
         line-height: 120%;
+        margin: 0 16px;
     }
 `;
 
@@ -48,8 +50,14 @@ export const TileBox = styled.div`
     flex-wrap: wrap;
     justify-content: flex-start;
     gap:24px;
+    justify-content: flex-start;
+    @media (max-width: 1400px) {
+        margin: 0 16px;
+    }
     @media (max-width: 500px) {
         gap: 16px;
+        justify-content: flex-start;
+        margin: 0 16px;
     }
 `;
 

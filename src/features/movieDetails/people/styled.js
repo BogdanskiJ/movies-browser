@@ -28,7 +28,7 @@ export const NameBox = styled.div`
   align-items: center;
   text-align: center;
   @media (max-width: 500px) {
-      
+      max-width: 114px;
     }
 `;
 
@@ -41,6 +41,7 @@ export const Name = styled(NavLink)`
   text-align: center;
   flex-wrap: wrap;
   margin: 0;
+  padding: 0;
   @media (max-width: 500px) {
     font-weight: 500;
     font-size: 14px;
