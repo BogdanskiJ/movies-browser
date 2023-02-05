@@ -29,7 +29,7 @@ export const Navigation = () => {
                         </Logo>
                         <Subpages>
                             <StyledNavLink to="/popular-movies">Movies</StyledNavLink>
-                            <StyledNavLink to="/people">People</StyledNavLink>
+                            <StyledNavLink to="/popular-people/1">People</StyledNavLink>
                         </Subpages>
                     </NavigationWrapper>
                     <Search>
