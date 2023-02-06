@@ -8,14 +8,16 @@ export const MainWrapper = styled.div`
   max-width: 1368px;
   margin: auto;
   padding-top: 56px;
+  padding-bottom: 60px;
   align-items: center;
   background-color: ${({ theme }) => theme.color.whisper};
-
+  
   @media (max-width: 767px) {
     width: 304px;
     margin: auto;
     padding: 0;
     padding-top: 24px;
+    padding-bottom: 30px;
   } ;
 
   @media (min-width: 767px) and (max-width: 1300px) {
