@@ -9,7 +9,6 @@ export const Tile = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin: 24px; */
   margin-left: 0;
   margin-bottom: 0;
   filter: drop-shadow(0px 4px 12px rgba(186, 199, 213, 0.5));
@@ -50,6 +49,7 @@ export const Photo = styled.img`
   border-radius: 5px;
   width: 176px;
   height: 231px;
+  background-color: ${({ theme }) => theme.color.silver};
 
   @media (max-width: 767px) {
     width: 120px;
