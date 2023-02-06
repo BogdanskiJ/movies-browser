@@ -73,10 +73,10 @@ export const Descritpion = () => {
               </Info>
 
               <Script>
-                {ReadMore ? details.biography : biographyText }
+                {ReadMore ? (details.biography) : biographyText}
                 {details.biography.length > 300 && (
                   <ReadMoreButton onClick={toggleButton}>
-                    {ReadMore ? "read less..." : "...read more"}
+                    {ReadMore ? "...read less" : "...read more"}
                   </ReadMoreButton>
                 )}
               </Script>
