@@ -95,8 +95,8 @@ export const ReadMoreButton = styled.button`
   color: ${({ theme }) => theme.color.black};
   background-color: ${({ theme }) => theme.color.mystic};
   border: none;
-  padding: 10px;
-  width: 130px;
+  padding: 5px;
+  width: 140px;
   margin-top: 10px;
   align-self: flex-end;
   border-radius: 5%;

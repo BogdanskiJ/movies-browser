@@ -73,11 +73,12 @@ export const Descritpion = () => {
               </Info>
 
               <Script>
-                {ReadMore ? details.biography : biographyText + "..."}
-                <ReadMoreButton onClick={toggleButton}>
-                  {" "}
-                  {ReadMore ? "...read less" : "read more"}{" "}
-                </ReadMoreButton>
+                {ReadMore ? (details.biography) : biographyText}
+                {details.biography.length > 300 && (
+                  <ReadMoreButton onClick={toggleButton}>
+                    {ReadMore ? "...read less" : "...read more"}
+                  </ReadMoreButton>
+                )}
               </Script>
             </Tile>
             <Projects />

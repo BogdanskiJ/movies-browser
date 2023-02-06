@@ -17,6 +17,7 @@ import {
 import { ReactComponent as Star } from "../../../images/star.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGenres, selectProjectsState } from "../Projects/projectsSlice";
+import movieListEmptyPoster from "../../../images/movieListEmptyPoster.svg"
 
 const MovieDetailTile = ({
   movieTitle,
@@ -49,7 +50,7 @@ const MovieDetailTile = ({
         title={movieTitle}
         id={id}
       >
-        <Poster src={url_img + poster_path} alt="" />
+        <Poster src={poster_path ? (url_img + poster_path) : (movieListEmptyPoster)} alt="" />
       </PosterBox>
       <MovieDescriptionBox>
         <MovieTitleBox to={`/movies/${id}`} title={movieTitle} id={id}>
