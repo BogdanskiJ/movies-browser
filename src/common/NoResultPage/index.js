@@ -1,17 +1,19 @@
 import { useQueryParameter } from "../../queryParameters";
 import searchQueryParamName from "../../searchQueryParamName";
 import { ReactComponent as NoResultIcon } from "./NoResultIcon/picture.svg";
-import { Container, StyledHeader } from "./styled";
+import { Container, StyledHeader, Wrapper } from "./styled";
 
 const NoResultPage = () => {
     const query = useQueryParameter(searchQueryParamName);
 
     return (
         <>
-            <StyledHeader>{`Sorry, there are no result for "${query}"`}</StyledHeader>
-            <Container>
-                <NoResultIcon />
-            </Container>
+            <Wrapper>
+                <StyledHeader>{`Sorry, there are no result for "${query}"`}</StyledHeader>
+                <Container>
+                    <NoResultIcon />
+                </Container>
+            </Wrapper>
         </>
     );
 };
