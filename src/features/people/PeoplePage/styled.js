@@ -7,8 +7,8 @@ export const Background = styled.div`
 export const MainWrapper = styled.div`
   max-width: 1368px;
   margin: auto;
-  padding-top: 56px;
   padding: 20px;
+  padding-top: 56px;
   align-items: center;
   background-color: ${({ theme }) => theme.color.whisper};
 
@@ -43,7 +43,7 @@ export const TileWrapper = styled.div`
     grid-template-rows: repeat(3, 1fr);
     gap: 16px;
     width: 330px;
-  } 
+  }
   @media (min-width: 767px) and (max-width: 1300px) {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(6, 1fr);
