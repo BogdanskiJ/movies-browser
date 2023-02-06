@@ -17,12 +17,8 @@ const Pagination = () => {
     console.log("page z location", location.pathname.slice(16));
     console.log("page", page);
     console.log("query", query);
-    // useEffect(() => {
-    //     location.pathname.slice(16) == page ?
-    //         console.log("Równa się ") :
-    //         dispatch(setPage(firstPage));
-    // }, [page, dispatch]);
 
+    
     return (
         <PaginationBox theme={theme}>
             <PaginationLeftButtonMin
@@ -104,7 +100,7 @@ const Pagination = () => {
             <PaginationRightButtonNextPage
                 disabled={(Number(page) === 500) || (page === 0) || (page == totalPages)}
                 to={`${((location.search === "")) ?
-                    (`/popular-movies/${lastPage}`) : (`/popular-movies/${lastPage}${location.search}`)}`
+                    (`/popular-movies/${lastPage}`) : (`/popular-movies/${totalPages < lastPage ? totalPages : lastPage}${location.search}`)}`
                 }>
                 <PaginationButtonText>
                     Last
@@ -121,7 +117,7 @@ const Pagination = () => {
             <PaginationRightButtonMax
                 disabled={(Number(page) === 500) || (page === 0) || (page == totalPages)}
                 to={`${((location.search === "")) ?
-                    (`/popular-movies/${lastPage}`) : (`/popular-movies/${lastPage}${location.search}`)}`
+                    (`/popular-movies/${lastPage}`) : (`/popular-movies/${totalPages < lastPage ? totalPages : lastPage}${location.search}`)}`
                 }>
                 {(Number(page) === 500 || (page === 0) || (page == totalPages)) ?
                     (<>
