@@ -9,6 +9,7 @@ export const MovieDetailsPage = styled.div`
     align-items: center;
     padding-bottom:200px;
     background-color: ${({ theme }) => theme.color.whisper};
+
     @media (max-width: 756px) {
         width:100%;
         gap: 16px;
@@ -24,6 +25,7 @@ export const CastBox = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+
     @media (max-width: 500px) {
         gap: 12px;
     }
@@ -36,6 +38,7 @@ export const Title = styled.div`
     line-height: 120%;
     color: ${({ theme }) => theme.color.black};
     margin: 0 16px;
+
     @media (max-width: 500px) {
         font-weight: 600;
         font-size: 20px;
@@ -51,9 +54,11 @@ export const TileBox = styled.div`
     justify-content: flex-start;
     gap:24px;
     justify-content: flex-start;
+
     @media (max-width: 1400px) {
         margin: 0 16px;
     }
+    
     @media (max-width: 500px) {
         gap: 16px;
         justify-content: flex-start;

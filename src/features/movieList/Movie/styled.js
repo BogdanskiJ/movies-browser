@@ -27,6 +27,7 @@ export const Poster = styled.img`
     max-width:292px;
     height:434px;
     background: ${({ theme }) => theme.color.silver};
+
     @media (max-width: 756px) {
         width: 114px;
         height: 169px;
@@ -57,9 +58,11 @@ export const MovieTitle = styled.h2`
     line-height: 130%;
     margin:0;
     color: ${({ theme }) => theme.color.woodSmoke};
+
     &:hover{
     color: ${({ theme }) => theme.color.aquamarineBlue};
     }
+    
     @media (max-width: 756px) {
         font-size: 16px;
         margin:0;

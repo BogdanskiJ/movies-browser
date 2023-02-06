@@ -2,7 +2,6 @@ import { theme } from "../../../theme";
 import { MovieDescription, CountryAndDate, ProductionInfo, MovieRating, MovieTags, MovieTitle, MovieYear, Poster, Rating, Tag, Tail, VotesNumber, MovieProduction, MaxRating, MovieStory, PosterBox, StarBox, Production, ReleaseData } from "./styled";
 import { ReactComponent as Star } from '../../../images/star.svg'
 
-
 export const MovieTail = ({ movieTitle, movieYear, releaseData, votesNumber, maxRating, movieRating, movieStory, movieTilePoster, countryProductionArray, tagArray }) => {
 
   return (
@@ -16,7 +15,7 @@ export const MovieTail = ({ movieTitle, movieYear, releaseData, votesNumber, max
           {movieTitle}
         </MovieTitle>
         <MovieYear
-        none={!movieYear}
+          none={!movieYear}
         >
           {movieYear.slice(0, 4)}
         </MovieYear>
@@ -48,4 +47,4 @@ export const MovieTail = ({ movieTitle, movieYear, releaseData, votesNumber, max
       </MovieStory>
     </Tail>
   );
-}
+};
