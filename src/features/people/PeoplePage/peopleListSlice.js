@@ -14,7 +14,7 @@ const peopleListSlice = createSlice({
   },
   reducers: {
     setPeoplePage: (state, { payload: page }) => {
-      state.peoplePage = page;
+      page === undefined ? state.peoplePage = state.firstPage : state.peoplePage = page;
     },
     fetchPeopleList: (state) => {
       state.loading = true;
