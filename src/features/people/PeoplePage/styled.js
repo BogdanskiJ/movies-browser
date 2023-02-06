@@ -7,7 +7,6 @@ export const Background = styled.div`
 export const MainWrapper = styled.div`
   max-width: 1368px;
   margin: auto;
-  padding: 20px;
   padding-top: 56px;
   align-items: center;
   background-color: ${({ theme }) => theme.color.whisper};
@@ -18,6 +17,10 @@ export const MainWrapper = styled.div`
     padding: 0;
     padding-top: 24px;
   } ;
+
+  @media (min-width: 767px) and (max-width: 1300px) {
+  padding: 20px;
+  }
 `;
 
 export const Info = styled.h2`
