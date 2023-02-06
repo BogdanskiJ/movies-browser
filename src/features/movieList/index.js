@@ -31,16 +31,15 @@ const MovieList = ({ }) => {
 
   return (
     <>
-      {status === "loading" && !query ? <LoadingPage title={"Search results for \"Popular Movies\""} />
-        : status === "loading" && query ? <LoadingPage title={`Search results for "${query}"`} />
-          : status === "error" ? <ErrorPage />
+      {status === "loading" ? <LoadingPage title={"Search results for \"Popular Movies\""} />
+        : status === "error" ? <ErrorPage />
+          : totalResults === 0 ? <NoResultPage />
             : (
               <MovieListPage theme={theme}>
                 <PopularMoviesBox>
                   <PopularMoviesName>
                     {!query ? "Popular Movies"
-                      : totalResults === 0 ? <NoResultPage />
-                        : `Search results for "${query}" (${totalResults})`}
+                      : `Search results for "${query}" (${totalResults})`}
                   </PopularMoviesName>
                   <MoviesList>
                     {(movies.map(movie => <Movie

@@ -24,8 +24,6 @@ export const Tile = styled.div`
   }
 `;
 
-
-
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
 `;
@@ -41,14 +39,12 @@ export const Name = styled.h3`
 
   @media (max-width: 767px) {
     font-size: 14px;
-    
   }
 
   &:hover {
     color: ${({ theme }) => theme.color.aquamarineBlue};
   }
 `;
-
 
 export const Photo = styled.img`
   border-radius: 5px;
