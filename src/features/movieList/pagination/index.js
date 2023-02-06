@@ -1,23 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { theme } from "../../../theme";
 import { PaginationBox, PaginationButtonText, PaginationLeftButton, PaginationLeftButtonMin, PaginationLeftButtonPreviousPage, PaginationRightButton, PaginationRightButtonMax, PaginationRightButtonNextPage } from "./styled";
 import { ReactComponent as NextArrow } from '../../../images/nextArrow.svg';
 import { ReactComponent as PrevArrow } from '../../../images/prevArrow.svg';
 import PaginationPageNumber from "./PaginationNumberPage";
-import { useDispatch, useSelector } from "react-redux";
-import { selectMovieListState, selectMovieQuery, selectPage, setPage } from "../movieListSlice";
-import { useLocation, useParams } from "react-router-dom";
-import { select } from "redux-saga/effects";
+import { useSelector } from "react-redux";
+import { selectMovieListState } from "../movieListSlice";
+import { useLocation } from "react-router-dom";
 
 const Pagination = () => {
-    const dispatch = useDispatch();
-    //const page = useSelector(selectPage);
-    const { query, page, lastPage, firstPage, totalPages } = useSelector(selectMovieListState);
+    const { page, lastPage, firstPage, totalPages } = useSelector(selectMovieListState);
     const location = useLocation();
-    console.log("page z location", location.pathname.slice(16));
-    console.log("page", page);
-    console.log("query", query);
-    
+
     return (
         <PaginationBox theme={theme}>
             <PaginationLeftButtonMin

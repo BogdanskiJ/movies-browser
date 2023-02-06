@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Pagination from "./pagination/index";
 import { theme } from "../../theme";
 import Movie from "./Movie";
-import { fetchGenresList, fetchMovieList, selectGenresList, selectMovieList, selectMovieListStatus, setPage, getQuery, selectMovieTotalResults, goOnTop, setQueryPage, selectMovieTotalPages } from "./movieListSlice";
+import { fetchGenresList, fetchMovieList, selectGenresList, selectMovieList, selectMovieListStatus, setPage, getQuery, selectMovieTotalResults, goOnTop, selectMovieTotalPages } from "./movieListSlice";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
@@ -23,19 +23,18 @@ const MovieList = ({ }) => {
   const totalPages = useSelector(selectMovieTotalPages);
 
   useEffect(() => {
-    dispatch(setPage(page))
     dispatch(getQuery(query));
-    (page > totalPages ? dispatch(setPage(1)) : dispatch(setPage(page)));
+    dispatch(setPage(page));
     dispatch(fetchMovieList(page));
     dispatch(fetchGenresList());
     dispatch(goOnTop());
-  }, [page, query, totalPages, dispatch]);
+  }, [page, query, dispatch]);
 
   return (
     <>
       {status === "loading" ? <LoadingPage title={"Search results for \"Popular Movies\""} />
         : status === "error" ? <ErrorPage />
-          : totalResults === 0 ? <NoResultPage />
+          : (totalResults === 0 || page > totalPages) ? <NoResultPage />
             : (
               <MovieListPage theme={theme}>
                 <PopularMoviesBox>
