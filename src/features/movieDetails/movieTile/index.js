@@ -15,8 +15,10 @@ export const MovieTail = ({ movieTitle, movieYear, releaseData, votesNumber, max
         <MovieTitle>
           {movieTitle}
         </MovieTitle>
-        <MovieYear>
-          {movieYear}
+        <MovieYear
+        none={!movieYear}
+        >
+          {movieYear.slice(0, 4)}
         </MovieYear>
         <MovieProduction>
           <CountryAndDate><Production>Production:</Production>

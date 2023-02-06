@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Tail = styled.div`
     max-width:1368px;
@@ -84,6 +84,12 @@ export const MovieYear = styled.div`
         color: ${({ theme }) => theme.color.waterloo};
         margin-top:-4px;
     }
+
+    ${({ none }) => none && css`
+        {
+            display:none;
+        }
+    `} 
 `;
 
 export const MovieProduction = styled.div`

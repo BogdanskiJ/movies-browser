@@ -1,6 +1,7 @@
 import { call, delay, put, select, takeLatest } from "redux-saga/effects";
 import { selectPage, fetchGenresList, fetchGenresListError, fetchGenresListSuccess, fetchMovieList, fetchMovieListError, fetchMovieListSuccess, selectMovieQuery } from "./movieListSlice";
 import { getGenres, getMovieList, searchMovies } from "../../getApi";
+import { useLocation } from "react-router";
 
 function* fetchMovieListHandler() {
     try {

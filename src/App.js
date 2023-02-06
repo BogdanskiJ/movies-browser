@@ -12,30 +12,33 @@ export const App = () => {
 
   return (
     <>
-    <HashRouter>
-      <Navigation />
-      <Switch>
-      <Route path="/people/:id">
-          <Descritpion />
-        </Route>
-        <Route path="/movies/:id">
-          <MovieDetails />
-        </Route>
-        <Route path="/popular-movies/:page">
-          <MovieList />
-        </Route>
-        <Route path="/popular-movies">
-          <MovieList />
-        </Route>
-        <Route path="/popular-people/:page">
-          <People />
-        </Route>
-        <Route path="/">
-          <Redirect to="/popular-movies" />
-        </Route>
-      </Switch>
-    </HashRouter>
-   </>
+      <HashRouter>
+        <Navigation />
+        <Switch>
+          <Route path="/people/:id">
+            <Descritpion />
+          </Route>
+          <Route path="/movies/:id">
+            <MovieDetails />
+          </Route>
+          <Route path="/popular-movies/:page">
+            <MovieList />
+          </Route>
+          <Route path="/popular-movies">
+            <MovieList />
+          </Route>
+          <Route path="/popular-people/:page">
+            <People />
+          </Route>
+          <Route path="/popular-people">
+            <People />
+          </Route>
+          <Route path="/">
+            <Redirect to="/popular-movies" />
+          </Route>
+        </Switch>
+      </HashRouter>
+    </>
   );
 };
 

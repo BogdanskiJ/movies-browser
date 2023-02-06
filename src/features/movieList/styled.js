@@ -2,11 +2,9 @@ import styled from "styled-components";
 
 export const MovieListPage = styled.div`
     background-color: ${({ theme }) => theme.color.whisper};
-    padding-top:60px;
     padding-bottom: 60px;
 
     @media (max-width: 756px) {
-        padding-top:24px;
         padding-bottom: 30px;
     };
 `;
@@ -23,11 +21,12 @@ export const PopularMoviesBox = styled.div`
 
     @media (max-width: 756px) {
         align-self:center;
-        padding: 16px;
+        padding: 0 16px 16px 16px;
     };
 `;
 
 export const PopularMoviesName = styled.h1`
+    margin-top:56px;
     align-self:flex-start;
     font-weight: 600;
     font-size: 36px;
@@ -35,9 +34,12 @@ export const PopularMoviesName = styled.h1`
     color: ${({ theme }) => theme.color.woodSmoke};
 
     @media (max-width: 1353px) {
+        margin-left:1%;
     };
 
     @media (max-width: 756px) {
+        margin-left:0;
+        margin-top:24px;
         align-self:flex-start;
         font-size: 18px;
     };

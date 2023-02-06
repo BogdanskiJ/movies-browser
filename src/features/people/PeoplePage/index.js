@@ -10,6 +10,7 @@ import {
   getQuery,
   selectPeopleList,
   setPeoplePage,
+  selectPeopleTotalPages,
 } from "./peopleListSlice";
 import { useDispatch } from "react-redux";
 import { LoadingPage } from "../../../common/LoadingPage";
@@ -21,24 +22,26 @@ import { useParams } from "react-router-dom";
 
 export const People = () => {
   const { page } = useParams();
-  console.log("page w People", page);
   const people = useSelector(selectPeopleList);
   const loadingStatus = useSelector(selectLoadingStatus);
   const dispatch = useDispatch();
   const query = useQueryParameter(searchQueryParamName);
   const totalResults = useSelector(selectPeopleTotalResults);
+  const totalPages = useSelector(selectPeopleTotalPages);
 
   useEffect(() => {
-    dispatch(setPeoplePage(page));
     dispatch(getQuery(query));
+    dispatch(setPeoplePage(page));
     dispatch(fetchPeopleList());
   }, [query, page, dispatch]);
 
+
   return (
     <>
-      {loadingStatus === true ? <LoadingPage title={"Search results for \"Popular People\""} />
+      {loadingStatus === true && !query ? <LoadingPage title={"Search results for \"Popular People\""} />
+        : loadingStatus === true && query ? <LoadingPage title={`Search results for "${query}"`} />
         : loadingStatus === false && !people ? <ErrorPage />
-          : totalResults === 0 ? <NoResultPage />
+          : (totalResults === 0 || page > totalPages) ? <NoResultPage />
             : (
               <>
                 <Background>
