@@ -17,7 +17,6 @@ const Pagination = () => {
     console.log("page z location", location.pathname.slice(16));
     console.log("page", page);
     console.log("query", query);
-
     
     return (
         <PaginationBox theme={theme}>
