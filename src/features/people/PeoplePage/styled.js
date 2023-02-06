@@ -10,6 +10,7 @@ export const MainWrapper = styled.div`
   padding-top: 56px;
   align-items: center;
   background-color: ${({ theme }) => theme.color.whisper};
+  padding-bottom: 60px;
 
   @media (max-width: 767px) {
     width: 304px;
