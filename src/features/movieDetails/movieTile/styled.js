@@ -190,7 +190,10 @@ export const MovieRating = styled.div`
     flex-wrap: nowrap;
     gap:8px;
     color: ${({ theme }) => theme.color.black};
-
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    
     @media (max-width: 756px) {
         padding: 0;
         max-height:16px;

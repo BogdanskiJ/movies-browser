@@ -34,12 +34,17 @@ export const MovieTail = ({ movieTitle, movieYear, releaseData, votesNumber, max
           }
         </MovieTags>
         <MovieRating>
-          <StarBox>
-            <Star />
-          </StarBox>
-          <Rating>{movieRating}</Rating>
-          <MaxRating>/{maxRating}</MaxRating>
-          <VotesNumber>{votesNumber} votes</VotesNumber>
+          {(movieRating === 0 || votesNumber === 0) ?
+            "No votes yet" :
+            <>
+              <StarBox>
+                <Star />
+              </StarBox>
+              <Rating>{movieRating}</Rating>
+              <MaxRating>/{maxRating}</MaxRating>
+              <VotesNumber>{votesNumber} votes</VotesNumber>
+            </>
+          }
         </MovieRating>
       </MovieDescription>
       <MovieStory>

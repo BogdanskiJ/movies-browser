@@ -132,7 +132,10 @@ export const MovieRating = styled.div`
     height: 100%;
     align-items: flex-end;
     border-radius: 5px;
-
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: ${({ theme }) => theme.color.waterloo};
     @media (max-width: 756px) {
         padding: 0;
         height:auto;
