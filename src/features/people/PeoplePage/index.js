@@ -36,7 +36,8 @@ export const People = () => {
 
   return (
     <>
-      {loadingStatus === true ? <LoadingPage title={"Search results for \"Popular People\""} />
+      {loadingStatus === true && !query ? <LoadingPage title={"Search results for \"Popular People\""} />
+        : loadingStatus === true && query ? <LoadingPage title={`Search results for "${query}"`} />
         : loadingStatus === false && !people ? <ErrorPage />
           : totalResults === 0 ? <NoResultPage />
             : (

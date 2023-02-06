@@ -31,7 +31,8 @@ const MovieList = ({ }) => {
 
   return (
     <>
-      {status === "loading" ? <LoadingPage title={"Search results for \"Popular Movies\""} />
+      {status === "loading" && !query ? <LoadingPage title={"Search results for \"Popular Movies\""} />
+      : status === "loading" && query ? <LoadingPage title={`Search results for "${query}"`} />
         : status === "error" ? <ErrorPage />
           : totalResults === 0 ? <NoResultPage />
             : (
