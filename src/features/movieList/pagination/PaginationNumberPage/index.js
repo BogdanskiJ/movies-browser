@@ -7,13 +7,12 @@ import { PageNumberBox, Number } from "./styled";
 
 const PaginationPageNumber = () => {
     const { page, lastPage, totalPages } = useSelector(selectMovieListState);
-    console.log(totalPages)
     return (
         <PageNumberBox theme={theme}>
             Page
             <Number>{page ? page : 0}</Number>
             of
-            <Number>{totalPages<lastPage ? totalPages : lastPage}</Number>
+            <Number>{totalPages < lastPage ? totalPages : lastPage}</Number>
         </PageNumberBox>
     )
 }

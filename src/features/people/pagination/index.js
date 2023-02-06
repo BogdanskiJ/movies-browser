@@ -14,19 +14,21 @@ import { ReactComponent as NextArrow } from "../../../images/nextArrow.svg";
 import { ReactComponent as PrevArrow } from "../../../images/prevArrow.svg";
 import PaginationPeoplePageNumber from "./PaginationNumberPage";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import { selectPeopleListState } from "../PeoplePage/peopleListSlice";
+import { useLocation } from "react-router-dom";
 
 const Pagination = () => {
-  const { page } = useParams();
-  const { lastPage, firstPage } = useSelector(selectPeopleListState);
+  const { peoplePage, totalPages, lastPage, firstPage } = useSelector(selectPeopleListState);
+  const location = useLocation();
+
   return (
     <PaginationBox theme={theme}>
       <PaginationLeftButtonMin
-        disabled={Number(page) === 1 || page === undefined}
-        to={`/popular-people/${firstPage}`}
-      >
-        {Number(page) === 1 || page === undefined ? (
+        disabled={Number(peoplePage) === 1 || peoplePage === undefined || (peoplePage === 0)}
+        to={`${((location.search === "")) ?
+          (`/popular-people/${firstPage}`) : (`/popular-people/${firstPage}${location.search}`)}`
+        }>
+        {Number(peoplePage) === 1 || peoplePage === undefined || (peoplePage === 0) ? (
           <>
             <PrevArrow fill="#7E839A" />
             <PrevArrow fill="#7E839A" />
@@ -40,10 +42,11 @@ const Pagination = () => {
       </PaginationLeftButtonMin>
 
       <PaginationLeftButtonPreviousPage
-        disabled={Number(page) === 1 || page === undefined}
-        to={`/popular-people/${firstPage}`}
-      >
-        {Number(page) === 1 || page === undefined ? (
+        disabled={Number(peoplePage) === 1 || peoplePage === undefined || (peoplePage === 0)}
+        to={`${((location.search === "")) ?
+          (`/popular-people/${firstPage}`) : (`/popular-people/${firstPage}${location.search}`)}`
+        }>
+        {Number(peoplePage) === 1 || peoplePage === undefined || (peoplePage === 0) ? (
           <>
             <PrevArrow fill="#7E839A" />
           </>
@@ -55,10 +58,11 @@ const Pagination = () => {
         <PaginationButtonText>First</PaginationButtonText>
       </PaginationLeftButtonPreviousPage>
       <PaginationLeftButton
-        disabled={Number(page) === 1 || page === undefined}
-        to={`/popular-people/${Number(page) - 1}`}
-      >
-        {Number(page) === 1 || page === undefined ? (
+        disabled={Number(peoplePage) === 1 || peoplePage === undefined || (peoplePage === 0)}
+        to={`${((location.search === "")) ?
+          (`/popular-people/${Number(peoplePage) - 1}`) : (`/popular-people/${Number(peoplePage) - 1}${location.search}`)}`
+        }>
+        {Number(peoplePage) === 1 || peoplePage === undefined ? (
           <>
             <PrevArrow fill="#7E839A" />
           </>
@@ -71,15 +75,19 @@ const Pagination = () => {
       </PaginationLeftButton>
       <PaginationPeoplePageNumber />
       <PaginationRightButton
-        disabled={Number(page) === 500}
-        to={
-          page !== undefined
-            ? `/popular-people/${Number(page) + 1}`
-            : `/popular-people/${2}`
-        }
+        disabled={Number(peoplePage) === 500 || (peoplePage === 0) || (peoplePage == totalPages)}
+        to={peoplePage !== undefined
+          ?
+          (`${((location.search === "")) ?
+            (`/popular-people/${Number(peoplePage) + 1}`)
+            : (`/popular-people/${Number(peoplePage) + 1}${location.search}`)}`)
+          :
+          (`${((location.search === "")) ?
+            (`/popular-people/${2}`) :
+            (`/popular-people/${2}${location.search}`)}`)}
       >
         <PaginationButtonText>Next</PaginationButtonText>
-        {Number(page) === 500 ? (
+        {Number(peoplePage) === 500 || (peoplePage === 0) || (peoplePage == totalPages) ? (
           <>
             <NextArrow fill="#7E839A" />
           </>
@@ -90,11 +98,12 @@ const Pagination = () => {
         )}
       </PaginationRightButton>
       <PaginationRightButtonNextPage
-        disabled={Number(page) === 500}
-        to={`/popular-people/${lastPage}`}
-      >
+        disabled={Number(peoplePage) === 500 || (peoplePage === 0) || (peoplePage == totalPages)}
+        to={`${((location.search === "")) ?
+          (`/popular-people/${lastPage}`) : (`/popular-people/${totalPages < lastPage ? totalPages : lastPage}${location.search}`)}`
+        }>
         <PaginationButtonText>Last</PaginationButtonText>
-        {Number(page) === 500 ? (
+        {Number(peoplePage) === 500 || (peoplePage === 0) || (peoplePage == totalPages) ? (
           <>
             <NextArrow fill="#7E839A" />
           </>
@@ -105,10 +114,11 @@ const Pagination = () => {
         )}
       </PaginationRightButtonNextPage>
       <PaginationRightButtonMax
-        disabled={Number(page) === 500}
-        to={`/popular-people/${lastPage}`}
-      >
-        {Number(page) === 500 ? (
+        disabled={Number(peoplePage) === 500 || (peoplePage === 0) || (peoplePage == totalPages)}
+        to={`${((location.search === "")) ?
+          (`/popular-people/${lastPage}`) : (`/popular-people/${totalPages < lastPage ? totalPages : lastPage}${location.search}`)}`
+        }>
+        {Number(peoplePage) === 500 || (peoplePage === 0) || (peoplePage == totalPages) ? (
           <>
             <NextArrow fill="#7E839A" />
             <NextArrow fill="#7E839A" />

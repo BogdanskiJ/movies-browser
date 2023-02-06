@@ -10,6 +10,7 @@ import {
   getQuery,
   selectPeopleList,
   setPeoplePage,
+  selectPeopleTotalPages,
 } from "./peopleListSlice";
 import { useDispatch } from "react-redux";
 import { LoadingPage } from "../../../common/LoadingPage";
@@ -26,10 +27,11 @@ export const People = () => {
   const dispatch = useDispatch();
   const query = useQueryParameter(searchQueryParamName);
   const totalResults = useSelector(selectPeopleTotalResults);
+  const totalPages = useSelector(selectPeopleTotalPages);
 
   useEffect(() => {
-    dispatch(setPeoplePage(page));
     dispatch(getQuery(query));
+    dispatch(setPeoplePage(page));
     dispatch(fetchPeopleList());
   }, [query, page, dispatch]);
 
@@ -38,7 +40,7 @@ export const People = () => {
     <>
       {loadingStatus === true ? <LoadingPage title={"Search results for \"Popular People\""} />
         : loadingStatus === false && !people ? <ErrorPage />
-          : totalResults === 0 ? <NoResultPage />
+          : (totalResults === 0 || page > totalPages) ? <NoResultPage />
             : (
               <>
                 <Background>
@@ -52,7 +54,7 @@ export const People = () => {
                         <PeopleTile name={actor.name} key={actor.id} {...actor} />
                       ))}
                     </TileWrapper>
-                    {/* <Pagination currentPage={currentPage} /> */}
+                    <Pagination />
                   </MainWrapper>
                 </Background>
               </>
