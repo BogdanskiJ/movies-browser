@@ -32,33 +32,27 @@ export const getGenres = async () => {
 };
 
 export const getMovieDetails = async (id) => {
-    try {
-        const response = await fetch(`${movieDetailApiLink}${id}?${keyAPI}${languageAPI}`);
 
-        if (!response.ok) {
-            throw new Error(response.statusText);
-        };
+    const response = await fetch(`${movieDetailApiLink}${id}?${keyAPI}${languageAPI}`);
 
-        return await response.json();
-
-    } catch (error) {
-        console.log(error);
+    if (!response.ok) {
+        throw new Error(response.statusText);
     };
+
+    return await response.json();
+
 };
 
 export const getCredits = async (id) => {
-    try {
-        const response = await fetch(`${movieDetailApiLink}${id}/credits?${keyAPI}${languageAPI}`);
 
-        if (!response.ok) {
-            throw new Error(response.statusText);
-        };
+    const response = await fetch(`${movieDetailApiLink}${id}/credits?${keyAPI}${languageAPI}`);
 
-        return await response.json();
-
-    } catch (error) {
-        console.log(error);
+    if (!response.ok) {
+        throw new Error(response.statusText);
     };
+
+    return await response.json();
+
 };
 
 export const searchMovies = async (query, page) => {
