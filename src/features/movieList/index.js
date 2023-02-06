@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Pagination from "./pagination/index";
 import { theme } from "../../theme";
 import Movie from "./Movie";
-import { fetchGenresList, fetchMovieList, selectGenresList, selectMovieList, selectMovieListStatus, setPage, getQuery, selectMovieTotalResults, goOnTop } from "./movieListSlice";
+import { fetchGenresList, fetchMovieList, selectGenresList, selectMovieList, selectMovieListStatus, setPage, getQuery, selectMovieTotalResults, goOnTop, setQueryPage } from "./movieListSlice";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
@@ -14,12 +14,12 @@ import NoResultPage from "../../common/NoResultPage";
 
 const MovieList = ({ }) => {
   const dispatch = useDispatch();
+  const { page } = useParams();
   const movies = useSelector(selectMovieList);
   const genres = useSelector(selectGenresList);
   const status = useSelector(selectMovieListStatus);
   const query = useQueryParameter(searchQueryParamName);
   const totalResults = useSelector(selectMovieTotalResults);
-  const { page } = useParams();
 
   useEffect(() => {
     dispatch(getQuery(query));

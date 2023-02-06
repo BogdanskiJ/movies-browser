@@ -6,14 +6,14 @@ import { selectMovieListState } from "../../movieListSlice";
 import { PageNumberBox, Number } from "./styled";
 
 const PaginationPageNumber = () => {
-    const { lastPage } = useSelector(selectMovieListState);
-    const { page } = useParams();
+    const { page, lastPage, totalPages } = useSelector(selectMovieListState);
+    console.log(totalPages)
     return (
         <PageNumberBox theme={theme}>
             Page
-            <Number>{page !== undefined ? page : 1}</Number>
+            <Number>{page ? page : 0}</Number>
             of
-            <Number>{lastPage}</Number>
+            <Number>{totalPages<lastPage ? totalPages : lastPage}</Number>
         </PageNumberBox>
     )
 }

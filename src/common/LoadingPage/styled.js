@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    background-color: ${({theme}) => theme.color.whisper};
+    background-color: ${({theme}) => theme.color.mercury};
 `;
 
 export const StyledHeader = styled.header`

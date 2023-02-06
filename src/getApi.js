@@ -61,13 +61,13 @@ export const getCredits = async (id) => {
     };
 };
 
-export const searchMovies = async (query) => {
+export const searchMovies = async (query, page) => {
     if (!query) {
         return;
     };
 
     try {
-        const response = await fetch(`https://api.themoviedb.org/3/search/movie?${keyAPI}${languageAPI}&query=${query}&page=1`);
+        const response = await fetch(`https://api.themoviedb.org/3/search/movie?${keyAPI}${languageAPI}&query=${query}&page=${page}`);
 
         if (!response.ok) {
             throw new Error(response.statusText);

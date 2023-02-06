@@ -15,7 +15,6 @@ import { useParams } from "react-router-dom";
 export const People = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const { page } = useParams();
-  console.log("page w People", page)
   const people = useSelector(selectPeopleList);
   const loadingStatus = useSelector(selectLoadingStatus);
   const dispatch = useDispatch();
@@ -27,8 +26,6 @@ export const People = () => {
     dispatch(getQuery(query))
     dispatch(fetchPeopleList());
   }, [query, page, dispatch])
-
-  console.log(people)
 
   return (
     <>

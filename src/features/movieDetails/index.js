@@ -47,7 +47,7 @@ const MovieDetails = () => {
                   <MovieTail
                     movieTilePoster={`https://image.tmdb.org/t/p/w1280/${movieDetails.poster_path}`}
                     movieTitle={movieDetails.title}
-                    movieYear={movieDetails.release_date.slice(0, 4)}
+                    movieYear={movieDetails.release_date}
                     countryProductionArray={movieDetails.production_countries}
                     releaseData={movieDetails.release_date}
                     tagArray={movieDetails.genres}
