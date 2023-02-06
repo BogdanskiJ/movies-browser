@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+    background-color: ${({theme}) => theme.color.mercury};
+`;
+
 export const StyledHeader = styled.header`
     font-weight: 600;
     font-size: 36px;

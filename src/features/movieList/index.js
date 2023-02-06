@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Pagination from "./pagination/index";
 import { theme } from "../../theme";
 import Movie from "./Movie";
-import { fetchGenresList, fetchMovieList, selectGenresList, selectMovieList, selectMovieListStatus, setPage, getQuery, selectMovieTotalResults, goOnTop } from "./movieListSlice";
+import { fetchGenresList, fetchMovieList, selectGenresList, selectMovieList, selectMovieListStatus, setPage, getQuery, selectMovieTotalResults, goOnTop, selectMovieTotalPages } from "./movieListSlice";
 import { MovieListPage, MoviesList, PopularMoviesBox, PopularMoviesName } from "./styled";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
@@ -14,12 +14,13 @@ import NoResultPage from "../../common/NoResultPage";
 
 const MovieList = ({ }) => {
   const dispatch = useDispatch();
+  const { page } = useParams();
   const movies = useSelector(selectMovieList);
   const genres = useSelector(selectGenresList);
   const status = useSelector(selectMovieListStatus);
   const query = useQueryParameter(searchQueryParamName);
   const totalResults = useSelector(selectMovieTotalResults);
-  const { page } = useParams();
+  const totalPages = useSelector(selectMovieTotalPages);
 
   useEffect(() => {
     dispatch(getQuery(query));
@@ -34,7 +35,7 @@ const MovieList = ({ }) => {
       {status === "loading" && !query ? <LoadingPage title={"Search results for \"Popular Movies\""} />
       : status === "loading" && query ? <LoadingPage title={`Search results for "${query}"`} />
         : status === "error" ? <ErrorPage />
-          : totalResults === 0 ? <NoResultPage />
+          : (totalResults === 0 || page > totalPages) ? <NoResultPage />
             : (
               <MovieListPage theme={theme}>
                 <PopularMoviesBox>

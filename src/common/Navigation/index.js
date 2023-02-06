@@ -29,14 +29,14 @@ export const Navigation = () => {
                         </Logo>
                         <Subpages>
                             <StyledNavLink to="/popular-movies">Movies</StyledNavLink>
-                            <StyledNavLink to="/popular-people/1">People</StyledNavLink>
+                            <StyledNavLink to="/popular-people">People</StyledNavLink>
                         </Subpages>
                     </NavigationWrapper>
                     <Search>
                         <Input
-                            placeholder={`Search for ${(location.pathname).slice(0, 15) === "/popular-movies" ?
+                            placeholder={`Search for ${((location.pathname).slice(0, 15) === "/popular-movies" || (location.pathname).slice(0, 7) === "/movies") ?
                                 "movies..." : "people..."}
-                            `}
+                        `}
                             value={query || ""}
                             onChange={onInputChange}
                         />
