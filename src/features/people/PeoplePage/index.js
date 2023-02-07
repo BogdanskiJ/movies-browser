@@ -55,7 +55,7 @@ export const People = () => {
                         <PeopleTile name={actor.name} key={actor.id} {...actor} />
                       ))}
                     </TileWrapper>
-                    <Pagination />
+                    <Pagination  />
                   </MainWrapper>
                 </Background>
               </>
