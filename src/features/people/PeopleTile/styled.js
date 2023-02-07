@@ -13,7 +13,10 @@ export const Tile = styled.div`
   margin-bottom: 0;
   filter: drop-shadow(0px 4px 12px rgba(186, 199, 213, 0.5));
 
-  @media (max-width: 767px) {
+  @media (max-width: 300px) {
+  }
+
+  @media (min-width: 301px) and (max-width: 767px) {
     border-radius: 5px;
     margin: 0;
     padding: 8px;
@@ -21,8 +24,12 @@ export const Tile = styled.div`
     gap: 8px;
     max-width: 136px;
   }
+  @media (min-width: 767px) and (max-width: 1300px) {
+    max-width: 230px;
+  }
 `;
-
+export const PhotoBox = styled(NavLink)`
+`;
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
 `;
@@ -49,6 +56,7 @@ export const Photo = styled.img`
   border-radius: 5px;
   width: 176px;
   height: 231px;
+  flex-grow: 0;
   background-color: ${({ theme }) => theme.color.silver};
 
   @media (max-width: 767px) {

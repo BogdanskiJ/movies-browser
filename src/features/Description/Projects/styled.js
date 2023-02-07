@@ -15,7 +15,14 @@ export const TileWrapper = styled.div`
   grid-auto-columns: 25%;
   overflow-x: auto;
   padding-bottom: 10px;
-  @media (max-width: 756px) {
+
+  @media (min-width: 1101px) and (max-width: 1300px){
+    grid-auto-columns: 28%;
+  }
+  @media (min-width: 768px) and (max-width: 1100px){
+    grid-auto-columns: 45%
+  }
+  @media (max-width: 767px) {
     grid-auto-columns: 100%;
     padding-bottom: 15px;
   }
@@ -35,7 +42,7 @@ color: ${({ theme}) => theme.color.woodSmoke};
 margin-bottom: 24px;
 margin-right: 10px;
 
-@media (max-width: 756px) {
+@media (max-width: 767px) {
   font-size: 20px;
 }
 
