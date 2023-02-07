@@ -7,7 +7,6 @@ const movieListSlice = createSlice({
         status: "loading",
         query: "",
         genres: null,
-        currentPage: 1,
         firstPage: 1,
         lastPage: 500,
         id: 1,

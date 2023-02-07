@@ -33,5 +33,3 @@ export const Number = styled.span`
         line-height: 24px;
     };
 `;
-
-
