@@ -12,11 +12,12 @@ export const MainWrapper = styled.div`
   background-color: ${({ theme }) => theme.color.whisper};
   padding-bottom: 60px;
 
-  @media (min-width: 301px) and (max-width: 500px) {
+  @media (min-width: 260px) and (max-width: 500px) {
+    padding: 20px;
     padding-top: 24px;
-    padding-left:15px;
     margin: auto;
     max-width: 330px;
+    justify-items: left;
   }
 
   @media (min-width: 501px) and (max-width: 767px) {
@@ -37,7 +38,7 @@ export const Info = styled.h2`
   margin-bottom: 24px;
   font-style: normal;
 
-  @media (max-width: 300px){
+  @media (max-width: 300px) {
     font-size: 24px;
     margin-left: 20px;
   }
@@ -53,9 +54,11 @@ export const TileWrapper = styled.div`
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(4, 1fr);
 
-  @media (max-width: 300px){
+  @media (max-width: 300px) {
     grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
+    padding: 20px;
+    gap: 8px;
+    justify-items: left;
   }
   @media (min-width: 301px) and (max-width: 500px) {
     grid-template-columns: repeat(2, 1fr);
@@ -66,7 +69,6 @@ export const TileWrapper = styled.div`
   }
   @media (min-width: 921px) and (max-width: 1300px) {
     grid-template-columns: repeat(4, 1fr);
-  
   }
 
   @media (min-width: 501px) and (max-width: 920px) {
