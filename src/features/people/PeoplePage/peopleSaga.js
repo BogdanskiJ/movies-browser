@@ -1,4 +1,4 @@
-import { call, delay, put, select, takeEvery } from "redux-saga/effects";
+import { call, debounce, delay, put, select, takeEvery } from "redux-saga/effects";
 import { searchPeople } from "../../../getApi";
 import { getPeopleList } from "./getPeopleList";
 import {
@@ -24,5 +24,5 @@ function* fetchPeopleListHandler() {
 }
 
 export function* watchFetchPeopleList() {
-  yield takeEvery(fetchPeopleList.type, fetchPeopleListHandler);
+  yield debounce(800, fetchPeopleList.type, fetchPeopleListHandler);
 }

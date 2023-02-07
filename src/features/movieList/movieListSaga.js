@@ -1,4 +1,4 @@
-import { call, delay, put, select, takeLatest } from "redux-saga/effects";
+import { call, debounce, delay, put, select, takeLatest } from "redux-saga/effects";
 import { selectPage, fetchGenresList, fetchGenresListError, fetchGenresListSuccess, fetchMovieList, fetchMovieListError, fetchMovieListSuccess, selectMovieQuery } from "./movieListSlice";
 import { getGenres, getMovieList, searchMovies } from "../../getApi";
 
@@ -24,6 +24,6 @@ function* fetchGenresListHandler() {
 };
 
 export function* movieListSaga() {
-    yield takeLatest(fetchMovieList.type, fetchMovieListHandler);
-    yield takeLatest(fetchGenresList.type, fetchGenresListHandler);
+    yield debounce(800, fetchMovieList.type, fetchMovieListHandler);
+    yield debounce(800, fetchGenresList.type, fetchGenresListHandler);
 };
