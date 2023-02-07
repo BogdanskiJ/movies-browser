@@ -30,6 +30,7 @@ export const PaginationLeftButton = styled(NavLink)`
     background: ${({ theme }) => theme.color.pattensBlue};
     color: ${({ theme }) => theme.color.woodSmoke};
     cursor: pointer;
+
     @media (max-width: 756px) {
         padding: 7.5px 12px;
     };
@@ -58,6 +59,7 @@ export const PaginationLeftButtonPreviousPage = styled(NavLink)`
     background: ${({ theme }) => theme.color.pattensBlue};
     color: ${({ theme }) => theme.color.woodSmoke};
     cursor: pointer;
+
     @media (max-width: 756px) {
         display:none
     };
@@ -86,12 +88,15 @@ export const PaginationLeftButtonMin = styled(NavLink)`
     background: ${({ theme }) => theme.color.pattensBlue};
     color: ${({ theme }) => theme.color.woodSmoke};
     cursor: pointer;
+
     @media (min-width: 756px) {
         display:none
     };
+
     @media (max-width: 756px) {
         padding: 7.5px 12px;
     };
+
     ${({ disabled }) => disabled && css`
         {
             background: ${({ theme }) => theme.color.mystic};
@@ -116,6 +121,7 @@ export const PaginationRightButton = styled(NavLink)`
     background: ${({ theme }) => theme.color.pattensBlue};
     color: ${({ theme }) => theme.color.woodSmoke};
     cursor: pointer;
+
     @media (max-width: 756px) {
         padding: 7.5px 12px;
     }; 
@@ -131,6 +137,7 @@ export const PaginationRightButton = styled(NavLink)`
 
 
 export const PaginationButtonText = styled.div`
+
     @media (max-width: 756px) {
         display:none
     }; 
@@ -151,12 +158,15 @@ export const PaginationRightButtonMax = styled(NavLink)`
     background: ${({ theme }) => theme.color.pattensBlue};
     color: ${({ theme }) => theme.color.woodSmoke};
     cursor: pointer;
+
     @media (min-width: 756px) {
         display:none
     }; 
+
     @media (max-width: 756px) {
         padding: 7.5px 12px;
     }; 
+
     ${({ disabled }) => disabled && css`
         {
             background: ${({ theme }) => theme.color.mystic};
@@ -181,9 +191,11 @@ export const PaginationRightButtonNextPage = styled(NavLink)`
     background: ${({ theme }) => theme.color.pattensBlue};
     color: ${({ theme }) => theme.color.woodSmoke};
     cursor: pointer;
+    
     @media (max-width: 756px) {
         display:none
     }; 
+
     ${({ disabled }) => disabled && css`
         {
             background: ${({ theme }) => theme.color.mystic};

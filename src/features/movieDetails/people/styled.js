@@ -11,8 +11,7 @@ export const Tile = styled.div`
   align-items: center;
   margin-left: 0;
   margin-bottom: 0;
-    @media (max-width: 756px) {
-    } 
+
     @media (max-width: 500px) {
       padding: 8px;
       gap: 8px;
@@ -27,6 +26,7 @@ export const NameBox = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+
   @media (max-width: 500px) {
       max-width: 114px;
     }
@@ -42,6 +42,7 @@ export const Name = styled(NavLink)`
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+
   @media (max-width: 500px) {
     font-weight: 500;
     font-size: 14px;
@@ -71,7 +72,8 @@ export const Poster = styled(NavLink)`
     height: 231px;
     top: -6px;
     text-decoration:none;
-  @media (max-width: 500px) {
+
+    @media (max-width: 500px) {
       width: 114px;
       height: 169px;
       display:flex;
@@ -83,6 +85,7 @@ export const Photo = styled.img`
   width: 177px;
   height: 231px;
   background: ${({ theme }) => theme.color.silver};
+  
   @media (max-width: 500px) {
     width: 114px;
     height: 169px;

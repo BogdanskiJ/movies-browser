@@ -35,9 +35,14 @@ const Movie = ({ movieTitle, movieRating, votesNumber, movieYear, moviePosterApi
           }
         </MovieTags>
         <MovieRating>
-          <Star />
-          <Rating>{movieRating}</Rating>
-          <VotesNumber>{votesNumber} votes</VotesNumber>
+          {(movieRating === 0 || votesNumber === 0) ?
+            "No votes yet" :
+            <>
+              <Star />
+              <Rating>{movieRating}</Rating>
+              <VotesNumber>{votesNumber} votes</VotesNumber>
+            </>
+          }
         </MovieRating>
       </MovieDescriptionBox>
     </MovieDetail>
