@@ -25,7 +25,7 @@ export const MainWrapper = styled.div`
   }
 
   @media (min-width: 767px) and (max-width: 1300px) {
-    padding: 20px;
+    padding: 60px;
     padding-top: 24px;
   }
 `;
