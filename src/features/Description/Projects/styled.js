@@ -15,11 +15,12 @@ export const TileWrapper = styled.div`
   grid-auto-columns: 25%;
   overflow-x: auto;
   padding-bottom: 10px;
+
   @media (min-width: 1101px) and (max-width: 1300px){
     grid-auto-columns: 28%;
   }
   @media (min-width: 768px) and (max-width: 1100px){
-    grid-auto-columns: 35%
+    grid-auto-columns: 45%
   }
   @media (max-width: 767px) {
     grid-auto-columns: 100%;

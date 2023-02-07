@@ -28,7 +28,8 @@ export const Tile = styled.div`
     max-width: 230px;
   }
 `;
-
+export const PhotoBox = styled(NavLink)`
+`;
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
 `;
