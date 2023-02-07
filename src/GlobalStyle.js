@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         max-width: 1920px;
         margin: 0 auto;
-        background: ${({theme}) => theme.color.mercury};
+        background: ${({theme}) => theme.color.whisper};
         font-family: "Poppins", sans-serif;
     }
 `
