@@ -7,9 +7,10 @@ export const MovieDescription = styled.div`
     flex-direction: column;
     justify-content: flex-end;
     height: inherit;
+
     @media (max-width: 756px) {
         padding:0;
-    }
+    };
 `;
 
 export const MovieDetail = styled.div`
@@ -18,7 +19,8 @@ export const MovieDetail = styled.div`
     flex-direction: column;
     gap:24px;
     align-items: flex-start;
-        @media (max-width: 756px) {
+
+    @media (max-width: 756px) {
         flex-direction:column;
         max-width: fit-content;
         padding:0 16px 10px;
@@ -26,7 +28,7 @@ export const MovieDetail = styled.div`
         margin-bottom:0;
         display: flex;
         justify-content: flex-end;
-    }
+    };
 `;
 
 export const MovieTitle = styled.h2`
@@ -35,11 +37,12 @@ export const MovieTitle = styled.h2`
     line-height: 120%;
     margin: 0;
     color: ${({ theme }) => theme.color.white};
+
     @media (max-width: 756px) {
         font-weight: 600;
         font-size: 24px;
         line-height: 120%;
-    }
+    };
 `;
 
 export const MovieRating = styled.div`
@@ -52,9 +55,10 @@ export const MovieRating = styled.div`
     align-items: baseline;
     flex-direction: row;
     justify-content: flex-start;
+
     @media (max-width: 756px) {
         padding: 0;
-    }
+    };
 `;
 
 export const Rating = styled.div`
@@ -62,10 +66,11 @@ export const Rating = styled.div`
     font-size: 30px;
     line-height: 130%;
     color: ${({ theme }) => theme.color.white};
+
     @media (max-width: 756px) {
         font-weight: 600;
         font-size: 14px;
-    }
+    };
 `;
 
 export const MaxRating = styled.div`  
@@ -74,9 +79,10 @@ export const MaxRating = styled.div`
     line-height: 120%;
     flex-wrap:nowrap;
     color: ${({ theme }) => theme.color.white};
+
     @media (max-width: 756px) {
         font-size: 10px;
-    }
+    };
 `;
 
 export const VotesNumber = styled.div`
@@ -84,7 +90,8 @@ export const VotesNumber = styled.div`
     font-size: 16px;
     line-height: 120%;
     color: ${({ theme }) => theme.color.white};
+    
     @media (max-width: 756px) {
         font-size: 10px;
-    }
+    };
 `;

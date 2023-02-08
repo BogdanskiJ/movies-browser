@@ -8,6 +8,7 @@ export const MainWrapper = styled.div`
   max-width: 1368px;
   margin: auto;
   padding-top: 56px;
+  padding-bottom: 60px;
   align-items: center;
   background-color: ${({ theme }) => theme.color.whisper};
   padding-bottom: 60px;
@@ -23,7 +24,8 @@ export const MainWrapper = styled.div`
   @media (min-width: 501px) and (max-width: 767px) {
     padding-left: 15px;
     padding-top: 24px;
-  }
+    padding-bottom: 30px;
+  } ;
 
   @media (min-width: 767px) and (max-width: 1300px) {
     padding: 60px;

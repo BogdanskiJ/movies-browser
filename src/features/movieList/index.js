@@ -12,7 +12,7 @@ import { useQueryParameter } from "../../queryParameters";
 import searchQueryParamName from "../../searchQueryParamName";
 import NoResultPage from "../../common/NoResultPage";
 
-const MovieList = ({ }) => {
+const MovieList = () => {
   const dispatch = useDispatch();
   const { page } = useParams();
   const movies = useSelector(selectMovieList);
@@ -33,34 +33,34 @@ const MovieList = ({ }) => {
   return (
     <>
       {status === "loading" && !query ? <LoadingPage title={"Search results for \"Popular Movies\""} />
-      : status === "loading" && query ? <LoadingPage title={`Search results for "${query}"`} />
-        : status === "error" ? <ErrorPage />
-          : (totalResults === 0 || page > totalPages) ? <NoResultPage />
-            : (
-              <MovieListPage theme={theme}>
-                <PopularMoviesBox>
-                  <PopularMoviesName>
-                    {!query ? "Popular Movies"
-                      : `Search results for "${query}" (${totalResults})`}
-                  </PopularMoviesName>
-                  <MoviesList>
-                    {(movies.map(movie => <Movie
-                      genres={genres}
-                      movieTitle={movie.title}
-                      key={movie.id}
-                      movieRating={movie.vote_average}
-                      votesNumber={movie.vote_count}
-                      movieTagArray={movie.genre_ids}
-                      movieYear={movie.release_date}
-                      moviePosterApiLink={movie.poster_path}
-                      id={movie.id}
-                    >
-                    </Movie>))}
-                  </MoviesList>
-                  <Pagination />
-                </PopularMoviesBox>
-              </MovieListPage>
-            )}
+        : status === "loading" && query ? <LoadingPage title={`Search results for "${query}"`} />
+          : status === "error" ? <ErrorPage />
+            : (totalResults === 0 || page > totalPages) ? <NoResultPage />
+              : (
+                <MovieListPage theme={theme}>
+                  <PopularMoviesBox>
+                    <PopularMoviesName>
+                      {!query ? "Popular Movies"
+                        : `Search results for "${query}" (${totalResults})`}
+                    </PopularMoviesName>
+                    <MoviesList>
+                      {(movies.map(movie => <Movie
+                        genres={genres}
+                        movieTitle={movie.title}
+                        key={movie.id}
+                        movieRating={movie.vote_average}
+                        votesNumber={movie.vote_count}
+                        movieTagArray={movie.genre_ids}
+                        movieYear={movie.release_date}
+                        moviePosterApiLink={movie.poster_path}
+                        id={movie.id}
+                      >
+                      </Movie>))}
+                    </MoviesList>
+                    <Pagination />
+                  </PopularMoviesBox>
+                </MovieListPage>
+              )}
     </>
   );
 };
