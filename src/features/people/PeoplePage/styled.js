@@ -43,10 +43,12 @@ export const Info = styled.h2`
   @media (max-width: 300px) {
     font-size: 24px;
     margin-left: 20px;
+    margin-bottom: 16px;
   }
 
   @media (min-width: 301px) and (max-width: 767px) {
     font-size: 20px;
+    margin-bottom: 12px;
   }
 `;
 
