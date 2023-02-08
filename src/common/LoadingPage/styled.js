@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-    background-color: ${({theme}) => theme.color.mercury};
-`;
+
 
 export const StyledHeader = styled.header`
     font-weight: 600;
@@ -16,6 +14,7 @@ export const StyledHeader = styled.header`
         font-weight: 500;
         font-size: 14px;
         line-height: 130%;
+        margin-top: 24px;
         margin-left: 16px;
     };
 `;
