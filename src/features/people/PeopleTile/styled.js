@@ -24,7 +24,7 @@ export const Tile = styled.div`
     gap: 8px;
     max-width: 136px;
   }
-  @media (min-width: 767px) and (max-width: 1300px) {
+  @media (min-width: 767px) and (max-width: 1360px) {
     max-width: 230px;
   }
 `;
