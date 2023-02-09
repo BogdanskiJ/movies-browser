@@ -12,6 +12,10 @@ export const StyledHeader = styled.header`
     color: ${({ theme }) => theme.color.woodSmoke};
     margin-top: 56px;
 
+    @media (max-width: 1420px){
+        margin-left: 60px;
+    };
+
     @media (max-width:1050px){
         font-size: 30px;
         margin-left: 40px;
