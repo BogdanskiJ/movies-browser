@@ -31,6 +31,10 @@ export const PaginationLeftButton = styled(NavLink)`
     color: ${({ theme }) => theme.color.woodSmoke};
     cursor: pointer;
 
+    &:hover{
+        background: ${({ theme }) => theme.color.melrose};
+    }
+
     @media (max-width: 756px) {
         padding: 7.5px 12px;
     };
@@ -60,6 +64,10 @@ export const PaginationLeftButtonPreviousPage = styled(NavLink)`
     color: ${({ theme }) => theme.color.woodSmoke};
     cursor: pointer;
 
+    &:hover{
+        background: ${({ theme }) => theme.color.melrose};
+    }
+
     @media (max-width: 756px) {
         display:none
     };
@@ -88,6 +96,10 @@ export const PaginationLeftButtonMin = styled(NavLink)`
     background: ${({ theme }) => theme.color.pattensBlue};
     color: ${({ theme }) => theme.color.woodSmoke};
     cursor: pointer;
+
+    &:hover{
+        background: ${({ theme }) => theme.color.melrose};
+    }
 
     @media (min-width: 756px) {
         display:none
@@ -121,6 +133,10 @@ export const PaginationRightButton = styled(NavLink)`
     background: ${({ theme }) => theme.color.pattensBlue};
     color: ${({ theme }) => theme.color.woodSmoke};
     cursor: pointer;
+
+    &:hover{
+        background: ${({ theme }) => theme.color.melrose};
+    }
 
     @media (max-width: 756px) {
         padding: 7.5px 12px;
@@ -159,6 +175,10 @@ export const PaginationRightButtonMax = styled(NavLink)`
     color: ${({ theme }) => theme.color.woodSmoke};
     cursor: pointer;
 
+    &:hover{
+        background: ${({ theme }) => theme.color.melrose};
+    }
+
     @media (min-width: 756px) {
         display:none
     }; 
@@ -192,6 +212,10 @@ export const PaginationRightButtonNextPage = styled(NavLink)`
     color: ${({ theme }) => theme.color.woodSmoke};
     cursor: pointer;
     
+    &:hover{
+        background: ${({ theme }) => theme.color.melrose};
+    }
+
     @media (max-width: 756px) {
         display:none
     }; 
