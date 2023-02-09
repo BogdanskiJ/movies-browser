@@ -27,7 +27,7 @@ export const MainWrapper = styled.div`
     padding-bottom: 30px;
   } ;
 
-  @media (min-width: 767px) and (max-width: 1300px) {
+  @media (min-width: 767px) and (max-width: 1360px) {
     padding: 60px;
     padding-top: 24px;
   }
@@ -71,7 +71,7 @@ export const TileWrapper = styled.div`
     max-width: 330px;
     margin: 0;
   }
-  @media (min-width: 921px) and (max-width: 1300px) {
+  @media (min-width: 921px) and (max-width: 1360px) {
     grid-template-columns: repeat(4, 1fr);
   }
 
