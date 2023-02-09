@@ -29,6 +29,7 @@ export const Tile = styled.div`
   }
 `;
 export const PhotoBox = styled(NavLink)`
+
 `;
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
