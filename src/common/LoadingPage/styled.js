@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     max-width: 1368px;
+    margin: auto;
 `;
 
 export const StyledHeader = styled.header`
@@ -9,8 +10,7 @@ export const StyledHeader = styled.header`
     font-size: 36px;
     line-height: 120%;
     color: ${({ theme }) => theme.color.woodSmoke};
-    margin-top: 56px;
-    margin-left: 246px;
+    margin-top: 56px; 
 
     @media (max-width:767px){
         font-weight: 500;
