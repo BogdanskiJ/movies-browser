@@ -38,7 +38,7 @@ export const Photo = styled.img`
   border-radius: 5px;
   background-color: ${({ theme }) => theme.color.silver};
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     width: 116px;
     height: 163px;
   }

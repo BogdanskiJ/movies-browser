@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
     max-width: 1368px;
 `;
 
+
 export const StyledHeader = styled.header`
     font-weight: 600;
     font-size: 36px;
@@ -16,6 +17,7 @@ export const StyledHeader = styled.header`
         font-weight: 500;
         font-size: 14px;
         line-height: 130%;
+        margin-top: 24px;
         margin-left: 16px;
     };
 `;
