@@ -35,8 +35,16 @@ export const MainWrapper = styled.div`
     align-content: center;
   }
 
-  @media (min-width: 912px) and (max-width: 1353px) {
-    padding: 0 40px 24px 40px;
+  @media (min-width: 912px) and (max-width: 1023x) {
+    padding-top: 24px;
+    max-width: 1000px;
+    margin: auto;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+  }
+  @media (min-width: 1024px) and (max-width: 1353px) {
+    padding: 40px;
     padding-top: 24px;
     max-width: 1000px;
     margin: auto;
