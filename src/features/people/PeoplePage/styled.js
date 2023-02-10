@@ -6,30 +6,51 @@ export const Background = styled.div`
 
 export const MainWrapper = styled.div`
   max-width: 1368px;
-  margin: auto;
   padding-top: 56px;
   padding-bottom: 60px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.color.whisper};
-  padding-bottom: 60px;
 
-  @media (min-width: 260px) and (max-width: 500px) {
-    padding: 20px;
+  @media (max-width: 440px) {
+   padding: 0 16px 16px 16px;
     padding-top: 24px;
-    margin: auto;
     max-width: 330px;
-    justify-items: left;
+    margin: auto;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+  }
+  @media (min-width: 441px) and (max-width: 911px) {
+    padding: 0 40px 24px 40px;
+    padding-top: 24px;
+    max-width: 770px;
+    margin: auto;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
   }
 
-  @media (min-width: 501px) and (max-width: 767px) {
-    padding-left: 15px;
+  @media (min-width: 912px) and (max-width: 1023x) {
     padding-top: 24px;
-    padding-bottom: 30px;
-  } ;
-
-  @media (min-width: 767px) and (max-width: 1360px) {
-    padding: 60px;
+    max-width: 1000px;
+    margin: auto;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+  }
+  @media (min-width: 1024px) and (max-width: 1353px) {
+    padding: 40px;
     padding-top: 24px;
+    max-width: 1000px;
+    margin: auto;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
   }
 `;
 
@@ -39,45 +60,39 @@ export const Info = styled.h2`
   margin: 0;
   margin-bottom: 24px;
   font-style: normal;
+  align-self: flex-start;
 
-  @media (max-width: 300px) {
-    font-size: 24px;
-    margin-left: 20px;
-    margin-bottom: 16px;
-  }
-
-  @media (min-width: 301px) and (max-width: 767px) {
+  @media (max-width: 767px) {
     font-size: 20px;
     margin-bottom: 12px;
+    gap:16px;
   }
 `;
 
 export const TileWrapper = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  align-self: center;
+
+  @media (max-width: 767px) {
+    align-self: center;
+    min-width: 288px;
+  }
+`;
+
+export const PopularActorsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: stretch;
   gap: 24px;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, 1fr);
 
-  @media (max-width: 300px) {
-    grid-template-columns: repeat(1, 1fr);
-    padding: 20px;
-    gap: 8px;
-    justify-items: left;
-  }
-  @media (min-width: 301px) and (max-width: 500px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 16px;
-    max-width: 330px;
-    margin: 0;
-  }
-  @media (min-width: 921px) and (max-width: 1360px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media (min-width: 501px) and (max-width: 920px) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    margin: 0;
+  @media (max-width: 767px) {
+    /* gap: 16px; */
   }
 `;

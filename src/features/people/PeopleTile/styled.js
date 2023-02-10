@@ -13,19 +13,13 @@ export const Tile = styled.div`
   margin-bottom: 0;
   filter: drop-shadow(0px 4px 12px rgba(186, 199, 213, 0.5));
 
-  @media (max-width: 300px) {
-  }
-
-  @media (min-width: 301px) and (max-width: 767px) {
+@media (max-width: 767px) {
     border-radius: 5px;
     margin: 0;
     padding: 8px;
     padding-bottom: 20px;
     gap: 8px;
-    max-width: 136px;
-  }
-  @media (min-width: 767px) and (max-width: 1360px) {
-    max-width: 230px;
+    /* max-width: 136px; */
   }
 `;
 export const PhotoBox = styled(NavLink)`
@@ -43,6 +37,7 @@ export const Name = styled.h3`
   color: ${({ theme }) => theme.color.woodSmoke};
   font-weight: 500;
   font-size: 22px;
+  max-width: 176px;
 
   @media (max-width: 767px) {
     font-size: 14px;

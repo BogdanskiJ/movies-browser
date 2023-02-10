@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Pagination from "../pagination/index";
 import { PeopleTile } from "../PeopleTile";
-import { Background, Info, MainWrapper, TileWrapper } from "./styled";
+import { Background, Info, MainWrapper, PopularActorsWrapper, TileWrapper } from "./styled";
 import { useSelector } from "react-redux";
 import {
   fetchPeopleList,
@@ -46,14 +46,17 @@ export const People = () => {
               <>
                 <Background>
                   <MainWrapper>
+                
+                    <TileWrapper>
                     <Info>
                       {!query ? "Popular people"
                         : `Search results for "${query}" (${totalResults})`}
                     </Info>
-                    <TileWrapper>
-                      {people.map((actor) => (
+                   <PopularActorsWrapper>
+                   {people.map((actor) => (
                         <PeopleTile name={actor.name} key={actor.id} {...actor} />
                       ))}
+                   </PopularActorsWrapper>
                     </TileWrapper>
                     <Pagination  />
                   </MainWrapper>
