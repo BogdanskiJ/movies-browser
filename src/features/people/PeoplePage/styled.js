@@ -16,10 +16,29 @@ export const MainWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 767px) {
+  @media (max-width: 440px) {
    padding: 0 16px 16px 16px;
     padding-top: 24px;
     max-width: 330px;
+    margin: auto;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+  }
+  @media (min-width: 441px) and (max-width: 911px) {
+    padding: 0 40px 24px 40px;
+    padding-top: 24px;
+    max-width: 770px;
+    margin: auto;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+  }
+
+  @media (min-width: 912px) and (max-width: 1353px) {
+    padding: 0 40px 24px 40px;
+    padding-top: 24px;
+    max-width: 1000px;
     margin: auto;
     align-self: center;
     justify-content: center;
