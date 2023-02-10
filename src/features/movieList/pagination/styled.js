@@ -33,6 +33,7 @@ export const PaginationLeftButton = styled(NavLink)`
 
     &:hover{
         background: ${({ theme }) => theme.color.melrose};
+        transition: 0.5s;
     }
 
     @media (max-width: 756px) {
@@ -66,6 +67,7 @@ export const PaginationLeftButtonPreviousPage = styled(NavLink)`
 
     &:hover{
         background: ${({ theme }) => theme.color.melrose};
+        transition: 0.5s;
     }
 
     @media (max-width: 756px) {
@@ -99,6 +101,7 @@ export const PaginationLeftButtonMin = styled(NavLink)`
 
     &:hover{
         background: ${({ theme }) => theme.color.melrose};
+        transition: 0.5s;
     }
 
     @media (min-width: 756px) {
@@ -136,6 +139,7 @@ export const PaginationRightButton = styled(NavLink)`
 
     &:hover{
         background: ${({ theme }) => theme.color.melrose};
+        transition: 0.5s;
     }
 
     @media (max-width: 756px) {
@@ -177,6 +181,7 @@ export const PaginationRightButtonMax = styled(NavLink)`
 
     &:hover{
         background: ${({ theme }) => theme.color.melrose};
+        transition: 0.5s;
     }
 
     @media (min-width: 756px) {
@@ -214,6 +219,7 @@ export const PaginationRightButtonNextPage = styled(NavLink)`
     
     &:hover{
         background: ${({ theme }) => theme.color.melrose};
+        transition: 0.5s;
     }
 
     @media (max-width: 756px) {
