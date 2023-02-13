@@ -1,7 +1,13 @@
 import { useEffect } from "react";
 import Pagination from "../pagination/index";
 import { PeopleTile } from "../PeopleTile";
-import { Background, Info, MainWrapper, PopularActorsWrapper, TileWrapper } from "./styled";
+import {
+  Background,
+  Info,
+  MainWrapper,
+  PopularActorsWrapper,
+  TileWrapper,
+} from "./styled";
 import { useSelector } from "react-redux";
 import {
   fetchPeopleList,
@@ -35,34 +41,35 @@ export const People = () => {
     dispatch(fetchPeopleList());
   }, [query, page, dispatch]);
 
-
   return (
     <>
-      {loadingStatus === true && !query ? <LoadingPage title={"Search results for \"Popular People\""} />
-        : loadingStatus === true && query ? <LoadingPage title={`Search results for "${query}"`} />
-        : loadingStatus === false && !people ? <ErrorPage />
-          : (totalResults === 0 || page > totalPages) ? <NoResultPage />
-            : (
-              <>
-                <Background>
-                  <MainWrapper>
-                
-                    <TileWrapper>
-                    <Info>
-                      {!query ? "Popular people"
-                        : `Search results for "${query}" (${totalResults})`}
-                    </Info>
-                   <PopularActorsWrapper>
-                   {people.map((actor) => (
-                        <PeopleTile name={actor.name} key={actor.id} {...actor} />
-                      ))}
-                   </PopularActorsWrapper>
-                    </TileWrapper>
-                    <Pagination  />
-                  </MainWrapper>
-                </Background>
-              </>
-            )}
+      {loadingStatus === true && !query ? (
+        <LoadingPage title={'Search results for "Popular People"'} />
+      ) : loadingStatus === true && query ? (
+        <LoadingPage title={`Search results for "${query}"`} />
+      ) : loadingStatus === false && !people ? (
+        <ErrorPage />
+      ) : totalResults === 0 || page > totalPages ? (
+        <NoResultPage />
+      ) : (
+        <>
+          <Background>
+            <MainWrapper>
+              <Info>
+                {!query
+                  ? "Popular people"
+                  : `Search results for "${query}" (${totalResults})`}
+              </Info>
+              <PopularActorsWrapper>
+                {people.map((actor) => (
+                  <PeopleTile name={actor.name} key={actor.id} {...actor} />
+                ))}
+              </PopularActorsWrapper>
+              <Pagination />
+            </MainWrapper>
+          </Background>
+        </>
+      )}
     </>
   );
 };

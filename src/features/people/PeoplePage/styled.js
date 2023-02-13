@@ -6,7 +6,6 @@ export const Background = styled.div`
 
 export const MainWrapper = styled.div`
   max-width: 1368px;
-  padding-top: 56px;
   padding-bottom: 60px;
   margin: auto;
   display: flex;
@@ -16,95 +15,38 @@ export const MainWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 440px) {
-   padding: 0 16px 16px 16px;
-    padding-top: 24px;
-    max-width: 330px;
-    margin: auto;
+  @media (max-width: 767px) {
     align-self: center;
-    justify-content: center;
-    align-content: center;
+    padding: 16px;
+    padding-top: 0;
   }
-  @media (min-width: 441px) and (max-width: 911px) {
-    padding: 0 30px 24px 30px;
-    padding-top: 24px;
-    max-width: 800px;
-    margin: auto;
-    align-self: center;
-    justify-content: center;
-    align-content: center;
-  }
-
-  @media (min-width: 912px) and (max-width: 1023px) {
-    padding: 0 30px 24px 30px;
-    padding-top: 24px;
-    max-width: 800px;
-    margin: auto;
-    align-self: center;
-    justify-content: center;
-    align-content: center;
-  }
-  @media (min-width: 1024px) and (max-width: 1353px) {
-    padding: 40px;
-    padding-top: 24px;
-    max-width: 1000px;
-    margin: auto;
-    align-self: center;
-    justify-content: center;
-    align-content: center;
-  }
-  /* @media (max-width:767px){
-    padding: 0 20px 24px 20px;
-    padding-top: 24px;
-    max-width: fit-content;
-    margin: auto;
-    align-self: center;
-    justify-content: center;
-    align-content: center;
-  } */
 `;
 
-export const Info = styled.h2`
+export const Info = styled.h1`
+  margin-top: 56px;
+  align-self: flex-start;
   font-weight: 600;
   font-size: 36px;
-  margin: 0;
-  margin-bottom: 24px;
-  font-style: normal;
-  align-self: flex-start;
+  line-height: 120%;
 
   @media (max-width: 767px) {
-    font-size: 20px;
-    margin-bottom: 12px;
-    gap:16px;
-  }
-`;
-
-export const TileWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  align-self: center;
-
-  @media (max-width: 767px) {
-    align-self: center;
-    min-width: 288px;
+    /* margin-left: 0; */
+    margin-top: 24px;
+    align-self: flex-start;
+    font-size: 18px;
   }
 `;
 
 export const PopularActorsWrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: flex-start;
-  align-items: stretch;
   gap: 24px;
-  max-width: max-content;
+  align-content: center;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
 
   @media (max-width: 767px) {
     gap: 16px;
-    /* max-width: max-content; */
+    align-self: center;
   }
 `;
