@@ -54,6 +54,7 @@ export const Photo = styled.img`
   height: 231px;
   flex-grow: 0;
   background-color: ${({ theme }) => theme.color.silver};
+  object-fit: cover;
 
   @media (max-width: 767px) {
     width: 120px;
