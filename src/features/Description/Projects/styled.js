@@ -12,23 +12,12 @@ export const TileWrapper = styled.div`
   margin-bottom: 24px;
   max-width: 100%;
   grid-auto-flow: column;
-  grid-auto-columns: 25%;
+  grid-auto-columns: max-content;
   overflow-x: auto;
+  gap: 16px;
   padding-bottom: 10px;
 
-  @media (min-width: 1108px) and (max-width: 1300px){
-    grid-auto-columns: 28%;
-  }
-  @media (min-width: 1024px) and (max-width: 1107px){
-    grid-auto-columns: 35%;
-  }
-  @media (min-width: 768px) and (max-width: 830px){
-    grid-auto-columns: 47%;
-  }
-  @media (min-width: 831px) and (max-width: 1023px){
-    grid-auto-columns: 38%;
-  }
-  @media (max-width: 767px) {
+  @media (max-width: 430px) {
     grid-auto-columns: 100% ;
     padding-bottom: 15px;
   }

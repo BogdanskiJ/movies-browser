@@ -77,7 +77,7 @@ export const Script = styled.div`
   grid-column: 2/2;
   grid-row: 1 / span 2;
   margin-left: 40px;
-  margin-top: 150px;
+  margin-top: 200px;
   display: flex;
   flex-direction: column;
   color: ${({ theme }) => theme.color.black};
@@ -100,7 +100,7 @@ export const ReadMoreButton = styled.button`
   margin-top: 10px;
   align-self: flex-end;
   border-radius: 5%;
-  @media (max-width: 767px) {
+  @media (max-width: 756px) {
     padding: 8px;
     font-size: 12px;
     width: auto;
