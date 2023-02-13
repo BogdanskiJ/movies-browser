@@ -26,18 +26,19 @@ export const MainWrapper = styled.div`
     align-content: center;
   }
   @media (min-width: 441px) and (max-width: 911px) {
-    padding: 0 40px 24px 40px;
+    padding: 0 30px 24px 30px;
     padding-top: 24px;
-    max-width: 770px;
+    max-width: 800px;
     margin: auto;
     align-self: center;
     justify-content: center;
     align-content: center;
   }
 
-  @media (min-width: 912px) and (max-width: 1023x) {
+  @media (min-width: 912px) and (max-width: 1023px) {
+    padding: 0 30px 24px 30px;
     padding-top: 24px;
-    max-width: 1000px;
+    max-width: 800px;
     margin: auto;
     align-self: center;
     justify-content: center;
@@ -52,6 +53,15 @@ export const MainWrapper = styled.div`
     justify-content: center;
     align-content: center;
   }
+  /* @media (max-width:767px){
+    padding: 0 20px 24px 20px;
+    padding-top: 24px;
+    max-width: fit-content;
+    margin: auto;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+  } */
 `;
 
 export const Info = styled.h2`
@@ -91,8 +101,10 @@ export const PopularActorsWrapper = styled.div`
   justify-content: flex-start;
   align-items: stretch;
   gap: 24px;
+  max-width: max-content;
 
   @media (max-width: 767px) {
-    /* gap: 16px; */
+    gap: 16px;
+    /* max-width: max-content; */
   }
 `;

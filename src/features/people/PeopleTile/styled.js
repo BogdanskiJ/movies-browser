@@ -41,6 +41,7 @@ export const Name = styled.h3`
 
   @media (max-width: 767px) {
     font-size: 14px;
+    max-width: 120px;
   }
 
   &:hover {

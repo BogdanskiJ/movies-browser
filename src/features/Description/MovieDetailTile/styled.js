@@ -4,11 +4,12 @@ import styled from "styled-components";
 export const MovieDetail = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 324px;
+  width: 324px;
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   border-radius: 5px;
   gap: 16px;
   padding: 16px;
+  margin-right: 16px;
   background: ${({ theme }) => theme.color.white};
 
   @media (max-width: 756px) {
