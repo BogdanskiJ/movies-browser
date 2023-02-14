@@ -49,9 +49,8 @@ export const Name = styled.h3`
 export const Photo = styled.img`
   border-radius: 5px;
   width: 100%;
-  height: auto;
+  height: 100%;
   background-color: ${({ theme }) => theme.color.silver};
-  object-fit: cover;
 
   @media (max-width: 767px) {
     width: 100%;
