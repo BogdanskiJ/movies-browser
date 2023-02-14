@@ -6,7 +6,7 @@ export const Background = styled.div`
 
 export const MainWrapper = styled.div`
   max-width: 1368px;
-  padding-bottom: 60px;
+  padding-top: 0;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -14,6 +14,7 @@ export const MainWrapper = styled.div`
   align-content: center;
   justify-content: center;
   align-items: center;
+  flex-grow: 1 ;
 
   @media (max-width: 767px) {
     align-self: center;
@@ -30,7 +31,6 @@ export const Info = styled.h1`
   line-height: 120%;
 
   @media (max-width: 767px) {
-    /* margin-left: 0; */
     margin-top: 24px;
     align-self: flex-start;
     font-size: 18px;
@@ -41,12 +41,11 @@ export const PopularActorsWrapper = styled.div`
   display: flex;
   gap: 24px;
   align-content: center;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: stretch;
   flex-wrap: wrap;
-
   @media (max-width: 767px) {
-    gap: 16px;
+    gap: 14px;
     align-self: center;
   }
 `;
