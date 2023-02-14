@@ -6,7 +6,6 @@ export const Background = styled.div`
 
 export const MainWrapper = styled.div`
   max-width: 1368px;
-  padding-top: 0;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -14,7 +13,6 @@ export const MainWrapper = styled.div`
   align-content: center;
   justify-content: center;
   align-items: center;
-  flex-grow: 1 ;
 
   @media (max-width: 767px) {
     align-self: center;
@@ -49,4 +47,36 @@ export const PopularActorsWrapper = styled.div`
     align-self: center;
   }
 `;
+
+export const Margin = styled.div`
+ 
+  @media (min-width: 768px) and (max-width: 949px) {
+    max-width: 700px;
+    justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: 0 auto;
+  }
+  @media (min-width: 950px) and (max-width: 1149px) {
+    max-width: 910px;
+    justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: 0 auto;
+  }
+  @media (min-width: 1150px) and (max-width: 1367px) {
+    max-width: 1140px;
+    justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: 0 auto;
+  }
+`;
+ 
 

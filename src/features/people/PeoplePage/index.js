@@ -5,6 +5,7 @@ import {
   Background,
   Info,
   MainWrapper,
+  Margin,
   PopularActorsWrapper,
   TileWrapper,
 } from "./styled";
@@ -55,7 +56,8 @@ export const People = () => {
         <>
           <Background>
             <MainWrapper>
-              <Info>
+             <Margin>
+             <Info>
                 {!query
                   ? "Popular people"
                   : `Search results for "${query}" (${totalResults})`}
@@ -65,6 +67,8 @@ export const People = () => {
                   <PeopleTile name={actor.name} key={actor.id} {...actor} />
                 ))}
               </PopularActorsWrapper>
+
+             </Margin>
               <Pagination />
             </MainWrapper>
           </Background>
