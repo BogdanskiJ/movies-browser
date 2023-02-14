@@ -50,3 +50,4 @@ export const PopularActorsWrapper = styled.div`
     align-self: center;
   }
 `;
+
