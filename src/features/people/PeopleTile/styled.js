@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Tile = styled.div`
-  background-color: ${({ theme }) => theme.color.white};
+ background-color: ${({ theme }) => theme.color.white};
   padding: 16px;
   gap: 12px;
   display: flex;
@@ -10,20 +10,18 @@ export const Tile = styled.div`
   align-items: center;
   margin-left: 0px;
   margin-bottom: 0;
- flex-grow: 1;
-  max-width: 208px;
+  width: 208px;
   filter: drop-shadow(0px 4px 12px rgba(186, 199, 213, 0.5));
 
   @media (max-width: 767px) {
-    max-width: 47%;
+    width: 47%;
     border-radius: 5px;
     padding: 8px;
     padding-bottom: 20px;
     gap: 8px;
   }
 `;
-export const PhotoBox = styled(NavLink)`
-`
+export const PhotoBox = styled(NavLink)``;
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
 `;
@@ -61,4 +59,3 @@ export const Photo = styled.img`
     aspect-ratio: 2/3;
   }
 `;
-
