@@ -48,8 +48,10 @@ export const Name = styled.h3`
 export const Photo = styled.img`
   border-radius: 5px;
   width: 100%;
+  height: 100%;
   aspect-ratio: 2/3;
   background-color: ${({ theme }) => theme.color.silver};
+  object-fit: contain;
 
   @media (max-width: 767px) {
     width: 100%;
