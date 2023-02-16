@@ -6,7 +6,7 @@ export const MovieDetail = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: auto 1fr;
   border-radius: 5px;
   padding: 16px;
   background: ${({ theme }) => theme.color.white};
@@ -15,7 +15,8 @@ export const MovieDetail = styled.div`
     display: flex;
     flex-direction: row;
     max-width: 100%;
-    gap: 24px;
+    gap: 12px;
+    padding: 8px;
   } ;
 `;
 
@@ -29,12 +30,16 @@ border-radius: 5px;
 width: 100%;
 aspect-ratio: 2/3;
 max-height: auto;
-min-height: 330px;
 margin-bottom: 16px;
 background: ${({ theme }) => theme.color.silver};
-
-@media (max-width:756px){
-  min-height: 220px;
+@media (max-width: 480px) {
+  height: 130px;
+  width: auto;
+}
+@media (min-width: 481px) and (max-width:756px){
+  width: 100%;
+  min-height: 210px;
+  aspect-ratio: 3/3;
 }
 
 `

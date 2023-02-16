@@ -22,9 +22,9 @@ export const TileWrapper = styled.div`
   
   @media (max-width: 767px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 8px;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 540px) {
     grid-template-columns: 1fr;
     gap: 8px;
   }
