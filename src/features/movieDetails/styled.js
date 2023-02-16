@@ -60,7 +60,6 @@ export const TileBox = styled.div`
     grid-template-columns: 1fr 1fr;
   }
 `;
-
 export const MovieDetailsPeople = styled.div`
   display: flex;
   gap: 24px;
