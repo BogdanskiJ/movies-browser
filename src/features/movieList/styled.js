@@ -60,7 +60,7 @@ export const MoviesList = styled.div`
 
 export const Margin = styled.div`
  
-  @media (min-width: 756px) and (max-width: 1145px) {
+  /* @media (min-width: 756px) and (max-width: 1145px) {
     max-width: 700px;
     justify-content: center;
     align-items: center;
@@ -68,7 +68,7 @@ export const Margin = styled.div`
     flex-direction: column;
     align-self: center;
     margin: 0 auto;
-  };
+  }; */
 
   @media (min-width: 1146px) and (max-width: 1398px) {
     max-width: 1084px;

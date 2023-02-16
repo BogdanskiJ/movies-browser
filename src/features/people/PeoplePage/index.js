@@ -5,9 +5,6 @@ import {
   Background,
   Info,
   MainWrapper,
-  Margin,
-  PopularActorsWrapper,
-  TileWrapper,
 } from "./styled";
 import { useSelector } from "react-redux";
 import {
@@ -55,22 +52,17 @@ export const People = () => {
       ) : (
         <>
           <Background>
+            <Info>
+              {!query
+                ? "Popular people"
+                : `Search results for "${query}" (${totalResults})`}
+            </Info>
             <MainWrapper>
-             <Margin>
-             <Info>
-                {!query
-                  ? "Popular people"
-                  : `Search results for "${query}" (${totalResults})`}
-              </Info>
-              <PopularActorsWrapper>
-                {people.map((actor) => (
-                  <PeopleTile name={actor.name} key={actor.id} {...actor} />
-                ))}
-              </PopularActorsWrapper>
-
-             </Margin>
-              <Pagination />
+              {people.map((actor) => (
+                <PeopleTile name={actor.name} key={actor.id} {...actor} />
+              ))}
             </MainWrapper>
+            <Pagination />
           </Background>
         </>
       )}

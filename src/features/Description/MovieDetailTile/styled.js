@@ -1,38 +1,43 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+
 export const MovieDetail = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 324px;
-  box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
   border-radius: 5px;
-  gap: 16px;
   padding: 16px;
-  margin-right: 16px;
   background: ${({ theme }) => theme.color.white};
 
   @media (max-width: 756px) {
+    display: flex;
     flex-direction: row;
-    max-width: fit-content;
-    margin: 0;
-    min-width: 100%;
+    max-width: 100%;
+    gap: 24px;
   } ;
 `;
 
 export const PosterBox = styled(NavLink)``;
 
-export const Poster = styled.img`
-  border-radius: 5px;
-  max-width: 292px;
-  height: 434px;
-  background: ${({ theme }) => theme.color.silver};
-  @media (max-width: 756px) {
-    width: 114px;
-    height: 169px;
-    margin: 0;
-  } ;
+export const Poster = styled.div`
 `;
+export const PosterImg= styled.img`
+object-fit: cover;
+border-radius: 5px;
+width: 100%;
+aspect-ratio: 2/3;
+max-height: auto;
+min-height: 330px;
+margin-bottom: 16px;
+background: ${({ theme }) => theme.color.silver};
+
+@media (max-width:756px){
+  min-height: 220px;
+}
+
+`
 
 export const MovieDescriptionBox = styled.div`
   display: flex;
@@ -40,10 +45,9 @@ export const MovieDescriptionBox = styled.div`
   gap: 8px;
   width: 100%;
   height: 100%;
-
+  justify-content: space-between;
   @media (max-width: 756px) {
-    height: auto;
-    gap: 0;
+    justify-content: flex-start;
   } ;
 `;
 
@@ -163,3 +167,10 @@ export const VotesNumber = styled.div`
     line-height: 130%;
   } ;
 `;
+
+export const Detail = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+  margin-bottom: 16px;
+`

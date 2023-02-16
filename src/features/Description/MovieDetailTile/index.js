@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { theme } from "../../../theme";
 import {
+  Detail,
   MovieDescriptionBox,
   MovieDetail,
   MovieRating,
@@ -10,6 +11,7 @@ import {
   MovieYear,
   Poster,
   PosterBox,
+  PosterImg,
   Rating,
   Tag,
   VotesNumber,
@@ -17,7 +19,7 @@ import {
 import { ReactComponent as Star } from "../../../images/star.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGenres, selectProjectsState } from "../Projects/projectsSlice";
-import movieListEmptyPoster from "../../../images/movieListEmptyPoster.svg"
+import movieListEmptyPoster from "../../../images/movieListEmptyPoster.svg";
 
 const MovieDetailTile = ({
   movieTitle,
@@ -50,10 +52,16 @@ const MovieDetailTile = ({
         title={movieTitle}
         id={id}
       >
-        <Poster src={poster_path ? (url_img + poster_path) : (movieListEmptyPoster)} alt="" />
+        <Poster>
+          <PosterImg  src={poster_path ? url_img + poster_path : movieListEmptyPoster}
+          alt="" />
+        </Poster>
+         
+        
       </PosterBox>
       <MovieDescriptionBox>
-        <MovieTitleBox to={`/movies/${id}`} title={movieTitle} id={id}>
+       <Detail>
+       <MovieTitleBox to={`/movies/${id}`} title={movieTitle} id={id}>
           <MovieTitle>{movieTitle}</MovieTitle>
         </MovieTitleBox>
         <MovieYear>
@@ -68,11 +76,13 @@ const MovieDetailTile = ({
               ))
             : ""}
         </MovieTags>
+        </Detail>
         <MovieRating>
           <Star />
           <Rating>{movieRating}</Rating>
           <VotesNumber>{votesNumber} votes</VotesNumber>
         </MovieRating>
+      
       </MovieDescriptionBox>
     </MovieDetail>
   );

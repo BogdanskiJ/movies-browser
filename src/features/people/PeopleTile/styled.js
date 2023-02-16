@@ -4,20 +4,19 @@ import styled from "styled-components";
 export const Tile = styled.div`
  background-color: ${({ theme }) => theme.color.white};
   padding: 16px;
-  gap: 12px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-left: 0px;
   margin-bottom: 0;
-  width: 208px;
+  width: 100%;
+  height: 100%;
   filter: drop-shadow(0px 4px 12px rgba(186, 199, 213, 0.5));
 
   @media (max-width: 767px) {
-    width: 47%;
-    border-radius: 5px;
     padding: 8px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     gap: 8px;
   }
 `;
@@ -49,12 +48,12 @@ export const Name = styled.h3`
 export const Photo = styled.img`
   border-radius: 5px;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 2/3;
   background-color: ${({ theme }) => theme.color.silver};
 
   @media (max-width: 767px) {
     width: 100%;
     height: auto;
-    aspect-ratio: 2/3;
+   
   }
 `;
