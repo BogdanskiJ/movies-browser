@@ -25,6 +25,7 @@ export const CastBox = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+   
 
     @media (max-width: 500px) {
         gap: 12px;
@@ -50,10 +51,12 @@ export const Title = styled.div`
 export const TileBox = styled.div`
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     gap:24px;
+    padding-bottom: 20px;
     justify-content: flex-start;
+    overflow-x: scroll;
 
     @media (max-width: 1400px) {
         margin: 0 16px;

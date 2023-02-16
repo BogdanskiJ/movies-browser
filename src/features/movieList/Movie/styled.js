@@ -9,7 +9,9 @@ export const MovieDetail = styled.div`
     border-radius: 5px;
     gap:16px;
     padding: 16px;
+    align-items: center;
     background: ${({ theme }) => theme.color.white};
+    flex-grow: 1;
 
     @media (max-width: 756px) {
         flex-direction:row;
