@@ -4,32 +4,24 @@ import styled from "styled-components";
 export const Tile = styled.div`
   background-color: ${({ theme }) => theme.color.white};
   padding: 16px;
-  gap: 12px;
-  max-width: 208px;
+  word-break: break-word;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-left: 0;
-  margin-bottom: 0;
 
-    @media (max-width: 500px) {
+    @media (max-width: 767px) {
       padding: 8px;
-      gap: 8px;
-      max-width:136px;
     }
 `;
 
 export const NameBox = styled.div`
-  max-width: 176px;
   gap: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 
-  @media (max-width: 500px) {
-      max-width: 114px;
-    }
 `;
 
 export const Name = styled(NavLink)`
@@ -68,27 +60,22 @@ export const MovieName = styled.h3`
 `;
 
 export const Poster = styled(NavLink)`
-    width: 177px;
-    height: 231px;
     top: -6px;
     text-decoration:none;
 
     @media (max-width: 500px) {
-      width: 114px;
-      height: 169px;
       display:flex;
     }
 `;
 
 export const Photo = styled.img`
   border-radius: 5px;
-  width: 177px;
-  height: 231px;
+  width: 100%;
+  aspect-ratio: 2/3;
   object-fit: cover;
   background: ${({ theme }) => theme.color.silver};
   
   @media (max-width: 500px) {
-    width: 114px;
-    height: 169px;
+
     }
 `;
