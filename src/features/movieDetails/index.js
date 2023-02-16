@@ -100,11 +100,12 @@ const MovieDetails = () => {
                   ))}
                 </TileBox>
                 </>
-              </CastBox>
+             
             ) : (
               ""
             )}
           </>
+          </CastBox>
         </MovieDetailsPage>
       ) : (
         ""
