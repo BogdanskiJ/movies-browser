@@ -4,7 +4,7 @@ export const MovieDetailsPage = styled.div`
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 46px;
   align-items: center;
   padding-bottom: 200px;
   background-color: ${({ theme }) => theme.color.whisper};
@@ -18,6 +18,10 @@ export const MovieDetailsPage = styled.div`
 export const CastBox = styled.div`
   max-width: 1368px;
   margin: 0 auto;
+  padding: 16px;
+  @media (max-width: 767px) {
+    padding: 16px;
+  }
 `;
 
 export const Title = styled.div`

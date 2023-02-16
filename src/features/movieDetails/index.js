@@ -51,7 +51,7 @@ const MovieDetails = () => {
               maxRating={"10"}
             />
           )}
-           <CastBox>
+
           <MovieTail
             movieTilePoster={`https://image.tmdb.org/t/p/w1280/${movieDetails.poster_path}`}
             movieTitle={movieDetails.title}
@@ -66,7 +66,7 @@ const MovieDetails = () => {
           />
           <>
             {credits.cast !== undefined ? (
-             <>
+              <CastBox>
                 <Title>Cast</Title>
                 <TileBox>
                   {credits.cast.map((cast) => (
@@ -79,14 +79,14 @@ const MovieDetails = () => {
                     />
                   ))}
                 </TileBox>
-                </>
+              </CastBox>
             ) : (
               ""
             )}
           </>
           <>
             {credits.crew !== undefined ? (
-              <>
+              <CastBox>
                 <Title>Crew</Title>
                 <TileBox>
                   {credits.crew.map((crew) => (
@@ -99,13 +99,11 @@ const MovieDetails = () => {
                     />
                   ))}
                 </TileBox>
-                </>
-             
+              </CastBox>
             ) : (
               ""
             )}
           </>
-          </CastBox>
         </MovieDetailsPage>
       ) : (
         ""
