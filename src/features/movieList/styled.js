@@ -19,8 +19,7 @@ export const PopularMoviesName = styled.h1`
   font-size: 36px;
   line-height: 120%;
   color: ${({ theme }) => theme.color.woodSmoke};
-
-
+  margin-left: 1.5%;
 
   @media (max-width: 756px) {
     margin-left: 0;
@@ -36,6 +35,7 @@ export const MoviesList = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+  margin-left: 1.5%;
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
