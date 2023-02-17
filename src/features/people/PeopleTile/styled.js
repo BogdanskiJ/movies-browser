@@ -52,7 +52,7 @@ export const Photo = styled.img`
   aspect-ratio: 2/3;
   object-fit: cover;
   background-color: ${({ theme }) => theme.color.silver};
-  object-fit: contain;
+  object-fit: cover;
 
   @media (max-width: 767px) {
     width: 100%;
