@@ -49,6 +49,7 @@ export const Photo = styled.img`
   border-radius: 5px;
   width: 100%;
   aspect-ratio: 2/3;
+  object-fit: cover;
   background-color: ${({ theme }) => theme.color.silver};
 
   @media (max-width: 767px) {

@@ -10,21 +10,6 @@ export const Background = styled.div`
 `;
 
 export const MainWrapper = styled.div`
-  /* max-width: 1368px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-
-  @media (max-width: 767px) {
-    align-self: center;
-    padding: 16px;
-    padding-top: 0;
-  } */
-
   margin: 0px 0px 56px 0px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -45,7 +30,6 @@ export const MainWrapper = styled.div`
   }
 `;
 
-
 export const Info = styled.h1`
   margin-top: 56px;
   align-self: flex-start;
@@ -60,48 +44,7 @@ export const Info = styled.h1`
   }
 `;
 
-export const PopularActorsWrapper = styled.div``
-//   display: flex;
-//   gap: 24px;
-//   align-content: center;
-//   justify-content: flex-start;
-//   align-items: stretch;
-//   flex-wrap: wrap;
-//   @media (max-width: 767px) {
-//     gap: 14px;
-//     align-self: center;
-//   }
-// `;
+export const PopularActorsWrapper = styled.div``;
 
-export const Margin = styled.div``
- 
-//   @media (min-width: 768px) and (max-width: 949px) {
-//     max-width: 700px;
-//     justify-content: center;
-//   align-items: center;
-//   display: flex;
-//   flex-direction: column;
-//   align-self: center;
-//   margin: 0 auto;
-//   }
-//   @media (min-width: 950px) and (max-width: 1149px) {
-//     max-width: 910px;
-//     justify-content: center;
-//   align-items: center;
-//   display: flex;
-//   flex-direction: column;
-//   align-self: center;
-//   margin: 0 auto;
-//   }
-  // @media (min-width: 1150px) and (max-width: 1367px) {
-//     max-width: 1140px;
-//     justify-content: center;
-//   align-items: center;
-//   display: flex;
-//   flex-direction: column;
-//   align-self: center;
-//   margin: 0 auto;
-//   }
-// `;
- 
 
+export const Margin = styled.div``;
