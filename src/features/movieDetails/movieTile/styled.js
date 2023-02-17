@@ -38,6 +38,7 @@ export const PosterBox = styled.div`
 export const Poster = styled.img`
     border-radius: 5px;
     max-width: 312px;
+    object-fit: cover;
 
     @media (max-width: 756px) {
         max-width: 269px;

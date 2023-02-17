@@ -32,6 +32,7 @@ aspect-ratio: 2/3;
 max-height: auto;
 margin-bottom: 16px;
 background: ${({ theme }) => theme.color.silver};
+object-fit: cover;
 @media (max-width: 480px) {
   height: 130px;
   width: auto;

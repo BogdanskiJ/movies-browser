@@ -28,6 +28,7 @@ export const Poster = styled.img`
   width: 100%;
   height: auto;
   border-radius: 5px;
+  object-fit: cover;
   background: ${({ theme }) => theme.color.silver};
 
   @media (max-width: 480px) {
