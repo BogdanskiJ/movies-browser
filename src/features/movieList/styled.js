@@ -8,7 +8,7 @@ export const MovieListPage = styled.div`
   @media (max-width: 767px) {
     padding-bottom: 30px;
     padding: 16px;
-  } ;
+  };
 `;
 
 
@@ -26,7 +26,7 @@ export const PopularMoviesName = styled.h1`
     margin-top: 8px;
     align-self: flex-start;
     font-size: 18px;
-  } ;
+  };
 `;
 
 export const MoviesList = styled.div`
@@ -40,17 +40,18 @@ export const MoviesList = styled.div`
   @media (max-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-  }
+  };
   
   @media (max-width: 767px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-  }
+  };
+
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
     margin: 12px auto 0;
     gap: 8px;
-  }
+  };
 `;
 
 

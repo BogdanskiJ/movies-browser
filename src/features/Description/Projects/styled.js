@@ -7,12 +7,12 @@ export const Wrapper = styled.div`
   flex-direction: column;
   margin-top: 64px;
 `;
+
 export const TileWrapper = styled.div`
   gap: 24px;
   display: grid;
   grid-template-columns: repeat(4,1fr);
   margin: 0 0 56px 0;
-  
   padding-bottom: 10px;
 
   @media (max-width: 1200px) {
@@ -29,11 +29,13 @@ export const TileWrapper = styled.div`
     gap: 8px;
   }
 `;
+
 export const MovieScroll = styled.div`
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
 `;
+
 export const Title = styled.span`
   font-weight: 600;
   font-size: 36px;

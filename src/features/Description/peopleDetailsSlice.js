@@ -37,5 +37,4 @@ export const selectPeopleDetailsStatus = (state) =>
   selectPeopleDetailsState(state).status;
 export const selectPeopleId = (state) =>
   selectPeopleDetailsState(state).detailsId;
-
 export default peopleDetailsSlice.reducer;

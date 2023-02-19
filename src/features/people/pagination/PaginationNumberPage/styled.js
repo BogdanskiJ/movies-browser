@@ -18,7 +18,7 @@ export const PageNumberBox = styled.div`
     font-size: 10px;
     line-height: 24px;
     margin: 0px;
-  } ;
+  };
 `;
 
 export const Number = styled.span`
@@ -31,5 +31,5 @@ export const Number = styled.span`
     font-weight: 600;
     font-size: 10px;
     line-height: 24px;
-  } ;
+  };
 `;

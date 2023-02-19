@@ -1,4 +1,4 @@
-import loadingIcon from "./LoadingIcon/icon-spinner.svg";
+import loadingIcon from "../../images/icon-spinner.svg"
 import { Container, LoadingIcon, StyledHeader, Wrapper } from "./styled";
 
 export const LoadingPage = ({ title }) => (

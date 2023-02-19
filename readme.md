@@ -1,6 +1,6 @@
- # Movies Browser <img alt="Movies Browser" src="/public/tmdb-long.svg" width="50%" />
+# Movies Browser <img alt="Movies Browser" src="/public/tmdb-long.svg" width="50%" />
 
-Movie Browser is a database about movies and actors. It allows you to get information about any movie you want. 
+Movie Browser is a database about movies and actors. It allows you to get information about any movie you want.
 
 <p align="center">
   <img alt="Movies Browser" src="/public/movies.png" width="18%" />
@@ -8,13 +8,13 @@ Movie Browser is a database about movies and actors. It allows you to get inform
 
 ## Table of content
 
-* [Movies Browser Demo](#Movies-Browser-Demo)
-* [General Info](#General-Info)
-* [How it works](#How-it-works)
-* [Technologies](#Technologies)
-* [Developers](#Developers)
-* [Available Scripts](#Available-Scripts)
-* [The Movie Database License](#The-Movie-Database-License)
+- [Movies Browser Demo](#Movies-Browser-Demo)
+- [General Info](#General-Info)
+- [How it works](#How-it-works)
+- [Technologies](#Technologies)
+- [Developers](#Developers)
+- [Available Scripts](#Available-Scripts)
+- [The Movie Database License](#The-Movie-Database-License)
 
 ## Movies Browser Demo
 
@@ -112,5 +112,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## The Movie Database License
 
-Project is based on the TMDB API. 
+Project is based on the TMDB API.
 ![TMDB](public/tmdb.svg)

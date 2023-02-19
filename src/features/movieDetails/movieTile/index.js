@@ -1,11 +1,10 @@
 import { theme } from "../../../theme";
 import { MovieDescription, CountryAndDate, ProductionInfo, MovieRating, MovieTags, MovieTitle, MovieYear, Poster, Rating, Tag, Tail, VotesNumber, MovieProduction, MaxRating, MovieStory, PosterBox, StarBox, Production, ReleaseData } from "./styled";
-import { ReactComponent as Star } from '../../../images/star.svg'
+import { ReactComponent as Star } from '../../../images/star.svg';
 
 export const MovieTail = ({ movieTitle, movieYear, releaseData, votesNumber, maxRating, movieRating, movieStory, movieTilePoster, countryProductionArray, tagArray }) => {
 
   return (
-
     <Tail theme={theme}>
       <PosterBox>
         <Poster src={movieTilePoster} title={movieTitle} alt="" />

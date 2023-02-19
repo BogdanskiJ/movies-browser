@@ -7,21 +7,20 @@ const projectsSlice = createSlice({
     crew: [],
     genres: [],
     projectId: null,
-
   },
   reducers: {
-    fetchProjects: () => {},
-    setCast: (state, {payload: cast}) => {
-        state.cast = cast
+    fetchProjects: () => { },
+    setCast: (state, { payload: cast }) => {
+      state.cast = cast
     },
-    setCrew: (state, {payload:crew}) => {
-        state.crew = crew
+    setCrew: (state, { payload: crew }) => {
+      state.crew = crew
     },
-    fetchGenres: () => {},
-    setGenres: (state, {payload:genres}) => {
-        state.genres = genres
+    fetchGenres: () => { },
+    setGenres: (state, { payload: genres }) => {
+      state.genres = genres
     },
-    setProjectsId: (state, {payload: id}) => {
+    setProjectsId: (state, { payload: id }) => {
       state.projectId = id;
     },
   },

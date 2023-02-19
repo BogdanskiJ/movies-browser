@@ -27,7 +27,7 @@ export const Tile = styled.div`
 
   @media (max-width: 767px) {
     padding: 16px;
-  }
+  };
 `;
 
 export const Photo = styled.img`
@@ -42,7 +42,7 @@ export const Photo = styled.img`
   @media (max-width: 768px) {
     width: 116px;
     height: 163px;
-  }
+  };
 `;
 
 export const Info = styled.div`
@@ -50,6 +50,7 @@ export const Info = styled.div`
   grid-row: 1/2;
   margin-left: 40px;
   padding: 8px;
+
   @media (max-width: 767px) {
     margin-left: 10px;
     padding: 6px;
@@ -57,7 +58,7 @@ export const Info = styled.div`
     grid-row: 1/2;
     padding-left: 128px;
     margin: 0;
-  }
+  };
 `;
 
 export const Name = styled.h2`
@@ -66,10 +67,11 @@ export const Name = styled.h2`
   font-size: 36px;
   margin: 0;
   color: ${({ theme }) => theme.color.black};
+
   @media (max-width: 767px) {
     font-weight: 500;
     font-size: 14px;
-  }
+  };
 `;
 
 export const Script = styled.div`
@@ -82,6 +84,7 @@ export const Script = styled.div`
   display: flex;
   flex-direction: column;
   color: ${({ theme }) => theme.color.black};
+
   @media (max-width: 767px) {
     grid-column: 1 / span 2;
     padding-top: 72px;
@@ -89,7 +92,7 @@ export const Script = styled.div`
     margin-top: 100px;
     font-size: 14px;
     flex-wrap: wrap;
-  }
+  };
 `;
 
 export const ReadMoreButton = styled.button`
@@ -101,9 +104,10 @@ export const ReadMoreButton = styled.button`
   margin-top: 10px;
   align-self: flex-end;
   border-radius: 5%;
+  
   @media (max-width: 756px) {
     padding: 8px;
     font-size: 12px;
     width: auto;
-  }
+  };
 `;

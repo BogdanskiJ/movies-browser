@@ -12,7 +12,7 @@ export const PaginationBox = styled.div`
 
   @media (max-width: 756px) {
     gap: 8px;
-  } ;
+  };
 `;
 
 export const PaginationLeftButton = styled(NavLink)`
@@ -34,21 +34,21 @@ export const PaginationLeftButton = styled(NavLink)`
   &:hover{
         background: ${({ theme }) => theme.color.melrose};
         transition: 0.5s;
-    }
+    };
 
   @media (max-width: 756px) {
     padding: 7.5px 12px;
-  }
+  };
 
   ${({ disabled }) =>
     disabled &&
     css`
-       {
+      {
         background: ${({ theme }) => theme.color.mystic};
         pointer-events: none;
         cursor: default;
       }
-    `}
+    `};
 `;
 
 export const PaginationLeftButtonPreviousPage = styled(NavLink)`
@@ -70,11 +70,11 @@ export const PaginationLeftButtonPreviousPage = styled(NavLink)`
   &:hover{
         background: ${({ theme }) => theme.color.melrose};
         transition: 0.5s;
-    }
+    };
 
   @media (max-width: 756px) {
     display: none;
-  }
+  };
 
   ${({ disabled }) =>
     disabled &&
@@ -84,7 +84,7 @@ export const PaginationLeftButtonPreviousPage = styled(NavLink)`
         pointer-events: none;
         cursor: default;
       }
-    `}
+    `};
 `;
 
 export const PaginationLeftButtonMin = styled(NavLink)`
@@ -106,15 +106,15 @@ export const PaginationLeftButtonMin = styled(NavLink)`
   &:hover{
         background: ${({ theme }) => theme.color.melrose};
         transition: 0.5s;
-    }
+    };
 
   @media (min-width: 756px) {
     display: none;
-  }
+  };
 
   @media (max-width: 756px) {
     padding: 7.5px 12px;
-  }
+  };
 
   ${({ disabled }) =>
     disabled &&
@@ -124,7 +124,7 @@ export const PaginationLeftButtonMin = styled(NavLink)`
         pointer-events: none;
         cursor: default;
       }
-    `}
+    `};
 `;
 
 export const PaginationRightButton = styled(NavLink)`
@@ -146,11 +146,11 @@ export const PaginationRightButton = styled(NavLink)`
   &:hover{
         background: ${({ theme }) => theme.color.melrose};
         transition: 0.5s;
-    }
+    };
 
   @media (max-width: 756px) {
     padding: 7.5px 12px;
-  }
+  };
 
   ${({ disabled }) =>
     disabled &&
@@ -160,13 +160,13 @@ export const PaginationRightButton = styled(NavLink)`
         pointer-events: none;
         cursor: default;
       }
-    `}
+    `};
 `;
 
 export const PaginationButtonText = styled.div`
   @media (max-width: 756px) {
     display: none;
-  } ;
+  };
 `;
 
 export const PaginationRightButtonMax = styled(NavLink)`
@@ -188,15 +188,15 @@ export const PaginationRightButtonMax = styled(NavLink)`
   &:hover{
         background: ${({ theme }) => theme.color.melrose};
         transition: 0.5s;
-    }
+    };
 
   @media (min-width: 756px) {
     display: none;
-  }
+  };
 
   @media (max-width: 756px) {
     padding: 7.5px 12px;
-  }
+  };
 
   ${({ disabled }) =>
     disabled &&
@@ -206,7 +206,7 @@ export const PaginationRightButtonMax = styled(NavLink)`
         pointer-events: none;
         cursor: default;
       }
-    `}
+    `};
 `;
 
 export const PaginationRightButtonNextPage = styled(NavLink)`
@@ -228,11 +228,11 @@ export const PaginationRightButtonNextPage = styled(NavLink)`
   &:hover{
         background: ${({ theme }) => theme.color.melrose};
         transition: 0.5s;
-    }
+    };
 
   @media (max-width: 756px) {
     display: none;
-  }
+  };
 
   ${({ disabled }) =>
     disabled &&
@@ -242,5 +242,5 @@ export const PaginationRightButtonNextPage = styled(NavLink)`
         pointer-events: none;
         cursor: default;
       }
-    `}
+    `};
 `;

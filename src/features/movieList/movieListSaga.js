@@ -1,4 +1,4 @@
-import { call, debounce, delay, put, select, takeLatest } from "redux-saga/effects";
+import { call, debounce, delay, put, select } from "redux-saga/effects";
 import { selectPage, fetchGenresList, fetchGenresListError, fetchGenresListSuccess, fetchMovieList, fetchMovieListError, fetchMovieListSuccess, selectMovieQuery } from "./movieListSlice";
 import { getGenres, getMovieList, searchMovies } from "../../getApi";
 

@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Tile = styled.div`
   background-color: ${({ theme }) => theme.color.white};
@@ -21,7 +21,6 @@ export const NameBox = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-
 `;
 
 export const Name = styled(NavLink)`
@@ -74,8 +73,4 @@ export const Photo = styled.img`
   aspect-ratio: 2/3;
   object-fit: cover;
   background: ${({ theme }) => theme.color.silver};
-  
-  @media (max-width: 500px) {
-
-    }
 `;
