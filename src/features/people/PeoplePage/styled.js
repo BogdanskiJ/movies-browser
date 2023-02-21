@@ -4,8 +4,12 @@ export const Background = styled.div`
   background-color: ${({ theme }) => theme.color.whisper};
   max-width: 1368px;
   margin: 0 auto;
+  margin-bottom: 30px;
   @media (max-width: 1380px) {
     padding: 0 16px 16px 16px;
+  };
+  @media (max-width: 480px) {
+    margin-bottom: 10px;
   };
 `;
 

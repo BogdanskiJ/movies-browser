@@ -4,13 +4,15 @@ export const MovieListPage = styled.div`
   background-color: ${({ theme }) => theme.color.whisper};
   max-width: 1368px;
   margin: 0 auto;
-  
+  margin-bottom: 30px;
   @media (max-width: 767px) {
     padding-bottom: 30px;
     padding: 16px;
   };
+  @media (max-width: 480px) {
+    margin-bottom: 10px;
+  };
 `;
-
 
 export const PopularMoviesName = styled.h1`
   margin-top: 56px;
@@ -53,5 +55,3 @@ export const MoviesList = styled.div`
     gap: 8px;
   };
 `;
-
-
