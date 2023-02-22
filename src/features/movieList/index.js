@@ -18,9 +18,7 @@ import {
 import {
   MovieListPage,
   MoviesList,
-  PopularMoviesBox,
   PopularMoviesName,
-  Margin,
 } from "./styled";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";

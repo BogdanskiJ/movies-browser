@@ -1,14 +1,13 @@
-import iconNavigation from "./IconNavigation/video.svg";
+import { useLocation } from "react-router-dom";
+import iconNavigation from "../../images/video.svg";
 import { Container, Icon, Input, Name, Logo, NavigationWrapper, Search, StyledNavigation, StyledNavLink, Subpages } from "./styled";
 import { useQueryParameter, useReplaceQueryParameter } from "../../queryParameters";
 import searchQueryParamName from "../../searchQueryParamName";
-import { useLocation } from "react-router-dom";
 
 export const Navigation = () => {
     const location = useLocation();
     const query = useQueryParameter(searchQueryParamName);
     const replaceQueryParameter = useReplaceQueryParameter();
-
     const onInputChange = ({ target }) => {
         replaceQueryParameter({
             key: searchQueryParamName,

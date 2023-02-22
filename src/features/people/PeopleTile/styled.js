@@ -18,9 +18,11 @@ export const Tile = styled.div`
     padding: 8px;
     padding-bottom: 10px;
     gap: 8px;
-  }
+  };
 `;
+
 export const PhotoBox = styled(NavLink)``;
+
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
 `;
@@ -38,11 +40,11 @@ export const Name = styled.h3`
   @media (max-width: 767px) {
     font-size: 14px;
     word-break: keep-all;
-  }
+  };
 
   &:hover {
     color: ${({ theme }) => theme.color.aquamarineBlue};
-  }
+  };
 `;
 
 export const Photo = styled.img`
@@ -58,5 +60,5 @@ export const Photo = styled.img`
     width: 100%;
     height: auto;
    
-  }
+  };
 `;

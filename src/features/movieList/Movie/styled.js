@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const MovieDetail = styled.div`
   width: 100%;
@@ -19,7 +19,7 @@ export const MovieDetail = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     padding: 8px;
-  } ;
+  };
 `;
 
 export const PosterBox = styled(NavLink)``;
@@ -33,15 +33,14 @@ export const Poster = styled.img`
 
   @media (max-width: 480px) {
     width: 136px;
-  }
+  };
 
   @media (max-width: 756px) {
     display: grid;
     grid-template-columns: auto 1fr;
     aspect-ratio: 2/3;
     object-fit: contain;
-
-  } ;
+  };
 `;
 
 export const MovieDescriptionBox = styled.div`
@@ -52,7 +51,7 @@ export const MovieDescriptionBox = styled.div`
 
   @media (max-width: 756px) {
     gap: 8px;
-  } ;
+  };
 `;
 
 export const MovieTitleBox = styled(NavLink)`
@@ -68,7 +67,7 @@ export const MovieTitle = styled.h2`
 
   &:hover {
     color: ${({ theme }) => theme.color.aquamarineBlue};
-  }
+  };
 
   @media (max-width: 756px) {
     font-size: 16px;
@@ -76,7 +75,7 @@ export const MovieTitle = styled.h2`
     font-weight: 500;
     font-size: 16px;
     line-height: 130%;
-  } ;
+  };
 `;
 
 export const MovieYear = styled.div`
@@ -90,7 +89,7 @@ export const MovieYear = styled.div`
     font-size: 13px;
     line-height: 130%;
     margin-top: 4px;
-  } ;
+  };
 `;
 
 export const MovieTags = styled.ul`
@@ -107,7 +106,7 @@ export const MovieTags = styled.ul`
     font-size: 10px;
     margin: 0;
     margin-top: 8px;
-  } ;
+  };
 `;
 
 export const Tag = styled.li`
@@ -125,7 +124,7 @@ export const Tag = styled.li`
     font-size: 10px;
     line-height: 110%;
     padding: 4px 8px;
-  } ;
+  };
 `;
 
 export const MovieRating = styled.div`
@@ -143,13 +142,14 @@ export const MovieRating = styled.div`
   font-size: 16px;
   line-height: 150%;
   color: ${({ theme }) => theme.color.waterloo};
+
   @media (max-width: 756px) {
     padding: 0;
     height: auto;
     margin-top: 8px;
     gap: 8px;
     flex-wrap: wrap;
-  } ;
+  };
 `;
 
 export const Rating = styled.div`
@@ -162,7 +162,7 @@ export const Rating = styled.div`
     padding: 0;
     font-size: 13px;
     line-height: 130%;
-  } ;
+  };
 `;
 
 export const VotesNumber = styled.div`
@@ -175,5 +175,5 @@ export const VotesNumber = styled.div`
     padding: 0;
     font-size: 13px;
     line-height: 130%;
-  } ;
+  };
 `;

@@ -12,16 +12,17 @@ export const MovieDetailsPage = styled.div`
   @media (max-width: 756px) {
     width: 100%;
     gap: 16px;
-  }
+  };
 `;
 
 export const CastBox = styled.div`
   max-width: 1368px;
   margin: 0 auto;
   padding: 16px;
+
   @media (max-width: 767px) {
     padding: 16px;
-  }
+  };
 `;
 
 export const Title = styled.div`
@@ -37,7 +38,7 @@ export const Title = styled.div`
     font-size: 20px;
     line-height: 120%;
     margin: 0 16px;
-  }
+  };
 `;
 
 export const TileBox = styled.div`
@@ -47,18 +48,21 @@ export const TileBox = styled.div`
 
   @media (max-width:1368px) {
     grid-template-columns: repeat(5, 1fr);
-  }
+  };
+
   @media (max-width:990px) {
     grid-template-columns: repeat(4, 1fr);
-  }
+  };
+
   @media (max-width:767px) {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 8px;
-  }
+  };
+
   @media (max-width:480px) {
     margin: 0px 0px 21px 0px;
     grid-template-columns: 1fr 1fr;
-  }
+  };
 `;
 export const MovieDetailsPeople = styled.div`
   display: flex;

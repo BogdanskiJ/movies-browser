@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
     margin: auto;
 `;
 
-
 export const StyledHeader = styled.header`
     font-weight: 600;
     font-size: 36px;
@@ -45,7 +44,7 @@ export const Container = styled.div`
 
     @media (max-width:767px){
         margin-top: 24px;
-    };    
+    }; 
 `;
 
 export const LoadingIcon = styled.img`
@@ -54,6 +53,3 @@ export const LoadingIcon = styled.img`
         height: 35px;
     };
 `;
-
-
-

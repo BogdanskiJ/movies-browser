@@ -1,6 +1,6 @@
 import { call, put, select, takeEvery } from "redux-saga/effects";
-import { getGenres } from "./getGenres";
-import { getProjects } from "./getProjects";
+import { getGenres } from "../../../getApi"
+import { getProjects } from "../../../getApi";
 import { fetchProjects, setCast, setCrew, fetchGenres, setGenres, selectProjectsId } from "./projectsSlice";
 
 function* fetchProjectsHandler() {
@@ -10,7 +10,7 @@ function* fetchProjectsHandler() {
 
     yield put(setCast(projects.cast));
     yield put(setCrew(projects.crew));
-  } catch (error) {}
+  } catch (error) { }
 }
 
 export function* watchFetchProjects() {
@@ -18,13 +18,12 @@ export function* watchFetchProjects() {
 }
 
 function* fetchGenresHandler() {
-    try {
-        const genres = yield call(getGenres);
-        yield put(setGenres(genres.genres))
-    } catch (error)
-    {}
+  try {
+    const genres = yield call(getGenres);
+    yield put(setGenres(genres.genres))
+  } catch (error) { }
 }
 
 export function* watchFetchGenres() {
-    yield takeEvery(fetchGenres.type, fetchGenresHandler)
+  yield takeEvery(fetchGenres.type, fetchGenresHandler)
 }

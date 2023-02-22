@@ -1,4 +1,4 @@
-import { ReactComponent as ErrorIcon } from "./ErrorIcon/danger.svg";
+import { ReactComponent as ErrorIcon } from "../../images/danger.svg";
 import { Button, Container, Error, Info } from "./styled";
 
 export const ErrorPage = () => (

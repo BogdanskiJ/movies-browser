@@ -12,7 +12,7 @@ export const Container = styled.div`
             height: 45px;
             margin: auto;
         };
-    `}
+    `};
 `;
 
 export const Error = styled.p`

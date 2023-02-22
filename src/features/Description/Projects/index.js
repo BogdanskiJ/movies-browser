@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 export const Projects = () => {
   const { crew, cast } = useSelector(selectProjectsState);
   const dispatch = useDispatch();
-  const {id} = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     dispatch(setProjectsId(id));
@@ -29,7 +29,7 @@ export const Projects = () => {
               movieRating={detail.vote_average.toFixed(1)}
               votesNumber={detail.vote_count}
               poster_path={detail.poster_path}
-              movieYear={detail.release_date.slice(0,4)}
+              movieYear={detail.release_date.slice(0, 4)}
               character={detail.character}
               projects={detail.genre_ids}
               id={detail.id}
@@ -46,7 +46,7 @@ export const Projects = () => {
               movieRating={crewDetail.vote_average.toFixed(1)}
               votesNumber={crewDetail.vote_count}
               poster_path={crewDetail.poster_path}
-              movieYear={crewDetail.release_date.slice(0,4)}
+              movieYear={crewDetail.release_date.slice(0, 4)}
               character={crewDetail.job}
               id={crewDetail.id}
               projects={crewDetail.genre_ids}

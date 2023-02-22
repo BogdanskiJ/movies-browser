@@ -1,5 +1,4 @@
 import { theme } from "../../theme";
-import { Cast } from "./people/movieDetailsPeopleTile";
 import { MovieMainPoster } from "./movieMainPoster";
 import { MovieTail } from "./movieTile";
 import { MovieDetailsPage, TileBox } from "./styled";
@@ -18,6 +17,7 @@ import { useParams } from "react-router-dom";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 import { nanoid } from "@reduxjs/toolkit";
+import { Cast } from "./people/Cast";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();

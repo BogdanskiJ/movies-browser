@@ -1,6 +1,6 @@
-import { call, debounce, delay, put, select, takeEvery } from "redux-saga/effects";
+import { call, debounce, delay, put, select } from "redux-saga/effects";
 import { searchPeople } from "../../../getApi";
-import { getPeopleList } from "./getPeopleList";
+import { getPeopleList } from "../../../getApi"
 import {
   fetchPeopleList,
   selectPeoplePage,
