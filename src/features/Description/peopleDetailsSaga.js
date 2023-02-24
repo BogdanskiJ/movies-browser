@@ -1,5 +1,5 @@
 import { call, put, select, takeEvery } from "redux-saga/effects";
-import { getDetails } from "./getDetails";
+import { getDetails } from "../../getApi";
 import {
   fetchPeopleDetails,
   fetchPeopleDetailsError,

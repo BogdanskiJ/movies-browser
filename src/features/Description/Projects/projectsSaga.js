@@ -1,6 +1,6 @@
 import { call, put, select, takeEvery } from "redux-saga/effects";
-import { getGenres } from "./getGenres";
-import { getProjects } from "./getProjects";
+import { getGenres } from "../../../getApi";
+import { getProjects } from "../../../getApi";
 import { fetchProjects, setCast, setCrew, fetchGenres, setGenres, selectProjectsId } from "./projectsSlice";
 
 function* fetchProjectsHandler() {
