@@ -9,7 +9,7 @@ export const ErrorPage = () => (
         <Error>Ooops! Something went wrong...</Error>
         <Info>Please check your network connection <br /> and try again</Info>
         <Container>
-            <a href="https://kubabogd.github.io/movies-browser/#/popular-movies">
+            <a href="https://bogdanskij.github.io/movies-browser/#/popular-movies">
                 <Button>Back to home page</Button>
             </a>
         </Container>
