@@ -18,7 +18,7 @@ Movie Browser is a database about movies and actors. It allows you to get inform
 
 ## Movies Browser Demo
 
-[Movies Browser](https://kubabogd.github.io/movies-browser/)
+[Movies Browser](https://bogdanskij.github.io/movies-browser/#/popular-movies)
 
 ## General Info
 
